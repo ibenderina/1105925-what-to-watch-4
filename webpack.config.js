@@ -22,5 +22,13 @@ module.exports = {
       }
     ],
   },
+  resolve: {
+    alias: {
+      '@components': path.resolve(__dirname, `src/components`),
+      '@app': path.resolve(__dirname, `src/components/app`),
+      '@main': path.resolve(__dirname, `src/components/main`),
+      '@consts': path.resolve(__dirname, `src/consts`)
+    }
+  },
   devtool: `source-map`,
 };
