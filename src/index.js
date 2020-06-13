@@ -1,12 +1,13 @@
 import ReactDOM from "react-dom";
 import App from "@app/app";
-import {FilmInfo} from "@consts";
+import {FILMS_NAMES, MainFilmInfo} from "@consts";
 
 ReactDOM.render(
     <App
-      filmName={FilmInfo.NAME}
-      filmGenre={FilmInfo.GENRE}
-      filmDate={FilmInfo.DATE}
+      filmName={MainFilmInfo.NAME}
+      filmGenre={MainFilmInfo.GENRE}
+      filmDate={MainFilmInfo.DATE}
+      filmNames={FILMS_NAMES}
     />,
     document.querySelector(`#root`)
 );
