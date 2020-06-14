@@ -11,20 +11,14 @@
     "build": "webpack --mode production",
     "start": "webpack-dev-server --open"
   },
-  "jest": {
-    "moduleNameMapper": {
-      "^@app(.*)$": "<rootDir>/src/components/app/$1",
-      "^@components(.*)$": "<rootDir>/src/components/$1",
-      "^@welcome-screen(.*)$": "<rootDir>/src/components/welcome-screen/$1",
-      "^@consts(.*)$": "<rootDir>/src/$1"
-    }
-  },
   "devDependencies": {
     "@babel/core": "7.10.2",
     "@babel/preset-env": "7.10.2",
     "@babel/preset-react": "7.10.1",
     "babel-jest": "26.0.1",
     "babel-loader": "8.1.0",
+    "enzyme": "3.11.0",
+    "enzyme-adapter-react-16": "1.15.2",
     "eslint": "5.13.0",
     "eslint-config-htmlacademy": "0.5.2",
     "eslint-plugin-react": "7.20.0",

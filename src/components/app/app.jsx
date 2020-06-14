@@ -1,21 +1,21 @@
 import Main from "@main/main";
-import PropTypes from "prop-types";
 
 const App = (props) => {
-  const {filmName, filmNames, filmGenre, filmDate} = props;
+  const {filmName, filmGenre, filmDate, filmNames} = props;
 
   return (
     <Main
       filmName={filmName}
-      filmNames={filmNames}
       filmGenre={filmGenre}
       filmDate={filmDate}
+      filmNames={filmNames}
+      onFilmTitleClick={() => {}}
     />
   );
 };
 
 App.propTypes = {
-  filmNames: PropTypes.array.isRequired,
+  filmNames: PropTypes.arrayOf(PropTypes.string.isRequired),
   filmName: PropTypes.string.isRequired,
   filmGenre: PropTypes.string.isRequired,
   filmDate: PropTypes.string.isRequired,
