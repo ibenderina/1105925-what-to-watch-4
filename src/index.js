@@ -1,18 +1,13 @@
-import React from "react";
 import ReactDOM from "react-dom";
-import App from "@app/app.jsx";
-
-export const FilmInfo = {
-  NAME: `American Horror Story`,
-  GENRE: `Horror`,
-  DATE: `2011 – ...`
-};
+import App from "@app/app";
+import {FILMS_NAMES, MainFilmInfo} from "@consts";
 
 ReactDOM.render(
     <App
-      filmName={FilmInfo.NAME}
-      filmGenre={FilmInfo.GENRE}
-      filmDate={FilmInfo.DATE}
+      filmName={MainFilmInfo.NAME}
+      filmGenre={MainFilmInfo.GENRE}
+      filmDate={MainFilmInfo.DATE}
+      filmNames={FILMS_NAMES}
     />,
     document.querySelector(`#root`)
 );
