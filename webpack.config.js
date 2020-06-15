@@ -10,7 +10,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, `public`),
     open: false,
-    port: 1330,
+    port: 1350,
   },
   module: {
     rules: [
@@ -27,7 +27,7 @@ module.exports = {
     modules: [`node_modules`, path.resolve(path.join(__dirname, `src/components`))],
     extensions: [`.js`, `.jsx`, `.ts`, `.tsx`, `.webm`],
     alias: {
-      '@components': path.resolve(__dirname, `src/components`),
+      '@components': path.resolve(__dirname, `src/components/`),
       '@app': path.resolve(__dirname, `src/components/app`),
       '@main': path.resolve(__dirname, `src/components/main`),
       '@consts': path.resolve(__dirname, `src/consts/consts`)
@@ -37,6 +37,7 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin({
       React: `react`,
+      PropTypes: `prop-types`
     }),
   ],
 };

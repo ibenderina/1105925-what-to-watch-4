@@ -4,4 +4,4 @@ export const MainFilmInfo = {
   DATE: `2011 – ...`
 };
 
-export const FILMS_NAMES = [`Dead in a Week (Or Your Money Back)`, `The Gentlemen`, `Lion`, `Chappie`, `Guns Akimbo`];
+export const FILM_NAMES = [`Dead in a Week (Or Your Money Back)`, `The Gentlemen`, `Lion`, `Chappie`, `Guns Akimbo`];

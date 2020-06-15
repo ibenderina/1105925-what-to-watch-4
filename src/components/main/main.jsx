@@ -1,7 +1,5 @@
-import PropTypes from "prop-types";
-
 const Main = (props) => {
-  const {filmName, filmNames, filmGenre, filmDate} = props;
+  const {filmName, filmNames, filmGenre, filmDate, onFilmTitleClick} = props;
 
   const createFilmCards = filmNames.map((name, index) => {
     return (
@@ -9,7 +7,8 @@ const Main = (props) => {
         <div className="small-movie-card__image">
           <img src="https://memepedia.ru/wp-content/uploads/2018/12/hamster.jpg" alt={name} width="280" height="175" />
         </div>
-        <h3 className="small-movie-card__title">
+        <h3 className="small-movie-card__title"
+          onClick={onFilmTitleClick}>
           <a className="small-movie-card__link" href="movie-page.html">{name}</a>
         </h3>
       </article>
@@ -17,7 +16,7 @@ const Main = (props) => {
   });
 
   return (
-    <div>
+    <>
       <section className="movie-card">
         <div className="movie-card__bg">
           <img src="img/bg-the-grand-budapest-hotel.jpg" alt="The Grand Budapest Hotel"/>
@@ -72,7 +71,7 @@ const Main = (props) => {
           </div>
         </div>
       </section>
-      <div className="page-content">
+      <section className="page-content">
         <section className="catalog">
           <h2 className="catalog__title visually-hidden">Catalog</h2>
 
@@ -117,6 +116,7 @@ const Main = (props) => {
             <button className="catalog__button" type="button">Show more</button>
           </div>
         </section>
+      </section>
 
         <footer className="page-footer">
           <div className="logo">
@@ -131,16 +131,16 @@ const Main = (props) => {
             <p>© 2019 What to watch Ltd.</p>
           </div>
         </footer>
-      </div>
-    </div>
+      </>
   );
 };
 
 Main.propTypes = {
-  filmNames: PropTypes.array.isRequired,
+  filmNames: PropTypes.arrayOf(PropTypes.string.isRequired),
   filmName: PropTypes.string.isRequired,
   filmGenre: PropTypes.string.isRequired,
   filmDate: PropTypes.string.isRequired,
+  onFilmTitleClick: PropTypes.func.isRequired,
 };
 
 export default Main;
