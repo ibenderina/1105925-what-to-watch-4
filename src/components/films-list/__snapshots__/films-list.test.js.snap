@@ -1,0 +1,216 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should FilmsList render correctly 1`] = `
+<div
+  className="catalog__movies-list"
+>
+  <article
+    className="small-movie-card catalog__movies-card"
+    onMouseEnter={[Function]}
+  >
+    <div
+      className="small-movie-card__image"
+    >
+      <img
+        alt="Dead in a Week (Or Your Money Back)"
+        height="175"
+        src="https://pets.mail.ru/sharepic/68/10401.png"
+        width="280"
+      />
+    </div>
+    <h3
+      className="small-movie-card__title"
+      onClick={[Function]}
+    >
+      <a
+        className="small-movie-card__link"
+        href="movie-page.html"
+      >
+        Dead in a Week (Or Your Money Back)
+      </a>
+    </h3>
+  </article>
+  <article
+    className="small-movie-card catalog__movies-card"
+    onMouseEnter={[Function]}
+  >
+    <div
+      className="small-movie-card__image"
+    >
+      <img
+        alt="The Gentlemen"
+        height="175"
+        src="https://twizz.ru/wp-content/uploads/-000//1/animals-about-to-drop-album-photos-58aeb0ce59ff1__700.jpg"
+        width="280"
+      />
+    </div>
+    <h3
+      className="small-movie-card__title"
+      onClick={[Function]}
+    >
+      <a
+        className="small-movie-card__link"
+        href="movie-page.html"
+      >
+        The Gentlemen
+      </a>
+    </h3>
+  </article>
+  <article
+    className="small-movie-card catalog__movies-card"
+    onMouseEnter={[Function]}
+  >
+    <div
+      className="small-movie-card__image"
+    >
+      <img
+        alt="Lion"
+        height="175"
+        src="https://medialeaks.ru/wp-content/uploads/2019/08/glavnaya-1.jpg"
+        width="280"
+      />
+    </div>
+    <h3
+      className="small-movie-card__title"
+      onClick={[Function]}
+    >
+      <a
+        className="small-movie-card__link"
+        href="movie-page.html"
+      >
+        Lion
+      </a>
+    </h3>
+  </article>
+  <article
+    className="small-movie-card catalog__movies-card"
+    onMouseEnter={[Function]}
+  >
+    <div
+      className="small-movie-card__image"
+    >
+      <img
+        alt="Chappie"
+        height="175"
+        src="https://www.thepaws.net/wp-content/uploads/2018/10/funny-chihuahua.jpg"
+        width="280"
+      />
+    </div>
+    <h3
+      className="small-movie-card__title"
+      onClick={[Function]}
+    >
+      <a
+        className="small-movie-card__link"
+        href="movie-page.html"
+      >
+        Chappie
+      </a>
+    </h3>
+  </article>
+  <article
+    className="small-movie-card catalog__movies-card"
+    onMouseEnter={[Function]}
+  >
+    <div
+      className="small-movie-card__image"
+    >
+      <img
+        alt="Guns Akimbo"
+        height="175"
+        src="https://memepedia.ru/wp-content/uploads/2018/12/hamster.jpg"
+        width="280"
+      />
+    </div>
+    <h3
+      className="small-movie-card__title"
+      onClick={[Function]}
+    >
+      <a
+        className="small-movie-card__link"
+        href="movie-page.html"
+      >
+        Guns Akimbo
+      </a>
+    </h3>
+  </article>
+  <article
+    className="small-movie-card catalog__movies-card"
+    onMouseEnter={[Function]}
+  >
+    <div
+      className="small-movie-card__image"
+    >
+      <img
+        alt="Undisputed"
+        height="175"
+        src="https://stihi.ru/pics/2013/04/04/1852.jpg"
+        width="280"
+      />
+    </div>
+    <h3
+      className="small-movie-card__title"
+      onClick={[Function]}
+    >
+      <a
+        className="small-movie-card__link"
+        href="movie-page.html"
+      >
+        Undisputed
+      </a>
+    </h3>
+  </article>
+  <article
+    className="small-movie-card catalog__movies-card"
+    onMouseEnter={[Function]}
+  >
+    <div
+      className="small-movie-card__image"
+    >
+      <img
+        alt="En man som heter Ove"
+        height="175"
+        src="https://techtoday.in.ua/wp-content/uploads/2018/01/GRUMPYCAT.jpg"
+        width="280"
+      />
+    </div>
+    <h3
+      className="small-movie-card__title"
+      onClick={[Function]}
+    >
+      <a
+        className="small-movie-card__link"
+        href="movie-page.html"
+      >
+        En man som heter Ove
+      </a>
+    </h3>
+  </article>
+  <article
+    className="small-movie-card catalog__movies-card"
+    onMouseEnter={[Function]}
+  >
+    <div
+      className="small-movie-card__image"
+    >
+      <img
+        alt="Shining"
+        height="175"
+        src="https://cs7.pikabu.ru/post_img/2019/03/06/7/1551870696138123277.jpg"
+        width="280"
+      />
+    </div>
+    <h3
+      className="small-movie-card__title"
+      onClick={[Function]}
+    >
+      <a
+        className="small-movie-card__link"
+        href="movie-page.html"
+      >
+        Shining
+      </a>
+    </h3>
+  </article>
+</div>
+`;

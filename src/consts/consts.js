@@ -3,5 +3,3 @@ export const MainFilmInfo = {
   GENRE: `Horror`,
   DATE: `2011 – ...`
 };
-
-export const FILM_NAMES = [`Dead in a Week (Or Your Money Back)`, `The Gentlemen`, `Lion`, `Chappie`, `Guns Akimbo`];

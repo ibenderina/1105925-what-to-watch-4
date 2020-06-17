@@ -1,5 +1,6 @@
-import Main from "@main/main";
-import {FILM_NAMES, MainFilmInfo} from "@consts";
+import Main from "@components/main/main";
+import {MainFilmInfo} from "@consts";
+import films from "../../mocks/films";
 
 it(`Should Main render correctly`, () => {
   let tree;
@@ -8,7 +9,7 @@ it(`Should Main render correctly`, () => {
       filmName={MainFilmInfo.NAME}
       filmGenre={MainFilmInfo.GENRE}
       filmDate={MainFilmInfo.DATE}
-      filmNames={FILM_NAMES}
+      filmsList={films}
       onFilmTitleClick={() => {}}
     />);
   });
