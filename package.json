@@ -7,7 +7,7 @@
     "eslint": "eslint --ext .jsx --ext .js src/",
     "test": "npm run eslint && npm run test.jest",
     "test.jest": "jest",
-    "test-update": "jest -u",
+    "test-u": "jest -u",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --open"
   },

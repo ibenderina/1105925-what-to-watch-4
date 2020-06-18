@@ -8,6 +8,7 @@ module.exports = {
     path: path.join(__dirname, `public`)
   },
   devServer: {
+    historyApiFallback: true,
     contentBase: path.join(__dirname, `public`),
     open: false,
     port: 1350,
@@ -28,8 +29,6 @@ module.exports = {
     extensions: [`.js`, `.jsx`, `.ts`, `.tsx`, `.webm`],
     alias: {
       '@components': path.resolve(__dirname, `src/components/`),
-      '@app': path.resolve(__dirname, `src/components/app`),
-      '@main': path.resolve(__dirname, `src/components/main`),
       '@consts': path.resolve(__dirname, `src/consts/consts`)
     }
   },

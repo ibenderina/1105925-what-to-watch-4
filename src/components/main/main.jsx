@@ -1,19 +1,7 @@
-const Main = (props) => {
-  const {filmName, filmNames, filmGenre, filmDate, onFilmTitleClick} = props;
+import FilmsList from "@components/films-list/films-list";
 
-  const createFilmCards = filmNames.map((name, index) => {
-    return (
-      <article key={name + index.toString()} className="small-movie-card catalog__movies-card">
-        <div className="small-movie-card__image">
-          <img src="https://memepedia.ru/wp-content/uploads/2018/12/hamster.jpg" alt={name} width="280" height="175" />
-        </div>
-        <h3 className="small-movie-card__title"
-          onClick={onFilmTitleClick}>
-          <a className="small-movie-card__link" href="movie-page.html">{name}</a>
-        </h3>
-      </article>
-    );
-  });
+const Main = (props) => {
+  const {filmName, filmGenre, filmDate, filmsList} = props;
 
   return (
     <>
@@ -108,9 +96,7 @@ const Main = (props) => {
             </li>
           </ul>
 
-          <div className="catalog__movies-list">
-            {createFilmCards}
-          </div>
+          <FilmsList films={filmsList}/>
 
           <div className="catalog__more">
             <button className="catalog__button" type="button">Show more</button>
@@ -136,11 +122,17 @@ const Main = (props) => {
 };
 
 Main.propTypes = {
-  filmNames: PropTypes.arrayOf(PropTypes.string.isRequired),
   filmName: PropTypes.string.isRequired,
   filmGenre: PropTypes.string.isRequired,
   filmDate: PropTypes.string.isRequired,
-  onFilmTitleClick: PropTypes.func.isRequired,
+  filmsList: PropTypes.arrayOf(
+      PropTypes.exact({
+        id: PropTypes.number.isRequired,
+        title: PropTypes.string.isRequired,
+        src: PropTypes.string.isRequired,
+      })
+      .isRequired)
+    .isRequired,
 };
 
 export default Main;

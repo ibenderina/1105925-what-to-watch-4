@@ -1,5 +1,6 @@
-import App from "@app/app";
-import {FILM_NAMES, MainFilmInfo} from "@consts";
+import App from "@components/app/app";
+import {MainFilmInfo} from "@consts";
+import films from "../../mocks/films";
 
 it(`Render App`, () => {
   let tree;
@@ -8,7 +9,7 @@ it(`Render App`, () => {
       filmName={MainFilmInfo.NAME}
       filmGenre={MainFilmInfo.GENRE}
       filmDate={MainFilmInfo.DATE}
-      filmNames={FILM_NAMES}
+      filmsList={films}
     />);
   });
   expect(tree.toJSON()).toMatchSnapshot();
