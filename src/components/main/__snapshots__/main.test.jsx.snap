@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render App 1`] = `
+exports[`Should Main render correctly 1`] = `
 Array [
   <section
     className="movie-card"
@@ -9,8 +9,8 @@ Array [
       className="movie-card__bg"
     >
       <img
-        alt="The Grand Budapest Hotel"
-        src="img/bg-the-grand-budapest-hotel.jpg"
+        alt="The Gentlemen background"
+        src="https://99px.ru/sstorage/53/2017/12/tmb_217309_894087.jpg"
       />
     </div>
     <h1
@@ -69,9 +69,9 @@ Array [
           className="movie-card__poster"
         >
           <img
-            alt="The Grand Budapest Hotel poster"
+            alt="The Gentlemen poster"
             height="327"
-            src="img/the-grand-budapest-hotel-poster.jpg"
+            src="https://twizz.ru/wp-content/uploads/-000//1/animals-about-to-drop-album-photos-58aeb0ce59ff1__700.jpg"
             width="218"
           />
         </div>
@@ -81,7 +81,7 @@ Array [
           <h2
             className="movie-card__title"
           >
-            American Horror Story
+            The Gentlemen
           </h2>
           <p
             className="movie-card__meta"
@@ -89,12 +89,12 @@ Array [
             <span
               className="movie-card__genre"
             >
-              Horror
+              Comedy
             </span>
             <span
               className="movie-card__year"
             >
-              2011 – ...
+              One Million years AC
             </span>
           </p>
           <div
@@ -259,7 +259,7 @@ Array [
       >
         <article
           className="small-movie-card catalog__movies-card"
-          onMouseEnter={[Function]}
+          onClick={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -273,7 +273,6 @@ Array [
           </div>
           <h3
             className="small-movie-card__title"
-            onClick={[Function]}
           >
             <a
               className="small-movie-card__link"
@@ -285,7 +284,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onMouseEnter={[Function]}
+          onClick={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -299,7 +298,6 @@ Array [
           </div>
           <h3
             className="small-movie-card__title"
-            onClick={[Function]}
           >
             <a
               className="small-movie-card__link"
@@ -311,7 +309,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onMouseEnter={[Function]}
+          onClick={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -325,7 +323,6 @@ Array [
           </div>
           <h3
             className="small-movie-card__title"
-            onClick={[Function]}
           >
             <a
               className="small-movie-card__link"
@@ -337,7 +334,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onMouseEnter={[Function]}
+          onClick={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -351,7 +348,6 @@ Array [
           </div>
           <h3
             className="small-movie-card__title"
-            onClick={[Function]}
           >
             <a
               className="small-movie-card__link"
@@ -363,7 +359,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onMouseEnter={[Function]}
+          onClick={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -377,7 +373,6 @@ Array [
           </div>
           <h3
             className="small-movie-card__title"
-            onClick={[Function]}
           >
             <a
               className="small-movie-card__link"
@@ -389,7 +384,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onMouseEnter={[Function]}
+          onClick={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -403,7 +398,6 @@ Array [
           </div>
           <h3
             className="small-movie-card__title"
-            onClick={[Function]}
           >
             <a
               className="small-movie-card__link"
@@ -415,7 +409,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onMouseEnter={[Function]}
+          onClick={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -429,7 +423,6 @@ Array [
           </div>
           <h3
             className="small-movie-card__title"
-            onClick={[Function]}
           >
             <a
               className="small-movie-card__link"
@@ -441,7 +434,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onMouseEnter={[Function]}
+          onClick={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -455,7 +448,6 @@ Array [
           </div>
           <h3
             className="small-movie-card__title"
-            onClick={[Function]}
           >
             <a
               className="small-movie-card__link"
