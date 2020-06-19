@@ -6,8 +6,7 @@ it(`Should Main render correctly`, () => {
     tree = window.create(<FilmCard
       filmTitle={`Undisputed`}
       filmImage={`Undisputed.src`}
-      onFilmTitleClick={() => {}}
-      onFilmTitleMouseEnter={() => {}}
+      onClickFilmCard={() => {}}
     />);
   });
   expect(tree.toJSON()).toMatchSnapshot();
