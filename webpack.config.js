@@ -29,14 +29,15 @@ module.exports = {
     extensions: [`.js`, `.jsx`, `.ts`, `.tsx`, `.webm`],
     alias: {
       '@components': path.resolve(__dirname, `src/components/`),
-      '@consts': path.resolve(__dirname, `src/consts/consts`)
+      '@consts': path.resolve(__dirname, `src/consts/consts`),
+      '@utils': path.resolve(__dirname, `src/utils/utils`),
     }
   },
   devtool: `source-map`,
   plugins: [
     new webpack.ProvidePlugin({
       React: `react`,
-      PropTypes: `prop-types`
+      PropTypes: `prop-types`,
     }),
   ],
 };

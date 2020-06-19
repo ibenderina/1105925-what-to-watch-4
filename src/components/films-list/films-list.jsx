@@ -1,7 +1,6 @@
-import {PureComponent} from "react";
 import FilmCard from "@components/film-card/film-card";
 
-class FilmsList extends PureComponent {
+class FilmsList extends React.PureComponent {
   constructor(props) {
     super(props);
 

@@ -1,10 +1,10 @@
 const PromoFilm = (props) => {
-  const {filmTitle, filmImage, filmGenre, filmDate, filmBackground} = props;
+  const {title, src, genre, date, background} = props.film;
 
   return (
     <section className="movie-card">
       <div className="movie-card__bg">
-        <img src={filmBackground} alt={filmTitle + ` background`}/>
+        <img src={background} alt={title + ` background`}/>
       </div>
       <h1 className="visually-hidden">WTW</h1>
       <header className="page-header movie-card__head">
@@ -24,13 +24,13 @@ const PromoFilm = (props) => {
       <div className="movie-card__wrap">
         <div className="movie-card__info">
           <div className="movie-card__poster">
-            <img src={filmImage} alt={filmTitle + ` poster`} width="218" height="327"/>
+            <img src={src} alt={title + ` poster`} width="218" height="327"/>
           </div>
           <div className="movie-card__desc">
-            <h2 className="movie-card__title">{filmTitle}</h2>
+            <h2 className="movie-card__title">{title}</h2>
             <p className="movie-card__meta">
-              <span className="movie-card__genre">{filmGenre}</span>
-              <span className="movie-card__year">{filmDate}</span>
+              <span className="movie-card__genre">{genre}</span>
+              <span className="movie-card__year">{date}</span>
             </p>
             <div className="movie-card__buttons">
               <button className="btn btn--play movie-card__button" type="button">
@@ -54,11 +54,19 @@ const PromoFilm = (props) => {
 };
 
 PromoFilm.propTypes = {
-  filmTitle: PropTypes.string.isRequired,
-  filmImage: PropTypes.string.isRequired,
-  filmGenre: PropTypes.string.isRequired,
-  filmDate: PropTypes.string.isRequired,
-  filmBackground: PropTypes.string.isRequired,
+  film: PropTypes.exact({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    src: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    director: PropTypes.string.isRequired,
+    starring: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    background: PropTypes.string.isRequired,
+    ratingScore: PropTypes.number.isRequired,
+    ratingCount: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default PromoFilm;

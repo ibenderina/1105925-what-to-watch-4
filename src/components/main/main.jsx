@@ -21,26 +21,13 @@ class Main extends React.PureComponent {
     if (filmSelected) {
       shownFilm = (
         <FilmInfo
-          filmImage={filmSelected.src}
-          filmTitle={filmSelected.title}
-          filmDescription={filmSelected.description}
-          filmDirector={filmSelected.director}
-          filmStarring={filmSelected.starring}
-          filmGenre={filmSelected.genre}
-          filmDate={filmSelected.date}
-          filmBackground={filmSelected.background}
-          filmRatingScore={filmSelected.ratingScore}
-          filmRatingCount={filmSelected.ratingCount}
+          film={filmSelected}
         />
       );
     } else {
       shownFilm = (
         <PromoFilm
-          filmImage={promoFilm.src}
-          filmTitle={promoFilm.title}
-          filmGenre={promoFilm.genre}
-          filmDate={promoFilm.date}
-          filmBackground={promoFilm.background}
+          film={promoFilm}
         />
       );
     }

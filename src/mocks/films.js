@@ -1,4 +1,4 @@
-import {chooseRandomInt} from "../utils/utils";
+import {chooseRandomInt} from "@utils";
 
 export default [
   {
