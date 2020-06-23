@@ -36,7 +36,7 @@ export default [
     background: `https://static.irk.ru/media/img/site/gallery/30414/58476b75-5f6f-42fb-97ff-9b97f79124cd_jpg_730x1000_q85.jpg`,
     ratingScore: chooseRandomInt(0, 10),
     ratingCount: chooseRandomInt(1, 450),
-    videoUrl: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
+    videoUrl: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
   }, {
     id: 1,
     title: `The Gentlemen`,
@@ -127,7 +127,7 @@ export default [
     background: `https://img3.goodfon.ru/wallpaper/nbig/7/2b/priroda-risovannye-oblaka.jpg`,
     ratingScore: chooseRandomInt(0, 10),
     ratingCount: chooseRandomInt(1, 450),
-    videoUrl: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
+    videoUrl: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
   }
 ];
 
@@ -136,3 +136,14 @@ export const MainFilmInfo = {
   GENRE: `Horror`,
   DATE: `2011 – ...`
 };
+
+export const MOCK_TEXT = [
+  `If you can't be good, be careful`,
+  `A volunteer is worth twenty pressed men`,
+  `Suffering for a friend doubleth friendship`,
+  `A woman's work is never done`,
+  `Comparisons are odious`,
+  `Money talks`,
+  `Don't keep a dog and bark yourself`,
+  `Every man has his price`,
+];

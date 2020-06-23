@@ -5,3 +5,5 @@ export const Level = {
   VERY_GOOD: `Very good`,
   AWESOME: `Awesome`
 };
+
+export const TABS = [`Overview`, `Details`, `Reviews`];
