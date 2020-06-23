@@ -6,17 +6,11 @@ it(`Should PromoFilm render correctly`, () => {
     tree = window.create(<PromoFilm
       film={
         {
-          id: 3,
           title: `Hi`,
           src: `Hi`,
-          description: `Hi`,
-          director: `Hi`,
-          starring: `Hi`,
           genre: `Hi`,
           date: `Hi`,
           background: `Hi`,
-          ratingScore: 111,
-          ratingCount: 111,
         }
       }
     />);

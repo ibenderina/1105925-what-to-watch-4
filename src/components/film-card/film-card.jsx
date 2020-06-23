@@ -1,8 +1,9 @@
 const FilmCard = (props) => {
-  const {filmTitle, filmImage, onClickFilmCard} = props;
+  const {filmTitle, filmImage, onClickFilmCard, onFilmTitleMouseEnter} = props;
 
   return (
     <article className="small-movie-card catalog__movies-card"
+      onMouseEnter={onFilmTitleMouseEnter}
       onClick={onClickFilmCard}>
       <div className="small-movie-card__image">
         <img src={filmImage} alt={filmTitle} width="280" height="175"/>
@@ -18,6 +19,7 @@ FilmCard.propTypes = {
   filmTitle: PropTypes.string.isRequired,
   filmImage: PropTypes.string.isRequired,
   onClickFilmCard: PropTypes.func.isRequired,
+  onFilmTitleMouseEnter: PropTypes.func.isRequired,
 };
 
 export default FilmCard;

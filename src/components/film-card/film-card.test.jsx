@@ -7,6 +7,7 @@ it(`Should Main render correctly`, () => {
       filmTitle={`Undisputed`}
       filmImage={`Undisputed.src`}
       onClickFilmCard={() => {}}
+      onFilmTitleMouseEnter={() => {}}
     />);
   });
   expect(tree.toJSON()).toMatchSnapshot();

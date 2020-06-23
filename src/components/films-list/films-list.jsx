@@ -5,6 +5,13 @@ class FilmsList extends React.PureComponent {
     super(props);
 
     this.onClickFilmCard = this.onClickFilmCard.bind(this);
+    this.onFilmTitleMouseEnter = this.onFilmTitleMouseEnter.bind(this);
+  }
+
+  onFilmTitleMouseEnter(film) {
+    return () => {
+      this.props.onFilmTitleMouseEnter(film);
+    };
   }
 
   onClickFilmCard(film) {
@@ -24,6 +31,7 @@ class FilmsList extends React.PureComponent {
             filmTitle={film.title}
             filmImage={film.src}
             onClickFilmCard={this.onClickFilmCard(film)}
+            onFilmTitleMouseEnter={this.onFilmTitleMouseEnter(film)}
           />;
         })}
       </div>
@@ -33,6 +41,7 @@ class FilmsList extends React.PureComponent {
 
 FilmsList.propTypes = {
   onClickFilmCard: PropTypes.func.isRequired,
+  onFilmTitleMouseEnter: PropTypes.func.isRequired,
   films: PropTypes.arrayOf(
       PropTypes.exact({
         id: PropTypes.number.isRequired,
@@ -46,6 +55,7 @@ FilmsList.propTypes = {
         background: PropTypes.string.isRequired,
         ratingScore: PropTypes.number.isRequired,
         ratingCount: PropTypes.number.isRequired,
+        videoUrl: PropTypes.string.isRequired,
       })
       .isRequired)
     .isRequired

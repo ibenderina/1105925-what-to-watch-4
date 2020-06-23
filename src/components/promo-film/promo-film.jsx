@@ -54,18 +54,12 @@ const PromoFilm = (props) => {
 };
 
 PromoFilm.propTypes = {
-  film: PropTypes.exact({
-    id: PropTypes.number.isRequired,
+  film: PropTypes.shape({
     title: PropTypes.string.isRequired,
     src: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    director: PropTypes.string.isRequired,
-    starring: PropTypes.string.isRequired,
     genre: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     background: PropTypes.string.isRequired,
-    ratingScore: PropTypes.number.isRequired,
-    ratingCount: PropTypes.number.isRequired,
   }).isRequired,
 };
 

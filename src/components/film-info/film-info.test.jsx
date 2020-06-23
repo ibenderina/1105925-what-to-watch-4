@@ -16,6 +16,7 @@ it(`Should FilmInfo render correctly`, () => {
           background: `Hi`,
           ratingScore: 111,
           ratingCount: 111,
+          videoUrl: `Hi`,
         }
       }
     />);

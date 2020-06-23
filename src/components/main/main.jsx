@@ -10,6 +10,7 @@ class Main extends React.PureComponent {
       currentSelectedFilm: null,
     };
     this._onClickFilmCard = this._onClickFilmCard.bind(this);
+    this._onFilmTitleMouseEnter = this._onFilmTitleMouseEnter.bind(this);
   }
 
   render() {
@@ -76,6 +77,7 @@ class Main extends React.PureComponent {
             <FilmsList
               films={filmsList}
               onClickFilmCard={this._onClickFilmCard}
+              onFilmTitleMouseEnter={this._onFilmTitleMouseEnter}
             />
 
             <div className="catalog__more">
@@ -106,6 +108,9 @@ class Main extends React.PureComponent {
       currentSelectedFilm: newSelectedFilm
     });
   }
+
+  _onFilmTitleMouseEnter() {
+  }
 }
 
 Main.propTypes = {
@@ -125,6 +130,7 @@ Main.propTypes = {
         background: PropTypes.string.isRequired,
         ratingScore: PropTypes.number.isRequired,
         ratingCount: PropTypes.number.isRequired,
+        videoUrl: PropTypes.string.isRequired,
       })
       .isRequired)
     .isRequired,

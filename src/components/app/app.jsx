@@ -48,6 +48,7 @@ App.propTypes = {
         background: PropTypes.string.isRequired,
         ratingScore: PropTypes.number.isRequired,
         ratingCount: PropTypes.number.isRequired,
+        videoUrl: PropTypes.string.isRequired,
       })
       .isRequired)
     .isRequired,
