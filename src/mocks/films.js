@@ -1,4 +1,4 @@
-import {chooseRandomInt} from "../utils/utils";
+import {chooseRandomInt} from "@utils";
 
 export default [
   {
@@ -36,6 +36,7 @@ export default [
     background: `https://static.irk.ru/media/img/site/gallery/30414/58476b75-5f6f-42fb-97ff-9b97f79124cd_jpg_730x1000_q85.jpg`,
     ratingScore: chooseRandomInt(0, 10),
     ratingCount: chooseRandomInt(1, 450),
+    videoUrl: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
   }, {
     id: 1,
     title: `The Gentlemen`,
@@ -48,6 +49,7 @@ export default [
     background: `https://99px.ru/sstorage/53/2017/12/tmb_217309_894087.jpg`,
     ratingScore: chooseRandomInt(0, 10),
     ratingCount: chooseRandomInt(1, 450),
+    videoUrl: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   }, {
     id: 2,
     title: `Lion`,
@@ -60,6 +62,7 @@ export default [
     background: `https://img2.goodfon.ru/wallpaper/nbig/6/68/minimalizm-oblaka-blue.jpg`,
     ratingScore: chooseRandomInt(0, 10),
     ratingCount: chooseRandomInt(1, 450),
+    videoUrl: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   }, {
     id: 3,
     title: `Chappie`,
@@ -72,6 +75,7 @@ export default [
     background: `https://img.desktopwallpapers.ru/flowers/pics/wide/1920x1200/fd796b086cb82fea063cd6ecafb73caf.jpg`,
     ratingScore: chooseRandomInt(0, 10),
     ratingCount: chooseRandomInt(1, 450),
+    videoUrl: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
   }, {
     id: 4,
     title: `Guns Akimbo`,
@@ -84,6 +88,7 @@ export default [
     background: `https://img5.goodfon.ru/wallpaper/big/6/80/jackson-lake-mount-moran-grand-teton-lake-ozero-gory.jpg`,
     ratingScore: chooseRandomInt(0, 10),
     ratingCount: chooseRandomInt(1, 450),
+    videoUrl: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   }, {
     id: 5,
     title: `Undisputed`,
@@ -96,6 +101,7 @@ export default [
     background: `https://w-dog.ru/wallpapers/9/19/448077089475704.jpg`,
     ratingScore: chooseRandomInt(0, 10),
     ratingCount: chooseRandomInt(1, 450),
+    videoUrl: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
   }, {
     id: 6,
     title: `En man som heter Ove`,
@@ -108,6 +114,7 @@ export default [
     background: `https://linchakin.com/files/word/1000/411/1.jpg`,
     ratingScore: chooseRandomInt(0, 10),
     ratingCount: chooseRandomInt(1, 450),
+    videoUrl: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   }, {
     id: 7,
     title: `Shining`,
@@ -120,5 +127,12 @@ export default [
     background: `https://img3.goodfon.ru/wallpaper/nbig/7/2b/priroda-risovannye-oblaka.jpg`,
     ratingScore: chooseRandomInt(0, 10),
     ratingCount: chooseRandomInt(1, 450),
+    videoUrl: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
   }
 ];
+
+export const MainFilmInfo = {
+  NAME: `American Horror Story`,
+  GENRE: `Horror`,
+  DATE: `2011 – ...`
+};

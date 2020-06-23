@@ -1,7 +1,6 @@
 import ReactDOM from "react-dom";
 import App from "@components/app/app";
-import {MainFilmInfo} from "@consts";
-import films from "./mocks/films";
+import films, {MainFilmInfo} from "../src/mocks/films";
 
 ReactDOM.render(
     <App

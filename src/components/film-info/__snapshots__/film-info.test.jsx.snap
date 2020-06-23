@@ -11,8 +11,8 @@ exports[`Should FilmInfo render correctly 1`] = `
       className="movie-card__bg"
     >
       <img
-        alt="Undisputed background"
-        src="Undisputed"
+        alt="Hi background"
+        src="Hi"
       />
     </div>
     <h1
@@ -71,7 +71,7 @@ exports[`Should FilmInfo render correctly 1`] = `
         <h2
           className="movie-card__title"
         >
-          Undisputed
+          Hi
         </h2>
         <p
           className="movie-card__meta"
@@ -79,12 +79,12 @@ exports[`Should FilmInfo render correctly 1`] = `
           <span
             className="movie-card__genre"
           >
-            Undisputed
+            Hi
           </span>
           <span
             className="movie-card__year"
           >
-            Undisputed
+            Hi
           </span>
         </p>
         <div
@@ -152,9 +152,9 @@ exports[`Should FilmInfo render correctly 1`] = `
         className="movie-card__poster movie-card__poster--big"
       >
         <img
-          alt="Undisputed poster"
+          alt="Hi poster"
           height="327"
-          src="Undisputed"
+          src="Hi"
           width="218"
         />
       </div>
@@ -227,14 +227,14 @@ exports[`Should FilmInfo render correctly 1`] = `
           className="movie-card__text"
         >
           <p>
-            Undisputed
+            Hi
           </p>
           <p
             className="movie-card__director"
           >
             <strong>
               Director: 
-              Undisputed
+              Hi
             </strong>
           </p>
           <p
@@ -242,7 +242,7 @@ exports[`Should FilmInfo render correctly 1`] = `
           >
             <strong>
               Starring: 
-              Undisputed
+              Hi
                and other
             </strong>
           </p>

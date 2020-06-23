@@ -1,15 +1,15 @@
+import {setTextRating} from "@utils";
 import Icon from "react-svg-use";
-import {setTextRating} from "../../utils/utils";
 
 const FilmInfo = (props) => {
-  const {filmDescription, filmDirector, filmStarring, filmImage, filmTitle,
-    filmGenre, filmDate, filmBackground, filmRatingScore, filmRatingCount} = props;
+  const {description, director, starring, src, title,
+    genre, date, background, ratingScore, ratingCount} = props.film;
 
   return (
     <section className="movie-card movie-card--full">
       <div className="movie-card__hero">
         <div className="movie-card__bg">
-          <img src={filmBackground} alt={filmTitle + ` background`}/>
+          <img src={background} alt={title + ` background`}/>
         </div>
 
         <h1 className="visually-hidden">WTW</h1>
@@ -32,10 +32,10 @@ const FilmInfo = (props) => {
 
         <div className="movie-card__wrap">
           <div className="movie-card__desc">
-            <h2 className="movie-card__title">{filmTitle}</h2>
+            <h2 className="movie-card__title">{title}</h2>
             <p className="movie-card__meta">
-              <span className="movie-card__genre">{filmGenre}</span>
-              <span className="movie-card__year">{filmDate}</span>
+              <span className="movie-card__genre">{genre}</span>
+              <span className="movie-card__year">{date}</span>
             </p>
 
             <div className="movie-card__buttons">
@@ -56,7 +56,7 @@ const FilmInfo = (props) => {
       <div className="movie-card__wrap movie-card__translate-top">
         <div className="movie-card__info">
           <div className="movie-card__poster movie-card__poster--big">
-            <img src={filmImage} alt={filmTitle + ` poster`} width="218" height="327"/>
+            <img src={src} alt={title + ` poster`} width="218" height="327"/>
           </div>
 
           <div className="movie-card__desc">
@@ -75,19 +75,19 @@ const FilmInfo = (props) => {
             </nav>
 
             <div className="movie-rating">
-              <div className="movie-rating__score">{filmRatingScore}</div>
+              <div className="movie-rating__score">{ratingScore}</div>
               <p className="movie-rating__meta">
-                <span className="movie-rating__level">{setTextRating(filmRatingScore)}</span>
-                <span className="movie-rating__count">{filmRatingCount} ratings</span>
+                <span className="movie-rating__level">{setTextRating(ratingScore)}</span>
+                <span className="movie-rating__count">{ratingCount} ratings</span>
               </p>
             </div>
 
             <div className="movie-card__text">
-              <p>{filmDescription}</p>
+              <p>{description}</p>
 
-              <p className="movie-card__director"><strong>Director: {filmDirector}</strong></p>
+              <p className="movie-card__director"><strong>Director: {director}</strong></p>
 
-              <p className="movie-card__starring"><strong>Starring: {filmStarring} and other</strong></p>
+              <p className="movie-card__starring"><strong>Starring: {starring} and other</strong></p>
             </div>
           </div>
         </div>
@@ -97,16 +97,20 @@ const FilmInfo = (props) => {
 };
 
 FilmInfo.propTypes = {
-  filmImage: PropTypes.string.isRequired,
-  filmTitle: PropTypes.string.isRequired,
-  filmDescription: PropTypes.string.isRequired,
-  filmDirector: PropTypes.string.isRequired,
-  filmStarring: PropTypes.string.isRequired,
-  filmGenre: PropTypes.string.isRequired,
-  filmDate: PropTypes.string.isRequired,
-  filmBackground: PropTypes.string.isRequired,
-  filmRatingScore: PropTypes.number.isRequired,
-  filmRatingCount: PropTypes.number.isRequired,
+  film: PropTypes.exact({
+    id: PropTypes.number.isRequired,
+    src: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    director: PropTypes.string.isRequired,
+    starring: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    background: PropTypes.string.isRequired,
+    ratingScore: PropTypes.number.isRequired,
+    ratingCount: PropTypes.number.isRequired,
+    videoUrl: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default FilmInfo;

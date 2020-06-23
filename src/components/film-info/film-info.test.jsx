@@ -4,16 +4,22 @@ it(`Should FilmInfo render correctly`, () => {
   let tree;
   window.act(() => {
     tree = window.create(<FilmInfo
-      filmImage={`Undisputed`}
-      filmTitle={`Undisputed`}
-      filmDescription={`Undisputed`}
-      filmDirector={`Undisputed`}
-      filmStarring={`Undisputed`}
-      filmGenre={`Undisputed`}
-      filmDate={`Undisputed`}
-      filmBackground={`Undisputed`}
-      filmRatingScore={111}
-      filmRatingCount={111}
+      film={
+        {
+          id: 111,
+          title: `Hi`,
+          src: `Hi`,
+          description: `Hi`,
+          director: `Hi`,
+          starring: `Hi`,
+          genre: `Hi`,
+          date: `Hi`,
+          background: `Hi`,
+          ratingScore: 111,
+          ratingCount: 111,
+          videoUrl: `Hi`,
+        }
+      }
     />);
   });
   expect(tree.toJSON()).toMatchSnapshot();

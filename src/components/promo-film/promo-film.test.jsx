@@ -4,11 +4,15 @@ it(`Should PromoFilm render correctly`, () => {
   let tree;
   window.act(() => {
     tree = window.create(<PromoFilm
-      filmTitle={`Undisputed`}
-      filmImage={`Undisputed`}
-      filmGenre={`Undisputed`}
-      filmDate={`Undisputed`}
-      filmBackground={`Undisputed`}
+      film={
+        {
+          title: `Hi`,
+          src: `Hi`,
+          genre: `Hi`,
+          date: `Hi`,
+          background: `Hi`,
+        }
+      }
     />);
   });
   expect(tree.toJSON()).toMatchSnapshot();

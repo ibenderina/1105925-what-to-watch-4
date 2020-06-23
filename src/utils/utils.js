@@ -1,19 +1,19 @@
-export const setTextRating = (ratingScore) => {
-  const LEVELS = [`Bad`, `Normal`, `Good`, `Very good`, `Awesome`];
+import {Level} from "@consts";
 
+export const setTextRating = (ratingScore) => {
   if (ratingScore < 3) {
-    return LEVELS[0];
+    return Level.BAD;
   }
   if (ratingScore >= 3 && ratingScore < 5) {
-    return LEVELS[1];
+    return Level.NORMAL;
   }
   if (ratingScore >= 5 && ratingScore < 8) {
-    return LEVELS[2];
+    return Level.GOOD;
   }
   if (ratingScore >= 8 && ratingScore < 10) {
-    return LEVELS[3];
+    return Level.VERY_GOOD;
   }
-  return LEVELS[4];
+  return Level.AWESOME;
 };
 
 export const chooseRandomInt = (min, max) => {

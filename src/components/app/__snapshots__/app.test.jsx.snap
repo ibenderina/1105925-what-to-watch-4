@@ -260,14 +260,19 @@ Array [
         <article
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Dead in a Week (Or Your Money Back)"
+            <video
+              autoPlay={true}
               height="175"
-              src="https://pets.mail.ru/sharepic/68/10401.png"
+              loop={true}
+              muted={true}
+              poster="https://pets.mail.ru/sharepic/68/10401.png"
+              src=""
               width="280"
             />
           </div>
@@ -285,14 +290,19 @@ Array [
         <article
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="The Gentlemen"
+            <video
+              autoPlay={true}
               height="175"
-              src="https://twizz.ru/wp-content/uploads/-000//1/animals-about-to-drop-album-photos-58aeb0ce59ff1__700.jpg"
+              loop={true}
+              muted={true}
+              poster="https://twizz.ru/wp-content/uploads/-000//1/animals-about-to-drop-album-photos-58aeb0ce59ff1__700.jpg"
+              src=""
               width="280"
             />
           </div>
@@ -310,14 +320,19 @@ Array [
         <article
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Lion"
+            <video
+              autoPlay={true}
               height="175"
-              src="https://medialeaks.ru/wp-content/uploads/2019/08/glavnaya-1.jpg"
+              loop={true}
+              muted={true}
+              poster="https://medialeaks.ru/wp-content/uploads/2019/08/glavnaya-1.jpg"
+              src=""
               width="280"
             />
           </div>
@@ -335,14 +350,19 @@ Array [
         <article
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Chappie"
+            <video
+              autoPlay={true}
               height="175"
-              src="https://www.thepaws.net/wp-content/uploads/2018/10/funny-chihuahua.jpg"
+              loop={true}
+              muted={true}
+              poster="https://www.thepaws.net/wp-content/uploads/2018/10/funny-chihuahua.jpg"
+              src=""
               width="280"
             />
           </div>
@@ -360,14 +380,19 @@ Array [
         <article
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Guns Akimbo"
+            <video
+              autoPlay={true}
               height="175"
-              src="https://memepedia.ru/wp-content/uploads/2018/12/hamster.jpg"
+              loop={true}
+              muted={true}
+              poster="https://memepedia.ru/wp-content/uploads/2018/12/hamster.jpg"
+              src=""
               width="280"
             />
           </div>
@@ -385,14 +410,19 @@ Array [
         <article
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Undisputed"
+            <video
+              autoPlay={true}
               height="175"
-              src="https://stihi.ru/pics/2013/04/04/1852.jpg"
+              loop={true}
+              muted={true}
+              poster="https://stihi.ru/pics/2013/04/04/1852.jpg"
+              src=""
               width="280"
             />
           </div>
@@ -410,14 +440,19 @@ Array [
         <article
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="En man som heter Ove"
+            <video
+              autoPlay={true}
               height="175"
-              src="https://techtoday.in.ua/wp-content/uploads/2018/01/GRUMPYCAT.jpg"
+              loop={true}
+              muted={true}
+              poster="https://techtoday.in.ua/wp-content/uploads/2018/01/GRUMPYCAT.jpg"
+              src=""
               width="280"
             />
           </div>
@@ -435,14 +470,19 @@ Array [
         <article
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Shining"
+            <video
+              autoPlay={true}
               height="175"
-              src="https://cs7.pikabu.ru/post_img/2019/03/06/7/1551870696138123277.jpg"
+              loop={true}
+              muted={true}
+              poster="https://cs7.pikabu.ru/post_img/2019/03/06/7/1551870696138123277.jpg"
+              src=""
               width="280"
             />
           </div>

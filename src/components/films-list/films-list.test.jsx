@@ -6,7 +6,6 @@ it(`Should FilmsList render correctly`, () => {
   window.act(() => {
     tree = window.create(<FilmsList
       films={films}
-      onClickFilmCard={() => {}}
     />);
   });
   expect(tree.toJSON()).toMatchSnapshot();

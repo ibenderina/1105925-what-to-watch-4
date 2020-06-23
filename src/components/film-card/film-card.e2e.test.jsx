@@ -1,19 +1,20 @@
 import FilmCard from "@components/film-card/film-card";
 
 it(`Should get film info and should film name be pressed`, () => {
-  const onClickFilmCard = jest.fn(()=>{});
-  const filmTitle = `Undisputed`;
-  const filmImage = `Undisputed.src`;
+  const handleFilmCardClick = jest.fn(()=>{});
+  const filmTitle = `Hello`;
+  const filmImage = `Hello`;
+  const videoUrl = `Hello`;
 
   const main = window.shallow(
       <FilmCard
         filmTitle={filmTitle}
         filmImage={filmImage}
-        onClickFilmCard={onClickFilmCard}
+        videoUrl={videoUrl}
+        handleFilmCardClick={handleFilmCardClick}
       />
   );
 
-  const filmCard = main.find(`.small-movie-card`).first();
-  filmCard.props().onClick();
-  expect(onClickFilmCard.mock.calls.length).toBe(1);
+  main.props().onClick();
+  expect(handleFilmCardClick.mock.calls.length).toBe(1);
 });

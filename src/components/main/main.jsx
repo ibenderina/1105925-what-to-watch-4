@@ -9,7 +9,13 @@ class Main extends React.PureComponent {
     this.state = {
       currentSelectedFilm: null,
     };
-    this._onClickFilmCard = this._onClickFilmCard.bind(this);
+    this._handleFilmCardClick = this._handleFilmCardClick.bind(this);
+  }
+
+  _handleFilmCardClick(newSelectedFilm) {
+    this.setState({
+      currentSelectedFilm: newSelectedFilm
+    });
   }
 
   render() {
@@ -21,26 +27,13 @@ class Main extends React.PureComponent {
     if (filmSelected) {
       shownFilm = (
         <FilmInfo
-          filmImage={filmSelected.src}
-          filmTitle={filmSelected.title}
-          filmDescription={filmSelected.description}
-          filmDirector={filmSelected.director}
-          filmStarring={filmSelected.starring}
-          filmGenre={filmSelected.genre}
-          filmDate={filmSelected.date}
-          filmBackground={filmSelected.background}
-          filmRatingScore={filmSelected.ratingScore}
-          filmRatingCount={filmSelected.ratingCount}
+          film={filmSelected}
         />
       );
     } else {
       shownFilm = (
         <PromoFilm
-          filmImage={promoFilm.src}
-          filmTitle={promoFilm.title}
-          filmGenre={promoFilm.genre}
-          filmDate={promoFilm.date}
-          filmBackground={promoFilm.background}
+          film={promoFilm}
         />
       );
     }
@@ -88,7 +81,7 @@ class Main extends React.PureComponent {
 
             <FilmsList
               films={filmsList}
-              onClickFilmCard={this._onClickFilmCard}
+              handleFilmCardClick={this._handleFilmCardClick}
             />
 
             <div className="catalog__more">
@@ -113,12 +106,6 @@ class Main extends React.PureComponent {
       </>
     );
   }
-
-  _onClickFilmCard(newSelectedFilm) {
-    this.setState({
-      currentSelectedFilm: newSelectedFilm
-    });
-  }
 }
 
 Main.propTypes = {
@@ -138,6 +125,7 @@ Main.propTypes = {
         background: PropTypes.string.isRequired,
         ratingScore: PropTypes.number.isRequired,
         ratingCount: PropTypes.number.isRequired,
+        videoUrl: PropTypes.string.isRequired,
       })
       .isRequired)
     .isRequired,
