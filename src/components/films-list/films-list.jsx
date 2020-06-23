@@ -4,19 +4,12 @@ class FilmsList extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    this.onClickFilmCard = this.onClickFilmCard.bind(this);
-    this.onFilmTitleMouseEnter = this.onFilmTitleMouseEnter.bind(this);
+    this._handleFilmCardClick = this._handleFilmCardClick.bind(this);
   }
 
-  onFilmTitleMouseEnter(film) {
+  _handleFilmCardClick(film) {
     return () => {
-      this.props.onFilmTitleMouseEnter(film);
-    };
-  }
-
-  onClickFilmCard(film) {
-    return () => {
-      this.props.onClickFilmCard(film);
+      this.props.handleFilmCardClick(film);
     };
   }
 
@@ -28,10 +21,10 @@ class FilmsList extends React.PureComponent {
         {films.map((film) => {
           return <FilmCard
             key={film.id}
+            videoUrl={film.videoUrl}
             filmTitle={film.title}
             filmImage={film.src}
-            onClickFilmCard={this.onClickFilmCard(film)}
-            onFilmTitleMouseEnter={this.onFilmTitleMouseEnter(film)}
+            handleFilmCardClick={this._handleFilmCardClick(film)}
           />;
         })}
       </div>
@@ -40,8 +33,7 @@ class FilmsList extends React.PureComponent {
 }
 
 FilmsList.propTypes = {
-  onClickFilmCard: PropTypes.func.isRequired,
-  onFilmTitleMouseEnter: PropTypes.func.isRequired,
+  handleFilmCardClick: PropTypes.func.isRequired,
   films: PropTypes.arrayOf(
       PropTypes.exact({
         id: PropTypes.number.isRequired,

@@ -130,3 +130,9 @@ export default [
     videoUrl: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
   }
 ];
+
+export const MainFilmInfo = {
+  NAME: `American Horror Story`,
+  GENRE: `Horror`,
+  DATE: `2011 – ...`
+};

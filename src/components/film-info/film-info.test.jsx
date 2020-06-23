@@ -6,6 +6,7 @@ it(`Should FilmInfo render correctly`, () => {
     tree = window.create(<FilmInfo
       film={
         {
+          id: 111,
           title: `Hi`,
           src: `Hi`,
           description: `Hi`,

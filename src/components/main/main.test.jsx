@@ -1,6 +1,5 @@
 import Main from "@components/main/main";
-import {MainFilmInfo} from "@consts";
-import films from "../../mocks/films";
+import films, {MainFilmInfo} from "../../mocks/films";
 
 it(`Should Main render correctly`, () => {
   let tree;
@@ -10,7 +9,7 @@ it(`Should Main render correctly`, () => {
       filmGenre={MainFilmInfo.GENRE}
       filmDate={MainFilmInfo.DATE}
       filmsList={films}
-      onFilmTitleClick={() => {}}
+      handleFilmCardClick={() => {}}
     />);
   });
   expect(tree.toJSON()).toMatchSnapshot();

@@ -6,6 +6,19 @@ class App extends React.PureComponent {
     super(props);
   }
 
+  _renderActiveFilm() {
+    const {filmName, filmGenre, filmDate, filmsList} = this.props;
+
+    return (
+      <Main
+        filmName={filmName}
+        filmGenre={filmGenre}
+        filmDate={filmDate}
+        filmsList={filmsList}
+      />
+    );
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -17,19 +30,6 @@ class App extends React.PureComponent {
           </Route>
         </Switch>
       </BrowserRouter>
-    );
-  }
-
-  _renderActiveFilm() {
-    const {filmName, filmGenre, filmDate, filmsList} = this.props;
-
-    return (
-      <Main
-        filmName={filmName}
-        filmGenre={filmGenre}
-        filmDate={filmDate}
-        filmsList={filmsList}
-      />
     );
   }
 }

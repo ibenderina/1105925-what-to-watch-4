@@ -9,8 +9,13 @@ class Main extends React.PureComponent {
     this.state = {
       currentSelectedFilm: null,
     };
-    this._onClickFilmCard = this._onClickFilmCard.bind(this);
-    this._onFilmTitleMouseEnter = this._onFilmTitleMouseEnter.bind(this);
+    this._handleFilmCardClick = this._handleFilmCardClick.bind(this);
+  }
+
+  _handleFilmCardClick(newSelectedFilm) {
+    this.setState({
+      currentSelectedFilm: newSelectedFilm
+    });
   }
 
   render() {
@@ -76,8 +81,7 @@ class Main extends React.PureComponent {
 
             <FilmsList
               films={filmsList}
-              onClickFilmCard={this._onClickFilmCard}
-              onFilmTitleMouseEnter={this._onFilmTitleMouseEnter}
+              handleFilmCardClick={this._handleFilmCardClick}
             />
 
             <div className="catalog__more">
@@ -101,15 +105,6 @@ class Main extends React.PureComponent {
         </footer>
       </>
     );
-  }
-
-  _onClickFilmCard(newSelectedFilm) {
-    this.setState({
-      currentSelectedFilm: newSelectedFilm
-    });
-  }
-
-  _onFilmTitleMouseEnter() {
   }
 }
 

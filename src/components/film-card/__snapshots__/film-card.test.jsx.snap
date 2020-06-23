@@ -1,18 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should Main render correctly 1`] = `
+exports[`Should FilmCard render correctly 1`] = `
 <article
   className="small-movie-card catalog__movies-card"
   onClick={[Function]}
   onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
 >
   <div
     className="small-movie-card__image"
   >
-    <img
-      alt="Undisputed"
+    <video
+      autoPlay={true}
       height="175"
-      src="Undisputed.src"
+      loop={true}
+      muted={true}
+      poster="Hello"
+      src=""
       width="280"
     />
   </div>
@@ -23,7 +27,7 @@ exports[`Should Main render correctly 1`] = `
       className="small-movie-card__link"
       href="movie-page.html"
     >
-      Undisputed
+      Hello
     </a>
   </h3>
 </article>

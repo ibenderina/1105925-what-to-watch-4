@@ -98,6 +98,7 @@ const FilmInfo = (props) => {
 
 FilmInfo.propTypes = {
   film: PropTypes.exact({
+    id: PropTypes.number.isRequired,
     src: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
