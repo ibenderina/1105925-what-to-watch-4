@@ -1,6 +1,8 @@
 import FilmsList from "@components/films-list/films-list";
 import FilmInfo from "@components/film-info/film-info";
 import PromoFilm from "@components/promo-film/promo-film";
+import GenresList from "@components/genres-list/genres-list";
+import CatalogMore from "@components/catalog-more/catalog-more";
 
 class Main extends React.PureComponent {
   constructor(props) {
@@ -12,9 +14,18 @@ class Main extends React.PureComponent {
     this._handleFilmCardClick = this._handleFilmCardClick.bind(this);
   }
 
+  _getFilmsList() {
+    if (this.state.currentSelectedFilm) {
+      return this.props.filmsList.filter((film) => {
+        return film.genre === this.state.currentSelectedFilm.genre;
+      }).slice(0, 4);
+    }
+    return this.props.filmsList;
+  }
+
   _handleFilmCardClick(newSelectedFilm) {
     this.setState({
-      currentSelectedFilm: newSelectedFilm
+      currentSelectedFilm: newSelectedFilm,
     });
   }
 
@@ -46,47 +57,14 @@ class Main extends React.PureComponent {
           <section className="catalog">
             <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-            <ul className="catalog__genres-list">
-              <li className="catalog__genres-item catalog__genres-item--active">
-                <a href="#" className="catalog__genres-link">All genres</a>
-              </li>
-              <li className="catalog__genres-item">
-                <a href="#" className="catalog__genres-link">Comedies</a>
-              </li>
-              <li className="catalog__genres-item">
-                <a href="#" className="catalog__genres-link">Crime</a>
-              </li>
-              <li className="catalog__genres-item">
-                <a href="#" className="catalog__genres-link">Documentary</a>
-              </li>
-              <li className="catalog__genres-item">
-                <a href="#" className="catalog__genres-link">Dramas</a>
-              </li>
-              <li className="catalog__genres-item">
-                <a href="#" className="catalog__genres-link">Horror</a>
-              </li>
-              <li className="catalog__genres-item">
-                <a href="#" className="catalog__genres-link">Kids & Family</a>
-              </li>
-              <li className="catalog__genres-item">
-                <a href="#" className="catalog__genres-link">Romance</a>
-              </li>
-              <li className="catalog__genres-item">
-                <a href="#" className="catalog__genres-link">Sci-Fi</a>
-              </li>
-              <li className="catalog__genres-item">
-                <a href="#" className="catalog__genres-link">Thrillers</a>
-              </li>
-            </ul>
+            {this.state.currentSelectedFilm ? `` : <GenresList/>}
 
             <FilmsList
-              films={filmsList}
+              films={this._getFilmsList()}
               handleFilmCardClick={this._handleFilmCardClick}
             />
 
-            <div className="catalog__more">
-              <button className="catalog__button" type="button">Show more</button>
-            </div>
+            {this.state.currentSelectedFilm ? `` : <CatalogMore/>}
           </section>
         </section>
 
