@@ -1,14 +1,14 @@
 import VideoPlayer from "@components/video-player/video-player";
 
 it(`Should VideoPlayer render correctly`, () => {
-  const videoUrl = `Hello`;
-  const filmImage = `Hello`;
+  const url = `Hello`;
+  const image = `Hello`;
 
   let tree;
   window.act(() => {
     tree = window.create(<VideoPlayer
-      videoUrl={videoUrl}
-      filmImage={filmImage}
+      url={url}
+      image={image}
       isMuted={true}
       isPlayed={true}
     />);

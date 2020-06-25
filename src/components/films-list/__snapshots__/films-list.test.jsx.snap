@@ -30,7 +30,7 @@ exports[`Should FilmsList render correctly 1`] = `
         className="small-movie-card__link"
         href="movie-page.html"
       >
-        Dead in a Week (Or Your Money Back)
+        A woman's work is never done
       </a>
     </h3>
   </article>
@@ -60,7 +60,7 @@ exports[`Should FilmsList render correctly 1`] = `
         className="small-movie-card__link"
         href="movie-page.html"
       >
-        The Gentlemen
+        A woman's work is never done
       </a>
     </h3>
   </article>
@@ -90,7 +90,7 @@ exports[`Should FilmsList render correctly 1`] = `
         className="small-movie-card__link"
         href="movie-page.html"
       >
-        Lion
+        Don't keep a dog and bark yourself
       </a>
     </h3>
   </article>
@@ -120,7 +120,7 @@ exports[`Should FilmsList render correctly 1`] = `
         className="small-movie-card__link"
         href="movie-page.html"
       >
-        Chappie
+        Don't keep a dog and bark yourself
       </a>
     </h3>
   </article>
@@ -150,7 +150,7 @@ exports[`Should FilmsList render correctly 1`] = `
         className="small-movie-card__link"
         href="movie-page.html"
       >
-        Guns Akimbo
+        A woman's work is never done
       </a>
     </h3>
   </article>
@@ -180,7 +180,7 @@ exports[`Should FilmsList render correctly 1`] = `
         className="small-movie-card__link"
         href="movie-page.html"
       >
-        Undisputed
+        Comparisons are odious
       </a>
     </h3>
   </article>
@@ -210,7 +210,7 @@ exports[`Should FilmsList render correctly 1`] = `
         className="small-movie-card__link"
         href="movie-page.html"
       >
-        En man som heter Ove
+        Comparisons are odious
       </a>
     </h3>
   </article>
@@ -240,7 +240,7 @@ exports[`Should FilmsList render correctly 1`] = `
         className="small-movie-card__link"
         href="movie-page.html"
       >
-        Shining
+        Comparisons are odious
       </a>
     </h3>
   </article>

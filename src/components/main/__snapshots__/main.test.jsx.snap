@@ -9,8 +9,8 @@ Array [
       className="movie-card__bg"
     >
       <img
-        alt="The Gentlemen background"
-        src="https://99px.ru/sstorage/53/2017/12/tmb_217309_894087.jpg"
+        alt="A woman's work is never done background"
+        src="https://img1.goodfon.ru/wallpaper/big/9/6f/minimalizm-gradient-background.jpg"
       />
     </div>
     <h1
@@ -69,7 +69,7 @@ Array [
           className="movie-card__poster"
         >
           <img
-            alt="The Gentlemen poster"
+            alt="A woman's work is never done poster"
             height="327"
             src="https://twizz.ru/wp-content/uploads/-000//1/animals-about-to-drop-album-photos-58aeb0ce59ff1__700.jpg"
             width="218"
@@ -81,7 +81,7 @@ Array [
           <h2
             className="movie-card__title"
           >
-            The Gentlemen
+            A woman's work is never done
           </h2>
           <p
             className="movie-card__meta"
@@ -94,7 +94,7 @@ Array [
             <span
               className="movie-card__year"
             >
-              One Million years AC
+              2020
             </span>
           </p>
           <div
@@ -145,6 +145,7 @@ Array [
     <section
       className="catalog"
     >
+      
       <h2
         className="catalog__title visually-hidden"
       >
@@ -283,7 +284,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Dead in a Week (Or Your Money Back)
+              Comparisons are odious
             </a>
           </h3>
         </article>
@@ -313,7 +314,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              The Gentlemen
+              A woman's work is never done
             </a>
           </h3>
         </article>
@@ -343,7 +344,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Lion
+              A woman's work is never done
             </a>
           </h3>
         </article>
@@ -373,7 +374,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Chappie
+              Money talks
             </a>
           </h3>
         </article>
@@ -403,7 +404,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Guns Akimbo
+              Money talks
             </a>
           </h3>
         </article>
@@ -433,7 +434,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Undisputed
+              Don't keep a dog and bark yourself
             </a>
           </h3>
         </article>
@@ -463,7 +464,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              En man som heter Ove
+              Don't keep a dog and bark yourself
             </a>
           </h3>
         </article>
@@ -493,7 +494,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Shining
+              A volunteer is worth twenty pressed men
             </a>
           </h3>
         </article>
@@ -518,6 +519,7 @@ Array [
     >
       <a
         className="logo__link logo__link--light"
+        href="main.html"
       >
         <span
           className="logo__letter logo__letter--1"

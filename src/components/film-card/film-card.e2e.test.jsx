@@ -2,15 +2,13 @@ import FilmCard from "@components/film-card/film-card";
 
 it(`Should get film info and should film name be pressed`, () => {
   const handleFilmCardClick = jest.fn(()=>{});
-  const filmTitle = `Hello`;
-  const filmImage = `Hello`;
-  const videoUrl = `Hello`;
+  const commonText = `Hello`;
 
   const main = window.shallow(
       <FilmCard
-        filmTitle={filmTitle}
-        filmImage={filmImage}
-        videoUrl={videoUrl}
+        filmTitle={commonText}
+        image={commonText}
+        url={commonText}
         handleFilmCardClick={handleFilmCardClick}
       />
   );

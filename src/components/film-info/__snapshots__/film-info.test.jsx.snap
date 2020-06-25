@@ -11,8 +11,8 @@ exports[`Should FilmInfo render correctly 1`] = `
       className="movie-card__bg"
     >
       <img
-        alt="Hi background"
-        src="Hi"
+        alt="Hello background"
+        src="Hello"
       />
     </div>
     <h1
@@ -71,7 +71,7 @@ exports[`Should FilmInfo render correctly 1`] = `
         <h2
           className="movie-card__title"
         >
-          Hi
+          Hello
         </h2>
         <p
           className="movie-card__meta"
@@ -79,12 +79,12 @@ exports[`Should FilmInfo render correctly 1`] = `
           <span
             className="movie-card__genre"
           >
-            Hi
+            Hello
           </span>
           <span
             className="movie-card__year"
           >
-            Hi
+            Hello
           </span>
         </p>
         <div
@@ -152,9 +152,9 @@ exports[`Should FilmInfo render correctly 1`] = `
         className="movie-card__poster movie-card__poster--big"
       >
         <img
-          alt="Hi poster"
+          alt="Hello poster"
           height="327"
-          src="Hi"
+          src="Hello"
           width="218"
         />
       </div>
@@ -169,6 +169,7 @@ exports[`Should FilmInfo render correctly 1`] = `
           >
             <li
               className="movie-nav__item movie-nav__item--active"
+              onClick={[Function]}
             >
               <a
                 className="movie-nav__link"
@@ -179,6 +180,7 @@ exports[`Should FilmInfo render correctly 1`] = `
             </li>
             <li
               className="movie-nav__item"
+              onClick={[Function]}
             >
               <a
                 className="movie-nav__link"
@@ -189,6 +191,7 @@ exports[`Should FilmInfo render correctly 1`] = `
             </li>
             <li
               className="movie-nav__item"
+              onClick={[Function]}
             >
               <a
                 className="movie-nav__link"
@@ -205,7 +208,7 @@ exports[`Should FilmInfo render correctly 1`] = `
           <div
             className="movie-rating__score"
           >
-            111
+            123
           </div>
           <p
             className="movie-rating__meta"
@@ -218,7 +221,7 @@ exports[`Should FilmInfo render correctly 1`] = `
             <span
               className="movie-rating__count"
             >
-              111
+              123
                ratings
             </span>
           </p>
@@ -227,14 +230,14 @@ exports[`Should FilmInfo render correctly 1`] = `
           className="movie-card__text"
         >
           <p>
-            Hi
+            Hello
           </p>
           <p
             className="movie-card__director"
           >
             <strong>
               Director: 
-              Hi
+              Hello
             </strong>
           </p>
           <p
@@ -242,7 +245,7 @@ exports[`Should FilmInfo render correctly 1`] = `
           >
             <strong>
               Starring: 
-              Hi
+              Hello
                and other
             </strong>
           </p>

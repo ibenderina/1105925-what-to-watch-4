@@ -1,13 +1,15 @@
 import Main from "@components/main/main";
-import films, {MainFilmInfo} from "../../mocks/films";
+import films from "../../mocks/films";
 
 it(`Should Main render correctly`, () => {
+  const film = films[0];
   let tree;
+
   window.act(() => {
     tree = window.create(<Main
-      filmName={MainFilmInfo.NAME}
-      filmGenre={MainFilmInfo.GENRE}
-      filmDate={MainFilmInfo.DATE}
+      filmName={film.title}
+      filmGenre={film.genre}
+      filmDate={film.date}
       filmsList={films}
       handleFilmCardClick={() => {}}
     />);

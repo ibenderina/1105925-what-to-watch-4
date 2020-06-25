@@ -1,31 +1,44 @@
+import FilmInfoReview from "@components/film-info-review/film-info-review";
+
 const FilmInfoReviews = (props) => {
-  const {film} = props;
-  const {} = film;
+  const {comments} = props;
+  const commentsHalfLength = parseInt(comments.length / 2, 10) + 1;
+  const col1 = comments.slice(0, commentsHalfLength);
+  const col2 = comments.slice(commentsHalfLength);
+
+  const getComments = (filmComments) => {
+    return (
+      <div className="movie-card__reviews-col">
+        {filmComments.map((comment) => {
+          return <FilmInfoReview
+            key={comment.id}
+            comment={comment}
+          />;
+        })}
+      </div>
+    );
+  };
 
   return (
-    <>
-      <div className="movie-card__reviews movie-card__row">
-        <div className="movie-card__reviews-col">
-          <div className="review" key={film.title}>
-            <blockquote className="review__quote">
-              <p className="review__text">{film.title}</p>
-              <footer className="review__details">
-                <cite className="review__author">{film.title}</cite>
-                <time className="review__date" dateTime="2016-12-24">{film.title}</time>
-              </footer>
-            </blockquote>
-            <div className="review__rating">{film.title}</div>
-          </div>
-        </div>
-      </div>
-    </>
+    <div className="movie-card__reviews movie-card__row">
+
+      {getComments(col1)}
+      {getComments(col2)}
+
+    </div>
   );
 };
 
 FilmInfoReviews.propTypes = {
-  film: PropTypes.shape({
-    title: PropTypes.string.isRequired
-  })
+  comments: PropTypes.arrayOf(
+      PropTypes.exact({
+        id: PropTypes.number.isRequired,
+        commentAuthor: PropTypes.string.isRequired,
+        commentText: PropTypes.string.isRequired,
+        commentDate: PropTypes.string.isRequired,
+        commentRating: PropTypes.number.isRequired,
+      }).isRequired).isRequired
 };
 
 export default FilmInfoReviews;
+

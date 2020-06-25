@@ -1,17 +1,17 @@
 const VideoPlayer = (props) => {
-  let {videoUrl} = props;
-  const {isPlayed, isMuted, filmImage} = props;
+  let {url} = props;
+  const {isPlayed, isMuted, image} = props;
 
   if (!isPlayed) {
-    videoUrl = ``;
+    url = ``;
   }
 
   return (
     <video
       autoPlay={true}
       loop={true}
-      src={videoUrl}
-      poster={filmImage}
+      src={url}
+      poster={image}
       muted={isMuted}
       width="280"
       height="175"
@@ -20,8 +20,8 @@ const VideoPlayer = (props) => {
 };
 
 VideoPlayer.propTypes = {
-  videoUrl: PropTypes.string.isRequired,
-  filmImage: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
   isMuted: PropTypes.bool.isRequired,
   isPlayed: PropTypes.bool.isRequired,
 };

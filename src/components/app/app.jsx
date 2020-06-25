@@ -1,38 +1,23 @@
-import {Switch, Route, BrowserRouter} from "react-router-dom";
 import Main from "@components/main/main";
 
-class App extends React.PureComponent {
-  constructor(props) {
-    super(props);
-  }
+const App = (props) => {
+  const {filmsList} = props;
 
-  _renderActiveFilm() {
-    const {filmName, filmGenre, filmDate, filmsList} = this.props;
-
-    return (
-      <Main
-        filmName={filmName}
-        filmGenre={filmGenre}
-        filmDate={filmDate}
-        filmsList={filmsList}
-      />
-    );
-  }
-
-  render() {
-    return (
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/">
-            {this._renderActiveFilm()}
-          </Route>
-          <Route exact path="/dev-film">
-          </Route>
-        </Switch>
-      </BrowserRouter>
-    );
-  }
-}
+  return (
+    <Browser.BrowserRouter>
+      <Browser.Switch>
+        <Browser.Route exact path="/">
+          <Main
+            filmsList={filmsList}
+          />
+        </Browser.Route>
+        <Browser.Route exact path="/dev-film">
+          test
+        </Browser.Route>
+      </Browser.Switch>
+    </Browser.BrowserRouter>
+  );
+};
 
 App.propTypes = {
   filmsList: PropTypes.arrayOf(
@@ -48,13 +33,19 @@ App.propTypes = {
         background: PropTypes.string.isRequired,
         ratingScore: PropTypes.number.isRequired,
         ratingCount: PropTypes.number.isRequired,
-        videoUrl: PropTypes.string.isRequired,
-      })
+        url: PropTypes.string.isRequired,
+        runTime: PropTypes.string.isRequired,
+        comments: PropTypes.arrayOf(
+            PropTypes.exact({
+              id: PropTypes.number.isRequired,
+              commentAuthor: PropTypes.string.isRequired,
+              commentText: PropTypes.string.isRequired,
+              commentDate: PropTypes.string.isRequired,
+              commentRating: PropTypes.number.isRequired,
+            }).isRequired)
+          .isRequired})
       .isRequired)
-    .isRequired,
-  filmName: PropTypes.string.isRequired,
-  filmGenre: PropTypes.string.isRequired,
-  filmDate: PropTypes.string.isRequired,
+    .isRequired
 };
 
 export default App;

@@ -38,6 +38,7 @@ module.exports = {
     new webpack.ProvidePlugin({
       React: `react`,
       PropTypes: `prop-types`,
+      Browser: `react-router-dom`,
     }),
   ],
 };

@@ -1,6 +1,7 @@
 import Icon from "react-svg-use";
 import FilmInfoOverview from "@components/film-info-overview/film-info-overview";
 import FilmInfoDetails from "@components/film-info-details/film-info-details";
+import {Tab} from "@consts";
 import FilmInfoReviews from "@components/film-info-reviews/film-info-reviews";
 
 class FilmInfo extends React.PureComponent {
@@ -8,7 +9,7 @@ class FilmInfo extends React.PureComponent {
     super(props);
 
     this.state = {
-      activeTab: `overview`
+      activeTab: Tab.OVERVIEW
     };
   }
 
@@ -28,17 +29,17 @@ class FilmInfo extends React.PureComponent {
 
   _changeActiveTab() {
     switch (this.state.activeTab) {
-      case `overview`:
+      case Tab.OVERVIEW:
         return <FilmInfoOverview
           film={this.props.film}
         />;
-      case `details`:
+      case Tab.DETAILS:
         return <FilmInfoDetails
           film={this.props.film}
         />;
-      case `reviews`:
+      case Tab.REVIEWS:
         return <FilmInfoReviews
-          film={this.props.film}
+          comments={this.props.film.comments}
         />;
     }
     return ``;
@@ -105,15 +106,15 @@ class FilmInfo extends React.PureComponent {
               <nav className="movie-nav movie-card__nav">
                 <ul className="movie-nav__list">
                   <li className="movie-nav__item movie-nav__item--active"
-                    onClick={this._setActiveTab(`overview`)}>
+                    onClick={this._setActiveTab(Tab.OVERVIEW)}>
                     <a href="#" className="movie-nav__link">Overview</a>
                   </li>
                   <li className="movie-nav__item"
-                    onClick={this._setActiveTab(`details`)}>
+                    onClick={this._setActiveTab(Tab.DETAILS)}>
                     <a href="#" className="movie-nav__link">Details</a>
                   </li>
                   <li className="movie-nav__item"
-                    onClick={this._setActiveTab(`reviews`)}>
+                    onClick={this._setActiveTab(Tab.REVIEWS)}>
                     <a href="#" className="movie-nav__link">Reviews</a>
                   </li>
                 </ul>
@@ -144,8 +145,16 @@ FilmInfo.propTypes = {
     background: PropTypes.string.isRequired,
     ratingScore: PropTypes.number.isRequired,
     ratingCount: PropTypes.number.isRequired,
-    videoUrl: PropTypes.string.isRequired,
-  }).isRequired,
-};
+    url: PropTypes.string.isRequired,
+    runTime: PropTypes.string.isRequired,
+    comments: PropTypes.arrayOf(
+        PropTypes.exact({
+          id: PropTypes.number.isRequired,
+          commentAuthor: PropTypes.string.isRequired,
+          commentText: PropTypes.string.isRequired,
+          commentDate: PropTypes.string.isRequired,
+          commentRating: PropTypes.number.isRequired,
+        }).isRequired)
+  })};
 
 export default FilmInfo;

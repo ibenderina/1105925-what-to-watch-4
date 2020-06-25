@@ -15,7 +15,7 @@ class FilmCard extends React.PureComponent {
   _handleFilmCardMouseEnter() {
     const timeout = setTimeout(() => {
       this.setState({
-        isPlayed: true
+        isPlayed: true,
       });
     }, 1000);
     this.setState({
@@ -25,13 +25,14 @@ class FilmCard extends React.PureComponent {
 
   _handleFilmCardMouseLeave() {
     this.setState({
-      isPlayed: false
+      isPlayed: false,
+      timeout: null
     });
     clearTimeout(this.state.timeout);
   }
 
   render() {
-    const {filmTitle, filmImage, videoUrl, handleFilmCardClick} = this.props;
+    const {filmTitle, image, url, handleFilmCardClick} = this.props;
 
     return (
       <article
@@ -41,8 +42,8 @@ class FilmCard extends React.PureComponent {
         onClick={handleFilmCardClick}>
         <div className="small-movie-card__image">
           <VideoPlayer
-            videoUrl={videoUrl}
-            filmImage={filmImage}
+            url={url}
+            image={image}
             isMuted={true}
             isPlayed={this.state.isPlayed}
           />
@@ -57,8 +58,8 @@ class FilmCard extends React.PureComponent {
 
 FilmCard.propTypes = {
   filmTitle: PropTypes.string.isRequired,
-  filmImage: PropTypes.string.isRequired,
-  videoUrl: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
   handleFilmCardClick: PropTypes.func.isRequired,
 };
 
