@@ -8,8 +8,8 @@ exports[`Should PromoFilm render correctly 1`] = `
     className="movie-card__bg"
   >
     <img
-      alt="Hi background"
-      src="Hi"
+      alt="Hello background"
+      src="Hello"
     />
   </div>
   <h1
@@ -68,9 +68,9 @@ exports[`Should PromoFilm render correctly 1`] = `
         className="movie-card__poster"
       >
         <img
-          alt="Hi poster"
+          alt="Hello poster"
           height="327"
-          src="Hi"
+          src="Hello"
           width="218"
         />
       </div>
@@ -80,7 +80,7 @@ exports[`Should PromoFilm render correctly 1`] = `
         <h2
           className="movie-card__title"
         >
-          Hi
+          Hello
         </h2>
         <p
           className="movie-card__meta"
@@ -88,12 +88,12 @@ exports[`Should PromoFilm render correctly 1`] = `
           <span
             className="movie-card__genre"
           >
-            Hi
+            Hello
           </span>
           <span
             className="movie-card__year"
           >
-            Hi
+            Hello
           </span>
         </p>
         <div

@@ -3,14 +3,6 @@ import FilmCard from "@components/film-card/film-card";
 class FilmsList extends React.PureComponent {
   constructor(props) {
     super(props);
-
-    this._handleFilmCardClick = this._handleFilmCardClick.bind(this);
-  }
-
-  _handleFilmCardClick(film) {
-    return () => {
-      this.props.handleFilmCardClick(film);
-    };
   }
 
   render() {
@@ -21,10 +13,10 @@ class FilmsList extends React.PureComponent {
         {films.map((film) => {
           return <FilmCard
             key={film.id}
-            videoUrl={film.videoUrl}
+            url={film.url}
             filmTitle={film.title}
-            filmImage={film.src}
-            handleFilmCardClick={this._handleFilmCardClick(film)}
+            image={film.src}
+            handleFilmCardClick={() => this.props.handleFilmCardClick(film)}
           />;
         })}
       </div>
@@ -47,7 +39,17 @@ FilmsList.propTypes = {
         background: PropTypes.string.isRequired,
         ratingScore: PropTypes.number.isRequired,
         ratingCount: PropTypes.number.isRequired,
-        videoUrl: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired,
+        runTime: PropTypes.string.isRequired,
+        comments: PropTypes.arrayOf(
+            PropTypes.exact({
+              id: PropTypes.number.isRequired,
+              commentAuthor: PropTypes.string.isRequired,
+              commentText: PropTypes.string.isRequired,
+              commentDate: PropTypes.string.isRequired,
+              commentRating: PropTypes.number.isRequired,
+            }).isRequired)
+          .isRequired
       })
       .isRequired)
     .isRequired

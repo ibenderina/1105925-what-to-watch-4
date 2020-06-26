@@ -1,16 +1,18 @@
 import PromoFilm from "@components/promo-film/promo-film";
 
 it(`Should PromoFilm render correctly`, () => {
+  const commonText = `Hello`;
   let tree;
+
   window.act(() => {
     tree = window.create(<PromoFilm
       film={
         {
-          title: `Hi`,
-          src: `Hi`,
-          genre: `Hi`,
-          date: `Hi`,
-          background: `Hi`,
+          title: commonText,
+          src: commonText,
+          genre: commonText,
+          date: commonText,
+          background: commonText,
         }
       }
     />);

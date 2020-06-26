@@ -1,6 +1,8 @@
 import FilmsList from "@components/films-list/films-list";
 import FilmInfo from "@components/film-info/film-info";
 import PromoFilm from "@components/promo-film/promo-film";
+import GenresList from "@components/genres-list/genres-list";
+import CatalogMore from "@components/catalog-more/catalog-more";
 
 class Main extends React.PureComponent {
   constructor(props) {
@@ -12,9 +14,18 @@ class Main extends React.PureComponent {
     this._handleFilmCardClick = this._handleFilmCardClick.bind(this);
   }
 
+  _getFilmsList() {
+    if (this.state.currentSelectedFilm) {
+      return this.props.filmsList.filter((film) => {
+        return film.genre === this.state.currentSelectedFilm.genre;
+      }).slice(0, 4);
+    }
+    return this.props.filmsList;
+  }
+
   _handleFilmCardClick(newSelectedFilm) {
     this.setState({
-      currentSelectedFilm: newSelectedFilm
+      currentSelectedFilm: newSelectedFilm,
     });
   }
 
@@ -43,56 +54,26 @@ class Main extends React.PureComponent {
         {shownFilm}
 
         <section className="page-content">
-          <section className="catalog">
+          <section className={this.state.currentSelectedFilm ? `catalog catalog--like-this` : `catalog`}>
+
+            {this.state.currentSelectedFilm ? <h2 className="catalog__title">More like this</h2> : ``}
+
             <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-            <ul className="catalog__genres-list">
-              <li className="catalog__genres-item catalog__genres-item--active">
-                <a href="#" className="catalog__genres-link">All genres</a>
-              </li>
-              <li className="catalog__genres-item">
-                <a href="#" className="catalog__genres-link">Comedies</a>
-              </li>
-              <li className="catalog__genres-item">
-                <a href="#" className="catalog__genres-link">Crime</a>
-              </li>
-              <li className="catalog__genres-item">
-                <a href="#" className="catalog__genres-link">Documentary</a>
-              </li>
-              <li className="catalog__genres-item">
-                <a href="#" className="catalog__genres-link">Dramas</a>
-              </li>
-              <li className="catalog__genres-item">
-                <a href="#" className="catalog__genres-link">Horror</a>
-              </li>
-              <li className="catalog__genres-item">
-                <a href="#" className="catalog__genres-link">Kids & Family</a>
-              </li>
-              <li className="catalog__genres-item">
-                <a href="#" className="catalog__genres-link">Romance</a>
-              </li>
-              <li className="catalog__genres-item">
-                <a href="#" className="catalog__genres-link">Sci-Fi</a>
-              </li>
-              <li className="catalog__genres-item">
-                <a href="#" className="catalog__genres-link">Thrillers</a>
-              </li>
-            </ul>
+            {this.state.currentSelectedFilm ? `` : <GenresList/>}
 
             <FilmsList
-              films={filmsList}
+              films={this._getFilmsList()}
               handleFilmCardClick={this._handleFilmCardClick}
             />
 
-            <div className="catalog__more">
-              <button className="catalog__button" type="button">Show more</button>
-            </div>
+            {this.state.currentSelectedFilm ? `` : <CatalogMore/>}
           </section>
         </section>
 
         <footer className="page-footer">
           <div className="logo">
-            <a className="logo__link logo__link--light">
+            <a href="main.html" className="logo__link logo__link--light">
               <span className="logo__letter logo__letter--1">W</span>
               <span className="logo__letter logo__letter--2">T</span>
               <span className="logo__letter logo__letter--3">W</span>
@@ -109,9 +90,6 @@ class Main extends React.PureComponent {
 }
 
 Main.propTypes = {
-  filmName: PropTypes.string.isRequired,
-  filmGenre: PropTypes.string.isRequired,
-  filmDate: PropTypes.string.isRequired,
   filmsList: PropTypes.arrayOf(
       PropTypes.exact({
         id: PropTypes.number.isRequired,
@@ -125,10 +103,19 @@ Main.propTypes = {
         background: PropTypes.string.isRequired,
         ratingScore: PropTypes.number.isRequired,
         ratingCount: PropTypes.number.isRequired,
-        videoUrl: PropTypes.string.isRequired,
-      })
-      .isRequired)
-    .isRequired,
+        url: PropTypes.string.isRequired,
+        runTime: PropTypes.string.isRequired,
+        comments: PropTypes.arrayOf(
+            PropTypes.exact({
+              id: PropTypes.number.isRequired,
+              commentAuthor: PropTypes.string.isRequired,
+              commentText: PropTypes.string.isRequired,
+              commentDate: PropTypes.string.isRequired,
+              commentRating: PropTypes.number.isRequired,
+            }).isRequired)
+          .isRequired})
+        .isRequired)
+    .isRequired
 };
 
 export default Main;

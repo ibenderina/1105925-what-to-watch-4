@@ -21,3 +21,13 @@ export const chooseRandomInt = (min, max) => {
 
   return Math.floor(random);
 };
+
+export const chooseRandomStrings = (dataList) => {
+  const random = Math.floor(Math.random() * dataList.length);
+  return dataList.slice(random, dataList.length).join(`. `);
+};
+
+export const chooseRandomString = (dataList) => {
+  const random = Math.floor(Math.random() * dataList.length);
+  return dataList[random];
+};

@@ -1,13 +1,13 @@
 import VideoPlayer from "@components/video-player/video-player";
 
-const videoUrl = `Hello`;
-const filmImage = `Hello`;
+const url = `Hello`;
+const image = `Hello`;
 
 const checkVideoPlayer = (isPlayed) => {
   return window.shallow(
       <VideoPlayer
-        videoUrl={videoUrl}
-        filmImage={filmImage}
+        url={url}
+        image={image}
         isMuted={true}
         isPlayed={isPlayed}
       />
@@ -16,7 +16,7 @@ const checkVideoPlayer = (isPlayed) => {
 
 it(`Should set isPlayed-true`, () => {
   const video = checkVideoPlayer(true);
-  expect(video.props().src).toEqual(videoUrl);
+  expect(video.props().src).toEqual(url);
 });
 
 it(`Should set isPlayed-false`, () => {

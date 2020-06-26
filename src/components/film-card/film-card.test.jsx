@@ -1,12 +1,14 @@
 import FilmCard from "@components/film-card/film-card";
 
 it(`Should FilmCard render correctly`, () => {
+  const commonText = `Hello`;
   let tree;
+
   window.act(() => {
     tree = window.create(<FilmCard
-      filmTitle={`Hello`}
-      filmImage={`Hello`}
-      videoUrl={`Hello`}
+      filmTitle={commonText}
+      image={commonText}
+      url={commonText}
       handleFilmCardClick={() => {}}
     />);
   });
