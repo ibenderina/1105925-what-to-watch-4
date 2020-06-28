@@ -9,8 +9,8 @@ Array [
       className="movie-card__bg"
     >
       <img
-        alt="A woman's work is never done background"
-        src="https://i.pinimg.com/originals/01/47/bd/0147bd61ee15e3228d30e03ce2d64f5a.jpg"
+        alt="Every man has his price background"
+        src="https://img1.goodfon.ru/wallpaper/big/9/6f/minimalizm-gradient-background.jpg"
       />
     </div>
     <h1
@@ -69,7 +69,7 @@ Array [
           className="movie-card__poster"
         >
           <img
-            alt="A woman's work is never done poster"
+            alt="Every man has his price poster"
             height="327"
             src="https://pets.mail.ru/sharepic/68/10401.png"
             width="218"
@@ -81,7 +81,7 @@ Array [
           <h2
             className="movie-card__title"
           >
-            A woman's work is never done
+            Every man has his price
           </h2>
           <p
             className="movie-card__meta"
@@ -89,12 +89,12 @@ Array [
             <span
               className="movie-card__genre"
             >
-              Thriller
+              Crime
             </span>
             <span
               className="movie-card__year"
             >
-              1999
+              2020
             </span>
           </p>
           <div
@@ -173,7 +173,29 @@ Array [
             href="#"
             onClick={[Function]}
           >
-            Thriller
+            Crime
+          </a>
+        </li>
+        <li
+          className="catalog__genres-item"
+        >
+          <a
+            className="catalog__genres-link"
+            href="#"
+            onClick={[Function]}
+          >
+            Comedy
+          </a>
+        </li>
+        <li
+          className="catalog__genres-item"
+        >
+          <a
+            className="catalog__genres-link"
+            href="#"
+            onClick={[Function]}
+          >
+            Documentary
           </a>
         </li>
         <li
@@ -206,29 +228,7 @@ Array [
             href="#"
             onClick={[Function]}
           >
-            Romance
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-            onClick={[Function]}
-          >
             Horror
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-            onClick={[Function]}
-          >
-            Documentary
           </a>
         </li>
       </ul>
@@ -261,7 +261,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              A woman's work is never done
+              Every man has his price
             </a>
           </h3>
         </article>
@@ -291,7 +291,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Money talks
+              If you can't be good, be careful
             </a>
           </h3>
         </article>
@@ -321,7 +321,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              A volunteer is worth twenty pressed men
+              Every man has his price
             </a>
           </h3>
         </article>
@@ -351,7 +351,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Every man has his price
+              Money talks
             </a>
           </h3>
         </article>
@@ -381,7 +381,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Comparisons are odious
+              Suffering for a friend doubleth friendship
             </a>
           </h3>
         </article>
@@ -411,7 +411,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Every man has his price
+              If you can't be good, be careful
             </a>
           </h3>
         </article>
@@ -441,7 +441,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              If you can't be good, be careful
+              A woman's work is never done
             </a>
           </h3>
         </article>
@@ -471,7 +471,37 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Comparisons are odious
+              Money talks
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <div
+            className="small-movie-card__image"
+          >
+            <video
+              autoPlay={true}
+              height="175"
+              loop={true}
+              muted={true}
+              poster="https://cs7.pikabu.ru/post_img/2019/03/06/7/1551870696138123277.jpg"
+              src=""
+              width="280"
+            />
+          </div>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="movie-page.html"
+            >
+              Suffering for a friend doubleth friendship
             </a>
           </h3>
         </article>
@@ -481,6 +511,7 @@ Array [
       >
         <button
           className="catalog__button"
+          onClick={[Function]}
           type="button"
         >
           Show more

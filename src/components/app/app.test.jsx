@@ -2,18 +2,21 @@ import App from "@components/app/app";
 import {Provider} from "react-redux";
 import configureStore from "redux-mock-store";
 import mockFilms from "../../mocks/films";
-import {ALL_GENRES} from "@consts";
+import {ALL_GENRES, CountLimit} from "@consts";
 
 const mockStore = configureStore([]);
+const initialState = {
+  currentGenre: ALL_GENRES,
+  genres: [...(new Set(mockFilms.map((item) => {
+    return item.genre;
+  })))].slice(0, CountLimit.MAX_GENRES),
+  films: mockFilms.slice(0, CountLimit.MAX_FILMS),
+  isMoreFilms: true,
+  promoFilm: mockFilms[0]
+};
 
 it(`Render App`, () => {
-  const store = mockStore({
-    currentGenre: ALL_GENRES,
-    genres: [...(new Set(mockFilms.map((item) => {
-      return item.genre;
-    })))].slice(0, 9),
-    films: mockFilms,
-  });
+  const store = mockStore(initialState);
 
   let tree;
   window.act(() => {

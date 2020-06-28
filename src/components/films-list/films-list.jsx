@@ -18,7 +18,7 @@ class FilmsList extends React.PureComponent {
             image={film.src}
             handleFilmCardClick={() => this.props.handleFilmCardClick(film)}
           />;
-        }).slice(0, 8)}
+        })}
       </div>
     );
   }

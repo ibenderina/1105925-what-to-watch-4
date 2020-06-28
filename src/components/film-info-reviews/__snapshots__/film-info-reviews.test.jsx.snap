@@ -16,7 +16,7 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
         <p
           className="review__text"
         >
-          A volunteer is worth twenty pressed men. Suffering for a friend doubleth friendship. A woman's work is never done. Comparisons are odious. Money talks. Don't keep a dog and bark yourself. Every man has his price
+          Don't keep a dog and bark yourself. Every man has his price
         </p>
         <footer
           className="review__details"
@@ -37,7 +37,7 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
       <div
         className="review__rating"
       >
-        1
+        10
       </div>
     </div>
     <div
@@ -49,7 +49,7 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
         <p
           className="review__text"
         >
-          Don't keep a dog and bark yourself. Every man has his price
+          A volunteer is worth twenty pressed men. Suffering for a friend doubleth friendship. A woman's work is never done. Comparisons are odious. Money talks. Don't keep a dog and bark yourself. Every man has his price
         </p>
         <footer
           className="review__details"
@@ -57,7 +57,7 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
           <cite
             className="review__author"
           >
-            Olivia	Jayden
+            Man with a gun
           </cite>
           <time
             className="review__date"
@@ -70,7 +70,7 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
       <div
         className="review__rating"
       >
-        10
+        4
       </div>
     </div>
   </div>
@@ -86,7 +86,7 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
         <p
           className="review__text"
         >
-          Don't keep a dog and bark yourself. Every man has his price
+          If you can't be good, be careful. A volunteer is worth twenty pressed men. Suffering for a friend doubleth friendship. A woman's work is never done. Comparisons are odious. Money talks. Don't keep a dog and bark yourself. Every man has his price
         </p>
         <footer
           className="review__details"
@@ -107,7 +107,7 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
       <div
         className="review__rating"
       >
-        7
+        6
       </div>
     </div>
   </div>

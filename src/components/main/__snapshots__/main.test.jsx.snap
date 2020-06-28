@@ -9,7 +9,7 @@ Array [
       className="movie-card__bg"
     >
       <img
-        alt="Money talks background"
+        alt="If you can't be good, be careful background"
         src="https://i.pinimg.com/originals/1c/51/70/1c51707d341b915c32ed8d91d99d4ae9.gif"
       />
     </div>
@@ -69,7 +69,7 @@ Array [
           className="movie-card__poster"
         >
           <img
-            alt="Money talks poster"
+            alt="If you can't be good, be careful poster"
             height="327"
             src="https://pets.mail.ru/sharepic/68/10401.png"
             width="218"
@@ -81,7 +81,7 @@ Array [
           <h2
             className="movie-card__title"
           >
-            Money talks
+            If you can't be good, be careful
           </h2>
           <p
             className="movie-card__meta"
@@ -89,7 +89,7 @@ Array [
             <span
               className="movie-card__genre"
             >
-              Documentary
+              Drama
             </span>
             <span
               className="movie-card__year"
@@ -155,7 +155,7 @@ Array [
         className="catalog__genres-list"
       >
         <li
-          className="catalog__genres-item"
+          className="catalog__genres-item catalog__genres-item--active"
         >
           <a
             className="catalog__genres-link"
@@ -173,29 +173,7 @@ Array [
             href="#"
             onClick={[Function]}
           >
-            Documentary
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-            onClick={[Function]}
-          >
-            Thriller
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-            onClick={[Function]}
-          >
-            Kids & Family
+            Drama
           </a>
         </li>
         <li
@@ -217,7 +195,7 @@ Array [
             href="#"
             onClick={[Function]}
           >
-            Sci-Fi
+            Kids & Family
           </a>
         </li>
         <li
@@ -228,7 +206,18 @@ Array [
             href="#"
             onClick={[Function]}
           >
-            Horror
+            Thriller
+          </a>
+        </li>
+        <li
+          className="catalog__genres-item"
+        >
+          <a
+            className="catalog__genres-link"
+            href="#"
+            onClick={[Function]}
+          >
+            Documentary
           </a>
         </li>
       </ul>
@@ -261,7 +250,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Money talks
+              If you can't be good, be careful
             </a>
           </h3>
         </article>
@@ -291,7 +280,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              If you can't be good, be careful
+              A woman's work is never done
             </a>
           </h3>
         </article>
@@ -321,7 +310,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              A volunteer is worth twenty pressed men
+              Comparisons are odious
             </a>
           </h3>
         </article>
@@ -351,7 +340,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Suffering for a friend doubleth friendship
+              A woman's work is never done
             </a>
           </h3>
         </article>
@@ -381,7 +370,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Money talks
+              Every man has his price
             </a>
           </h3>
         </article>
@@ -411,7 +400,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Comparisons are odious
+              Don't keep a dog and bark yourself
             </a>
           </h3>
         </article>
@@ -471,7 +460,37 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              If you can't be good, be careful
+              Money talks
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <div
+            className="small-movie-card__image"
+          >
+            <video
+              autoPlay={true}
+              height="175"
+              loop={true}
+              muted={true}
+              poster="https://cs7.pikabu.ru/post_img/2019/03/06/7/1551870696138123277.jpg"
+              src=""
+              width="280"
+            />
+          </div>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="movie-page.html"
+            >
+              A volunteer is worth twenty pressed men
             </a>
           </h3>
         </article>
@@ -481,6 +500,7 @@ Array [
       >
         <button
           className="catalog__button"
+          onClick={[Function]}
           type="button"
         >
           Show more

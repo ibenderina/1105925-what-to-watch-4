@@ -1,14 +1,14 @@
 import {ClassName} from "@consts";
 
 const GenreListItem = (props) => {
-  const {genre, isCurrent, onGenreClick} = props;
+  const {genre, isCurrent, handleGenreClick} = props;
 
   return (
     <li className={isCurrent ? ClassName.ACTIVE_GENRE : ClassName.INACTIVE_GENRE}>
       <a href="#" className="catalog__genres-link"
         onClick={(evt) => {
           evt.preventDefault();
-          onGenreClick(genre);
+          handleGenreClick(genre);
         }}>
 
         {genre}
@@ -21,7 +21,7 @@ const GenreListItem = (props) => {
 GenreListItem.propTypes = {
   genre: PropTypes.string.isRequired,
   isCurrent: PropTypes.bool.isRequired,
-  onGenreClick: PropTypes.func.isRequired,
+  handleGenreClick: PropTypes.func.isRequired,
 };
 
 export default GenreListItem;

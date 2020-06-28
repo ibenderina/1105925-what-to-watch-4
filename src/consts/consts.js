@@ -20,3 +20,9 @@ export const ClassName = {
   INACTIVE_GENRE: `catalog__genres-item`,
   SIMILAR_FILMS: `catalog catalog--like-this`,
 };
+
+export const CountLimit = {
+  MAX_FILMS: 9,
+  MAX_SIMILAR_FILMS: 5,
+  MAX_GENRES: 10,
+};

@@ -4,7 +4,7 @@ import GenreListItem from "@components/genre-list-item/genre-list-item";
 import {ALL_GENRES} from "@consts";
 
 const GenresList = (props) => {
-  const {genres, currentGenre, onGenreClick} = props;
+  const {genres, currentGenre, handleGenreClick} = props;
 
   return (
     <ul className="catalog__genres-list">
@@ -12,18 +12,27 @@ const GenresList = (props) => {
         key={ALL_GENRES}
         genre={ALL_GENRES}
         isCurrent={currentGenre === ALL_GENRES}
-        onGenreClick={onGenreClick}/>
+        handleGenreClick={handleGenreClick}/>
       {genres.map((genre) => {
         return <GenreListItem
           key={genre}
           genre={genre}
           isCurrent={currentGenre === genre}
-          onGenreClick={onGenreClick}
+          handleGenreClick={handleGenreClick}
         />;
       })}
     </ul>
   );
 };
+
+GenresList.propTypes = {
+  genres: PropTypes.arrayOf(
+      PropTypes.string.isRequired
+  ).isRequired,
+  currentGenre: PropTypes.string.isRequired,
+  handleGenreClick: PropTypes.func.isRequired,
+};
+
 
 const mapStateToProps = (state) => {
   return {
@@ -34,18 +43,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onGenreClick: (genre) => {
+    handleGenreClick: (genre) => {
       return dispatch(setCurrentGenre(genre));
     },
   };
-};
-
-GenresList.propTypes = {
-  genres: PropTypes.arrayOf(
-      PropTypes.string.isRequired
-  ).isRequired,
-  currentGenre: PropTypes.string.isRequired,
-  onGenreClick: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(GenresList);
