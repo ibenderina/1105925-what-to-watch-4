@@ -31,7 +31,3 @@ export const chooseRandomString = (dataList) => {
   const random = Math.floor(Math.random() * dataList.length);
   return dataList[random];
 };
-
-export const extend = (a, b) => {
-  return Object.assign({}, a, b);
-};

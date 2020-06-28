@@ -10,6 +10,7 @@ module.exports = {
     "^@main(.*)$": `<rootDir>/src/components/main/$1`,
     "^@consts(.*)$": `<rootDir>/src/consts/consts`,
     "^@utils(.*)$": `<rootDir>/src/utils/utils`,
+    "^@reducer(.*)$": `<rootDir>/src/reducer/reducer`,
   },
   "coveragePathIgnorePatterns": [`/test.setup.js`],
 };

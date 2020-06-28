@@ -18,7 +18,7 @@ exports[`Should FilmInfoOverview render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        Olivia	Jayden
+        Emma	William
       </span>
     </p>
     <p
@@ -32,7 +32,7 @@ exports[`Should FilmInfoOverview render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        Isabella	Mason
+        Man with a gun
       </span>
     </p>
   </div>
@@ -50,7 +50,7 @@ exports[`Should FilmInfoOverview render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        1h 43m
+        1h 52m
       </span>
     </p>
     <p
@@ -59,12 +59,12 @@ exports[`Should FilmInfoOverview render correctly 1`] = `
       <strong
         className="movie-card__details-name"
       >
-        GenreListItem
+        Genre
       </strong>
       <span
         className="movie-card__details-value"
       >
-        Adventures
+        Comedy
       </span>
     </p>
     <p
@@ -78,7 +78,7 @@ exports[`Should FilmInfoOverview render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        2019
+        1999
       </span>
     </p>
   </div>

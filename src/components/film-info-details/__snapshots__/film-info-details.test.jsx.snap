@@ -32,7 +32,7 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        Emma	William
+        Sophia	Jacob
       </span>
     </p>
   </div>
@@ -50,7 +50,7 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        3h 15m
+        3h 57m
       </span>
     </p>
     <p
@@ -59,12 +59,12 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       <strong
         className="movie-card__details-name"
       >
-        GenreListItem
+        Genre
       </strong>
       <span
         className="movie-card__details-value"
       >
-        Adventures
+        Crime
       </span>
     </p>
     <p
@@ -78,7 +78,7 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        2020
+        2005
       </span>
     </p>
   </div>

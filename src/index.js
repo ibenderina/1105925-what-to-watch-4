@@ -3,7 +3,7 @@ import App from "@components/app/app";
 import films from "../src/mocks/films";
 import {createStore} from "redux";
 import {Provider} from "react-redux";
-import {reducer} from "./reducer.js";
+import {reducer} from "@reducer";
 
 const store = createStore(
     reducer,

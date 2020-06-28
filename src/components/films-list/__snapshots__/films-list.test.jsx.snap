@@ -30,7 +30,7 @@ exports[`Should FilmsList render correctly 1`] = `
         className="small-movie-card__link"
         href="movie-page.html"
       >
-        A woman's work is never done
+        If you can't be good, be careful
       </a>
     </h3>
   </article>
@@ -60,7 +60,7 @@ exports[`Should FilmsList render correctly 1`] = `
         className="small-movie-card__link"
         href="movie-page.html"
       >
-        A woman's work is never done
+        Suffering for a friend doubleth friendship
       </a>
     </h3>
   </article>
@@ -90,7 +90,7 @@ exports[`Should FilmsList render correctly 1`] = `
         className="small-movie-card__link"
         href="movie-page.html"
       >
-        Don't keep a dog and bark yourself
+        Money talks
       </a>
     </h3>
   </article>
@@ -120,7 +120,7 @@ exports[`Should FilmsList render correctly 1`] = `
         className="small-movie-card__link"
         href="movie-page.html"
       >
-        Don't keep a dog and bark yourself
+        Every man has his price
       </a>
     </h3>
   </article>
@@ -150,7 +150,7 @@ exports[`Should FilmsList render correctly 1`] = `
         className="small-movie-card__link"
         href="movie-page.html"
       >
-        A woman's work is never done
+        Don't keep a dog and bark yourself
       </a>
     </h3>
   </article>
@@ -180,7 +180,7 @@ exports[`Should FilmsList render correctly 1`] = `
         className="small-movie-card__link"
         href="movie-page.html"
       >
-        Comparisons are odious
+        Every man has his price
       </a>
     </h3>
   </article>
@@ -210,7 +210,7 @@ exports[`Should FilmsList render correctly 1`] = `
         className="small-movie-card__link"
         href="movie-page.html"
       >
-        Comparisons are odious
+        If you can't be good, be careful
       </a>
     </h3>
   </article>
@@ -240,7 +240,67 @@ exports[`Should FilmsList render correctly 1`] = `
         className="small-movie-card__link"
         href="movie-page.html"
       >
-        Comparisons are odious
+        Every man has his price
+      </a>
+    </h3>
+  </article>
+  <article
+    className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <div
+      className="small-movie-card__image"
+    >
+      <video
+        autoPlay={true}
+        height="175"
+        loop={true}
+        muted={true}
+        poster="https://cs7.pikabu.ru/post_img/2019/03/06/7/1551870696138123277.jpg"
+        src=""
+        width="280"
+      />
+    </div>
+    <h3
+      className="small-movie-card__title"
+    >
+      <a
+        className="small-movie-card__link"
+        href="movie-page.html"
+      >
+        Every man has his price
+      </a>
+    </h3>
+  </article>
+  <article
+    className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <div
+      className="small-movie-card__image"
+    >
+      <video
+        autoPlay={true}
+        height="175"
+        loop={true}
+        muted={true}
+        poster="https://cs7.pikabu.ru/post_img/2019/03/06/7/1551870696138123277.jpg"
+        src=""
+        width="280"
+      />
+    </div>
+    <h3
+      className="small-movie-card__title"
+    >
+      <a
+        className="small-movie-card__link"
+        href="movie-page.html"
+      >
+        Every man has his price
       </a>
     </h3>
   </article>

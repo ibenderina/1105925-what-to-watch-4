@@ -3,6 +3,9 @@ import FilmInfo from "@components/film-info/film-info";
 import PromoFilm from "@components/promo-film/promo-film";
 import GenresList from "@components/genres-list/genres-list";
 import CatalogMore from "@components/catalog-more/catalog-more";
+import {setCurrentGenre} from "@reducer";
+import {connect} from "react-redux";
+import {ClassName} from "@consts";
 
 class Main extends React.PureComponent {
   constructor(props) {
@@ -14,25 +17,19 @@ class Main extends React.PureComponent {
     this._handleFilmCardClick = this._handleFilmCardClick.bind(this);
   }
 
-  _getFilmsList() {
-    if (this.state.currentSelectedFilm) {
-      return this.props.filmsList.filter((film) => {
-        return film.genre === this.state.currentSelectedFilm.genre;
-      }).slice(0, 4);
-    }
-    return this.props.filmsList;
-  }
-
   _handleFilmCardClick(newSelectedFilm) {
     this.setState({
       currentSelectedFilm: newSelectedFilm,
     });
+    if (this.state.currentSelectedFilm) {
+      this.props.setCurrentGenre(this.state.currentSelectedFilm.genre);
+    }
   }
 
   render() {
     const {filmsList} = this.props;
     const filmSelected = this.state.currentSelectedFilm;
-    const promoFilm = filmsList[1];
+    const promoFilm = filmsList[0];
     let shownFilm = null;
 
     if (filmSelected) {
@@ -54,7 +51,7 @@ class Main extends React.PureComponent {
         {shownFilm}
 
         <section className="page-content">
-          <section className={this.state.currentSelectedFilm ? `catalog catalog--like-this` : `catalog`}>
+          <section className={this.state.currentSelectedFilm ? ClassName.SIMILAR_FILMS : `catalog`}>
 
             {this.state.currentSelectedFilm ? <h2 className="catalog__title">More like this</h2> : ``}
 
@@ -63,7 +60,7 @@ class Main extends React.PureComponent {
             {this.state.currentSelectedFilm ? `` : <GenresList/>}
 
             <FilmsList
-              films={this._getFilmsList()}
+              films={this.props.filmsList}
               handleFilmCardClick={this._handleFilmCardClick}
             />
 
@@ -115,7 +112,22 @@ Main.propTypes = {
             }).isRequired)
           .isRequired})
         .isRequired)
-    .isRequired
+    .isRequired,
+  setCurrentGenre: PropTypes.func.isRequired,
 };
 
-export default Main;
+const mapStateToProps = (state) => {
+  return {
+    filmsList: state.films,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setCurrentGenre: (genre) => {
+      return dispatch(setCurrentGenre(genre));
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

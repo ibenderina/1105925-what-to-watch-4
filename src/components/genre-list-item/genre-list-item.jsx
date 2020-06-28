@@ -1,14 +1,19 @@
+import {ClassName} from "@consts";
+
 const GenreListItem = (props) => {
   const {genre, isCurrent, onGenreClick} = props;
 
   return (
-    <li className={isCurrent ? `catalog__genres-item catalog__genres-item--active` : `catalog__genres-item`}>
+    <li className={isCurrent ? ClassName.ACTIVE_GENRE : ClassName.INACTIVE_GENRE}>
       <a href="#" className="catalog__genres-link"
         onClick={(evt) => {
           evt.preventDefault();
-          console.log(genre)
           onGenreClick(genre);
-        }}>{genre}</a>
+        }}>
+
+        {genre}
+
+      </a>
     </li>
   );
 };

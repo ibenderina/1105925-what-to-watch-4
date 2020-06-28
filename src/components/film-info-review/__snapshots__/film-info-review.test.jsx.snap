@@ -10,7 +10,7 @@ exports[`Should FilmInfoReview render correctly 1`] = `
     <p
       className="review__text"
     >
-      Suffering for a friend doubleth friendship. A woman's work is never done. Comparisons are odious. Money talks. Don't keep a dog and bark yourself. Every man has his price
+      Don't keep a dog and bark yourself. Every man has his price
     </p>
     <footer
       className="review__details"
@@ -24,14 +24,14 @@ exports[`Should FilmInfoReview render correctly 1`] = `
         className="review__date"
         dateTime="2016-12-24"
       >
-        25.11.1999
+        13.03.2005
       </time>
     </footer>
   </blockquote>
   <div
     className="review__rating"
   >
-    6
+    2
   </div>
 </div>
 `;

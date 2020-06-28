@@ -11,3 +11,12 @@ export const Tab = {
   DETAILS: `Details`,
   REVIEWS: `Reviews`
 };
+
+export const ALL_GENRES = `All Genres`;
+
+export const ClassName = {
+  ACTIVE_TAB: `movie-nav__item--active`,
+  ACTIVE_GENRE: `catalog__genres-item catalog__genres-item--active`,
+  INACTIVE_GENRE: `catalog__genres-item`,
+  SIMILAR_FILMS: `catalog catalog--like-this`,
+};
