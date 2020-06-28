@@ -9,8 +9,8 @@ Array [
       className="movie-card__bg"
     >
       <img
-        alt="Every man has his price background"
-        src="https://img1.goodfon.ru/wallpaper/big/9/6f/minimalizm-gradient-background.jpg"
+        alt="A woman's work is never done background"
+        src="https://i.pinimg.com/originals/01/47/bd/0147bd61ee15e3228d30e03ce2d64f5a.jpg"
       />
     </div>
     <h1
@@ -69,7 +69,7 @@ Array [
           className="movie-card__poster"
         >
           <img
-            alt="Every man has his price poster"
+            alt="A woman's work is never done poster"
             height="327"
             src="https://pets.mail.ru/sharepic/68/10401.png"
             width="218"
@@ -81,7 +81,7 @@ Array [
           <h2
             className="movie-card__title"
           >
-            Every man has his price
+            A woman's work is never done
           </h2>
           <p
             className="movie-card__meta"
@@ -89,12 +89,12 @@ Array [
             <span
               className="movie-card__genre"
             >
-              Drama
+              Thriller
             </span>
             <span
               className="movie-card__year"
             >
-              2005
+              1999
             </span>
           </p>
           <div
@@ -173,29 +173,7 @@ Array [
             href="#"
             onClick={[Function]}
           >
-            Drama
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-            onClick={[Function]}
-          >
-            Crime
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-            onClick={[Function]}
-          >
-            Documentary
+            Thriller
           </a>
         </li>
         <li
@@ -217,7 +195,18 @@ Array [
             href="#"
             onClick={[Function]}
           >
-            Thriller
+            Sci-Fi
+          </a>
+        </li>
+        <li
+          className="catalog__genres-item"
+        >
+          <a
+            className="catalog__genres-link"
+            href="#"
+            onClick={[Function]}
+          >
+            Romance
           </a>
         </li>
         <li
@@ -229,6 +218,17 @@ Array [
             onClick={[Function]}
           >
             Horror
+          </a>
+        </li>
+        <li
+          className="catalog__genres-item"
+        >
+          <a
+            className="catalog__genres-link"
+            href="#"
+            onClick={[Function]}
+          >
+            Documentary
           </a>
         </li>
       </ul>
@@ -261,7 +261,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Every man has his price
+              A woman's work is never done
             </a>
           </h3>
         </article>
@@ -291,7 +291,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Every man has his price
+              Money talks
             </a>
           </h3>
         </article>
@@ -321,7 +321,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Every man has his price
+              A volunteer is worth twenty pressed men
             </a>
           </h3>
         </article>
@@ -351,7 +351,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              A woman's work is never done
+              Every man has his price
             </a>
           </h3>
         </article>
@@ -381,7 +381,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              If you can't be good, be careful
+              Comparisons are odious
             </a>
           </h3>
         </article>
@@ -411,7 +411,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              A volunteer is worth twenty pressed men
+              Every man has his price
             </a>
           </h3>
         </article>
@@ -441,97 +441,37 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
+              If you can't be good, be careful
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <div
+            className="small-movie-card__image"
+          >
+            <video
+              autoPlay={true}
+              height="175"
+              loop={true}
+              muted={true}
+              poster="https://cs7.pikabu.ru/post_img/2019/03/06/7/1551870696138123277.jpg"
+              src=""
+              width="280"
+            />
+          </div>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="movie-page.html"
+            >
               Comparisons are odious
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <div
-            className="small-movie-card__image"
-          >
-            <video
-              autoPlay={true}
-              height="175"
-              loop={true}
-              muted={true}
-              poster="https://cs7.pikabu.ru/post_img/2019/03/06/7/1551870696138123277.jpg"
-              src=""
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-            >
-              A volunteer is worth twenty pressed men
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <div
-            className="small-movie-card__image"
-          >
-            <video
-              autoPlay={true}
-              height="175"
-              loop={true}
-              muted={true}
-              poster="https://cs7.pikabu.ru/post_img/2019/03/06/7/1551870696138123277.jpg"
-              src=""
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-            >
-              Don't keep a dog and bark yourself
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <div
-            className="small-movie-card__image"
-          >
-            <video
-              autoPlay={true}
-              height="175"
-              loop={true}
-              muted={true}
-              poster="https://cs7.pikabu.ru/post_img/2019/03/06/7/1551870696138123277.jpg"
-              src=""
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-            >
-              Money talks
             </a>
           </h3>
         </article>

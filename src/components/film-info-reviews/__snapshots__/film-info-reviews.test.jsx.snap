@@ -16,7 +16,7 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
         <p
           className="review__text"
         >
-          Every man has his price
+          A volunteer is worth twenty pressed men. Suffering for a friend doubleth friendship. A woman's work is never done. Comparisons are odious. Money talks. Don't keep a dog and bark yourself. Every man has his price
         </p>
         <footer
           className="review__details"
@@ -24,20 +24,20 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
           <cite
             className="review__author"
           >
-            Isabella	Mason
+            Emma	William
           </cite>
           <time
             className="review__date"
             dateTime="2016-12-24"
           >
-            17.12.2019
+            13.03.2005
           </time>
         </footer>
       </blockquote>
       <div
         className="review__rating"
       >
-        7
+        1
       </div>
     </div>
     <div
@@ -49,7 +49,7 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
         <p
           className="review__text"
         >
-          Every man has his price
+          Don't keep a dog and bark yourself. Every man has his price
         </p>
         <footer
           className="review__details"
@@ -57,7 +57,7 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
           <cite
             className="review__author"
           >
-            Man with a gun
+            Olivia	Jayden
           </cite>
           <time
             className="review__date"
@@ -70,7 +70,7 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
       <div
         className="review__rating"
       >
-        2
+        10
       </div>
     </div>
   </div>
@@ -86,7 +86,7 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
         <p
           className="review__text"
         >
-          Every man has his price
+          Don't keep a dog and bark yourself. Every man has his price
         </p>
         <footer
           className="review__details"
@@ -94,7 +94,7 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
           <cite
             className="review__author"
           >
-            Sophia	Jacob
+            Isabella	Mason
           </cite>
           <time
             className="review__date"
@@ -107,7 +107,7 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
       <div
         className="review__rating"
       >
-        4
+        7
       </div>
     </div>
   </div>
