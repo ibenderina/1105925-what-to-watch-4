@@ -34,10 +34,15 @@ export const UNIVERSAL_MOCK_DATES = [
 ];
 
 export const UNIVERSAL_MOCK_GENRES = [
-  `Drama`,
   `Comedy`,
+  `Crime`,
+  `Documentary`,
+  `Drama`,
+  `Horror`,
+  `Kids & Family`,
+  `Romance`,
+  `Sci-Fi`,
   `Thriller`,
-  `Adventures`,
 ];
 
 export const UNIVERSAL_MOCK_BACKGROUND = [

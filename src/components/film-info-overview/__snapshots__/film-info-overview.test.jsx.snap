@@ -59,7 +59,7 @@ exports[`Should FilmInfoOverview render correctly 1`] = `
       <strong
         className="movie-card__details-name"
       >
-        Genre
+        GenreListItem
       </strong>
       <span
         className="movie-card__details-value"
