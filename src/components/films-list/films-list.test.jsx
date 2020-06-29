@@ -1,11 +1,11 @@
 import FilmsList from "@components/films-list/films-list";
-import films from "../../mocks/films";
+import {testMockFilm} from "../../mocks/test-mock-film";
 
 it(`Should FilmsList render correctly`, () => {
   let tree;
   window.act(() => {
     tree = window.create(<FilmsList
-      films={films}
+      films={[testMockFilm]}
       handleFilmCardClick={() => {}}
     />);
   });

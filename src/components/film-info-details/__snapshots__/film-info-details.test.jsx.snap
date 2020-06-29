@@ -18,7 +18,7 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        Olivia	Jayden
+        text
       </span>
     </p>
     <p
@@ -32,7 +32,7 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        Olivia	Jayden
+        text
       </span>
     </p>
   </div>
@@ -50,7 +50,7 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        3h 54m
+        text
       </span>
     </p>
     <p
@@ -64,7 +64,7 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        Horror
+        text
       </span>
     </p>
     <p
@@ -78,7 +78,7 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        1999
+        text
       </span>
     </p>
   </div>

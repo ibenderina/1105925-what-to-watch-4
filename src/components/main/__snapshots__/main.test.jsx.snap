@@ -9,8 +9,8 @@ Array [
       className="movie-card__bg"
     >
       <img
-        alt="A woman's work is never done background"
-        src="https://i.pinimg.com/originals/01/47/bd/0147bd61ee15e3228d30e03ce2d64f5a.jpg"
+        alt="text background"
+        src="text"
       />
     </div>
     <h1
@@ -69,9 +69,9 @@ Array [
           className="movie-card__poster"
         >
           <img
-            alt="A woman's work is never done poster"
+            alt="text poster"
             height="327"
-            src="https://pets.mail.ru/sharepic/68/10401.png"
+            src="text"
             width="218"
           />
         </div>
@@ -81,7 +81,7 @@ Array [
           <h2
             className="movie-card__title"
           >
-            A woman's work is never done
+            text
           </h2>
           <p
             className="movie-card__meta"
@@ -89,12 +89,12 @@ Array [
             <span
               className="movie-card__genre"
             >
-              Comedy
+              text
             </span>
             <span
               className="movie-card__year"
             >
-              2019
+              text
             </span>
           </p>
           <div
@@ -173,62 +173,7 @@ Array [
             href="#"
             onClick={[Function]}
           >
-            Comedy
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-            onClick={[Function]}
-          >
-            Romance
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-            onClick={[Function]}
-          >
-            Sci-Fi
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-            onClick={[Function]}
-          >
-            Thriller
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-            onClick={[Function]}
-          >
-            Documentary
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-            onClick={[Function]}
-          >
-            Drama
+            text
           </a>
         </li>
       </ul>
@@ -249,7 +194,7 @@ Array [
               height="175"
               loop={true}
               muted={true}
-              poster="https://pets.mail.ru/sharepic/68/10401.png"
+              poster="text"
               src=""
               width="280"
             />
@@ -261,247 +206,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              A woman's work is never done
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <div
-            className="small-movie-card__image"
-          >
-            <video
-              autoPlay={true}
-              height="175"
-              loop={true}
-              muted={true}
-              poster="https://twizz.ru/wp-content/uploads/-000//1/animals-about-to-drop-album-photos-58aeb0ce59ff1__700.jpg"
-              src=""
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-            >
-              Every man has his price
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <div
-            className="small-movie-card__image"
-          >
-            <video
-              autoPlay={true}
-              height="175"
-              loop={true}
-              muted={true}
-              poster="https://medialeaks.ru/wp-content/uploads/2019/08/glavnaya-1.jpg"
-              src=""
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-            >
-              Money talks
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <div
-            className="small-movie-card__image"
-          >
-            <video
-              autoPlay={true}
-              height="175"
-              loop={true}
-              muted={true}
-              poster="https://www.thepaws.net/wp-content/uploads/2018/10/funny-chihuahua.jpg"
-              src=""
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-            >
-              A woman's work is never done
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <div
-            className="small-movie-card__image"
-          >
-            <video
-              autoPlay={true}
-              height="175"
-              loop={true}
-              muted={true}
-              poster="https://memepedia.ru/wp-content/uploads/2018/12/hamster.jpg"
-              src=""
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-            >
-              Don't keep a dog and bark yourself
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <div
-            className="small-movie-card__image"
-          >
-            <video
-              autoPlay={true}
-              height="175"
-              loop={true}
-              muted={true}
-              poster="https://stihi.ru/pics/2013/04/04/1852.jpg"
-              src=""
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-            >
-              Every man has his price
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <div
-            className="small-movie-card__image"
-          >
-            <video
-              autoPlay={true}
-              height="175"
-              loop={true}
-              muted={true}
-              poster="https://techtoday.in.ua/wp-content/uploads/2018/01/GRUMPYCAT.jpg"
-              src=""
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-            >
-              If you can't be good, be careful
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <div
-            className="small-movie-card__image"
-          >
-            <video
-              autoPlay={true}
-              height="175"
-              loop={true}
-              muted={true}
-              poster="https://cs7.pikabu.ru/post_img/2019/03/06/7/1551870696138123277.jpg"
-              src=""
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-            >
-              A volunteer is worth twenty pressed men
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <div
-            className="small-movie-card__image"
-          >
-            <video
-              autoPlay={true}
-              height="175"
-              loop={true}
-              muted={true}
-              poster="https://cs7.pikabu.ru/post_img/2019/03/06/7/1551870696138123277.jpg"
-              src=""
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-            >
-              If you can't be good, be careful
+              text
             </a>
           </h3>
         </article>

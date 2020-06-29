@@ -1,8 +1,8 @@
 import FilmInfoReview from "@components/film-info-review/film-info-review";
-import films from "../../mocks/films";
+import {testMockFilm} from "../../mocks/test-mock-film";
 
 it(`Should FilmInfoReview render correctly`, () => {
-  const comment = films[0].comments[0];
+  const comment = testMockFilm.comments[0];
   let tree;
 
   window.act(() => {
