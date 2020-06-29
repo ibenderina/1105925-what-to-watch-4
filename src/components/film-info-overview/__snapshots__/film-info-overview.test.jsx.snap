@@ -32,7 +32,7 @@ exports[`Should FilmInfoOverview render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        Isabella	Mason
+        Sophia	Jacob
       </span>
     </p>
   </div>
@@ -50,7 +50,7 @@ exports[`Should FilmInfoOverview render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        1h 56m
+        2h 46m
       </span>
     </p>
     <p
@@ -64,7 +64,7 @@ exports[`Should FilmInfoOverview render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        Crime
+        Sci-Fi
       </span>
     </p>
     <p
@@ -78,7 +78,7 @@ exports[`Should FilmInfoOverview render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        2005
+        1999
       </span>
     </p>
   </div>

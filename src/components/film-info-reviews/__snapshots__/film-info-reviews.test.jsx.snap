@@ -16,7 +16,7 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
         <p
           className="review__text"
         >
-          Don't keep a dog and bark yourself. Every man has his price
+          Comparisons are odious. Money talks. Don't keep a dog and bark yourself. Every man has his price
         </p>
         <footer
           className="review__details"
@@ -24,13 +24,13 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
           <cite
             className="review__author"
           >
-            Emma	William
+            Isabella	Mason
           </cite>
           <time
             className="review__date"
             dateTime="2016-12-24"
           >
-            13.03.2005
+            01.06.2020
           </time>
         </footer>
       </blockquote>
@@ -49,7 +49,7 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
         <p
           className="review__text"
         >
-          A volunteer is worth twenty pressed men. Suffering for a friend doubleth friendship. A woman's work is never done. Comparisons are odious. Money talks. Don't keep a dog and bark yourself. Every man has his price
+          If you can't be good, be careful. A volunteer is worth twenty pressed men. Suffering for a friend doubleth friendship. A woman's work is never done. Comparisons are odious. Money talks. Don't keep a dog and bark yourself. Every man has his price
         </p>
         <footer
           className="review__details"
@@ -63,14 +63,14 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
             className="review__date"
             dateTime="2016-12-24"
           >
-            17.12.2019
+            01.06.2020
           </time>
         </footer>
       </blockquote>
       <div
         className="review__rating"
       >
-        4
+        7
       </div>
     </div>
   </div>
@@ -86,7 +86,7 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
         <p
           className="review__text"
         >
-          If you can't be good, be careful. A volunteer is worth twenty pressed men. Suffering for a friend doubleth friendship. A woman's work is never done. Comparisons are odious. Money talks. Don't keep a dog and bark yourself. Every man has his price
+          Comparisons are odious. Money talks. Don't keep a dog and bark yourself. Every man has his price
         </p>
         <footer
           className="review__details"
@@ -100,7 +100,7 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
             className="review__date"
             dateTime="2016-12-24"
           >
-            01.06.2020
+            13.03.2005
           </time>
         </footer>
       </blockquote>

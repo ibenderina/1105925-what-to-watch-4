@@ -32,7 +32,7 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        Sophia	Jacob
+        Olivia	Jayden
       </span>
     </p>
   </div>
@@ -50,7 +50,7 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        2h 23m
+        3h 54m
       </span>
     </p>
     <p
@@ -64,7 +64,7 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        Crime
+        Horror
       </span>
     </p>
     <p

@@ -1,17 +1,18 @@
 import Main from "@components/main/main";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 
 const App = () => {
   return (
-    <Browser.BrowserRouter>
-      <Browser.Switch>
-        <Browser.Route exact path="/">
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
           <Main/>
-        </Browser.Route>
-        <Browser.Route exact path="/dev-film">
+        </Route>
+        <Route exact path="/dev-film">
           test
-        </Browser.Route>
-      </Browser.Switch>
-    </Browser.BrowserRouter>
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 };
 
