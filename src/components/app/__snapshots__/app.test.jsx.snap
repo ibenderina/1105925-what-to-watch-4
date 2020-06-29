@@ -71,7 +71,7 @@ Array [
           <img
             alt="A woman's work is never done poster"
             height="327"
-            src="https://twizz.ru/wp-content/uploads/-000//1/animals-about-to-drop-album-photos-58aeb0ce59ff1__700.jpg"
+            src="https://pets.mail.ru/sharepic/68/10401.png"
             width="218"
           />
         </div>
@@ -89,12 +89,12 @@ Array [
             <span
               className="movie-card__genre"
             >
-              Comedy
+              Thriller
             </span>
             <span
               className="movie-card__year"
             >
-              2020
+              1999
             </span>
           </p>
           <div
@@ -160,8 +160,9 @@ Array [
           <a
             className="catalog__genres-link"
             href="#"
+            onClick={[Function]}
           >
-            All genres
+            All Genres
           </a>
         </li>
         <li
@@ -170,8 +171,9 @@ Array [
           <a
             className="catalog__genres-link"
             href="#"
+            onClick={[Function]}
           >
-            Comedies
+            Thriller
           </a>
         </li>
         <li
@@ -180,46 +182,7 @@ Array [
           <a
             className="catalog__genres-link"
             href="#"
-          >
-            Crime
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Documentary
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Dramas
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Horror
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
+            onClick={[Function]}
           >
             Kids & Family
           </a>
@@ -230,16 +193,7 @@ Array [
           <a
             className="catalog__genres-link"
             href="#"
-          >
-            Romance
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
+            onClick={[Function]}
           >
             Sci-Fi
           </a>
@@ -250,8 +204,31 @@ Array [
           <a
             className="catalog__genres-link"
             href="#"
+            onClick={[Function]}
           >
-            Thrillers
+            Romance
+          </a>
+        </li>
+        <li
+          className="catalog__genres-item"
+        >
+          <a
+            className="catalog__genres-link"
+            href="#"
+            onClick={[Function]}
+          >
+            Horror
+          </a>
+        </li>
+        <li
+          className="catalog__genres-item"
+        >
+          <a
+            className="catalog__genres-link"
+            href="#"
+            onClick={[Function]}
+          >
+            Documentary
           </a>
         </li>
       </ul>
@@ -314,7 +291,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              A woman's work is never done
+              Money talks
             </a>
           </h3>
         </article>
@@ -344,7 +321,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Every man has his price
+              A volunteer is worth twenty pressed men
             </a>
           </h3>
         </article>
@@ -374,7 +351,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Comparisons are odious
+              Every man has his price
             </a>
           </h3>
         </article>
@@ -404,7 +381,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Money talks
+              Comparisons are odious
             </a>
           </h3>
         </article>
@@ -434,7 +411,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Money talks
+              Every man has his price
             </a>
           </h3>
         </article>
@@ -494,7 +471,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Suffering for a friend doubleth friendship
+              Comparisons are odious
             </a>
           </h3>
         </article>

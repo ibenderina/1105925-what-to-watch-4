@@ -23,6 +23,7 @@ it(`Should FilmInfo render correctly`, () => {
           url: commonText,
           runTime: commonText,
           comments: [{
+            id: commonNumber,
             commentAuthor: commonText,
             commentText: commonText,
             commentDate: commonText,

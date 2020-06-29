@@ -1,7 +1,7 @@
 import Icon from "react-svg-use";
 import FilmInfoOverview from "@components/film-info-overview/film-info-overview";
 import FilmInfoDetails from "@components/film-info-details/film-info-details";
-import {Tab} from "@consts";
+import {ClassName, Tab} from "@consts";
 import FilmInfoReviews from "@components/film-info-reviews/film-info-reviews";
 
 class FilmInfo extends React.PureComponent {
@@ -18,9 +18,9 @@ class FilmInfo extends React.PureComponent {
       evt.preventDefault();
       const activeClass = document.querySelectorAll(`.movie-nav__item--active`);
       activeClass.forEach((item) => {
-        item.classList.remove(`movie-nav__item--active`);
+        item.classList.remove(ClassName.ACTIVE_TAB);
       });
-      evt.target.closest(`.movie-nav__item`).classList.add(`movie-nav__item--active`);
+      evt.target.closest(`.movie-nav__item`).classList.add(ClassName.ACTIVE_TAB);
       this.setState({
         activeTab: tab
       });

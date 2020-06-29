@@ -18,7 +18,7 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        Isabella	Mason
+        Man with a gun
       </span>
     </p>
     <p
@@ -50,7 +50,7 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        3h 15m
+        1h 53m
       </span>
     </p>
     <p
@@ -64,7 +64,7 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        Adventures
+        Horror
       </span>
     </p>
     <p
@@ -78,7 +78,7 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        2020
+        1999
       </span>
     </p>
   </div>

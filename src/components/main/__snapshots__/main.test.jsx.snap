@@ -9,8 +9,8 @@ Array [
       className="movie-card__bg"
     >
       <img
-        alt="A woman's work is never done background"
-        src="https://img1.goodfon.ru/wallpaper/big/9/6f/minimalizm-gradient-background.jpg"
+        alt="Money talks background"
+        src="https://i.pinimg.com/originals/1c/51/70/1c51707d341b915c32ed8d91d99d4ae9.gif"
       />
     </div>
     <h1
@@ -69,9 +69,9 @@ Array [
           className="movie-card__poster"
         >
           <img
-            alt="A woman's work is never done poster"
+            alt="Money talks poster"
             height="327"
-            src="https://twizz.ru/wp-content/uploads/-000//1/animals-about-to-drop-album-photos-58aeb0ce59ff1__700.jpg"
+            src="https://pets.mail.ru/sharepic/68/10401.png"
             width="218"
           />
         </div>
@@ -81,7 +81,7 @@ Array [
           <h2
             className="movie-card__title"
           >
-            A woman's work is never done
+            Money talks
           </h2>
           <p
             className="movie-card__meta"
@@ -89,12 +89,12 @@ Array [
             <span
               className="movie-card__genre"
             >
-              Comedy
+              Documentary
             </span>
             <span
               className="movie-card__year"
             >
-              2020
+              1999
             </span>
           </p>
           <div
@@ -155,13 +155,14 @@ Array [
         className="catalog__genres-list"
       >
         <li
-          className="catalog__genres-item catalog__genres-item--active"
+          className="catalog__genres-item"
         >
           <a
             className="catalog__genres-link"
             href="#"
+            onClick={[Function]}
           >
-            All genres
+            All Genres
           </a>
         </li>
         <li
@@ -170,26 +171,7 @@ Array [
           <a
             className="catalog__genres-link"
             href="#"
-          >
-            Comedies
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Crime
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
+            onClick={[Function]}
           >
             Documentary
           </a>
@@ -200,8 +182,9 @@ Array [
           <a
             className="catalog__genres-link"
             href="#"
+            onClick={[Function]}
           >
-            Dramas
+            Thriller
           </a>
         </li>
         <li
@@ -210,16 +193,7 @@ Array [
           <a
             className="catalog__genres-link"
             href="#"
-          >
-            Horror
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
+            onClick={[Function]}
           >
             Kids & Family
           </a>
@@ -230,8 +204,9 @@ Array [
           <a
             className="catalog__genres-link"
             href="#"
+            onClick={[Function]}
           >
-            Romance
+            Comedy
           </a>
         </li>
         <li
@@ -240,6 +215,7 @@ Array [
           <a
             className="catalog__genres-link"
             href="#"
+            onClick={[Function]}
           >
             Sci-Fi
           </a>
@@ -250,8 +226,9 @@ Array [
           <a
             className="catalog__genres-link"
             href="#"
+            onClick={[Function]}
           >
-            Thrillers
+            Horror
           </a>
         </li>
       </ul>
@@ -284,7 +261,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Comparisons are odious
+              Money talks
             </a>
           </h3>
         </article>
@@ -314,7 +291,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              A woman's work is never done
+              If you can't be good, be careful
             </a>
           </h3>
         </article>
@@ -344,7 +321,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              A woman's work is never done
+              A volunteer is worth twenty pressed men
             </a>
           </h3>
         </article>
@@ -374,7 +351,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Money talks
+              Suffering for a friend doubleth friendship
             </a>
           </h3>
         </article>
@@ -434,7 +411,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Don't keep a dog and bark yourself
+              Comparisons are odious
             </a>
           </h3>
         </article>
@@ -494,7 +471,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              A volunteer is worth twenty pressed men
+              If you can't be good, be careful
             </a>
           </h3>
         </article>

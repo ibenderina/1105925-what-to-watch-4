@@ -31,6 +31,7 @@ module.exports = {
       '@components': path.resolve(__dirname, `src/components/`),
       '@consts': path.resolve(__dirname, `src/consts/consts`),
       '@utils': path.resolve(__dirname, `src/utils/utils`),
+      '@reducer': path.resolve(__dirname, `src/reducer/reducer`),
     }
   },
   devtool: `source-map`,
