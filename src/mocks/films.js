@@ -1,4 +1,5 @@
 import {chooseRandomInt, chooseRandomString, chooseRandomStrings} from "@utils";
+import {CountLimit} from "../consts/consts";
 
 export const UNIVERSAL_MOCK_TEXT = [
   `If you can't be good, be careful`,
@@ -56,7 +57,7 @@ export const UNIVERSAL_MOCK_VIDEO = [
   `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
 ];
 
-export default [
+const films = [
   {
     id: 0,
     title: chooseRandomString(UNIVERSAL_MOCK_TEXT),
@@ -409,3 +410,17 @@ export default [
     runTime: `${chooseRandomInt(1, 3)}h ${chooseRandomInt(10, 59)}m`,
   }
 ];
+
+export const fetchFilms = ({offset = 0, limit = CountLimit.MAX_FILMS, genre}) => {
+  return new Promise((resolve, _) => {
+    let _films = films;
+    if (genre && !(genre === `All Genres`)) {
+      _films = _films.filter((film) => {
+        return film.genre === genre;
+      });
+    }
+    return resolve(_films.slice(offset, offset + limit));
+  });
+};
+
+export default films;

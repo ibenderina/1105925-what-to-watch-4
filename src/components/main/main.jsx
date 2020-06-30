@@ -2,10 +2,11 @@ import FilmsList from "@components/films-list/films-list";
 import FilmInfo from "@components/film-info/film-info";
 import PromoFilm from "@components/promo-film/promo-film";
 import GenresList from "@components/genres-list/genres-list";
-import CatalogMore from "@components/catalog-more/catalog-more";
-import {setCurrentGenre} from "@reducer";
+import ShowMore from "@components/show-more/show-more";
+import {setFilms, setCurrentGenre} from "@reducer";
 import {connect} from "react-redux";
 import {ClassName} from "@consts";
+import {fetchFilms} from "../../mocks/films";
 
 class Main extends React.PureComponent {
   constructor(props) {
@@ -26,10 +27,15 @@ class Main extends React.PureComponent {
     }
   }
 
+  componentWillUpdate(nextProps) {
+    if (!nextProps.filmsList.length && nextProps.isMoreFilms) {
+      nextProps.setFilms(0, nextProps.currentGenre);
+    }
+  }
+
   render() {
-    const {filmsList} = this.props;
+    const {filmsList, promoFilm, currentGenre} = this.props;
     const filmSelected = this.state.currentSelectedFilm;
-    const promoFilm = filmsList[0];
     let shownFilm = null;
 
     if (filmSelected) {
@@ -51,20 +57,25 @@ class Main extends React.PureComponent {
         {shownFilm}
 
         <section className="page-content">
-          <section className={this.state.currentSelectedFilm ? ClassName.SIMILAR_FILMS : `catalog`}>
+          <section className={filmSelected ? ClassName.SIMILAR_FILMS : `catalog`}>
 
-            {this.state.currentSelectedFilm ? <h2 className="catalog__title">More like this</h2> : ``}
+            {filmSelected ? <h2 className="catalog__title">More like this</h2> : ``}
 
             <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-            {this.state.currentSelectedFilm ? `` : <GenresList/>}
+            {filmSelected ? `` : <GenresList/>}
 
             <FilmsList
-              films={this.props.filmsList}
+              films={filmsList}
               handleFilmCardClick={this._handleFilmCardClick}
             />
 
-            {this.state.currentSelectedFilm ? `` : <CatalogMore/>}
+            {filmSelected || !this.props.isMoreFilms ? `` : <ShowMore
+              handleShowButtonClick={() => {
+                this.props.setFilms(filmsList.length, currentGenre);
+              }}
+            />}
+
           </section>
         </section>
 
@@ -114,11 +125,18 @@ Main.propTypes = {
         .isRequired)
     .isRequired,
   setCurrentGenre: PropTypes.func.isRequired,
+  setFilms: PropTypes.func.isRequired,
+  isMoreFilms: PropTypes.bool.isRequired,
+  promoFilm: PropTypes.object.isRequired,
+  currentGenre: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = (state) => {
   return {
     filmsList: state.films,
+    isMoreFilms: state.isMoreFilms,
+    promoFilm: state.promoFilm,
+    currentGenre: state.currentGenre,
   };
 };
 
@@ -127,6 +145,11 @@ const mapDispatchToProps = (dispatch) => {
     setCurrentGenre: (genre) => {
       return dispatch(setCurrentGenre(genre));
     },
+    setFilms: (filmsCount, currentGenre) => {
+      fetchFilms({offset: filmsCount, genre: currentGenre}).then((filmsList) => {
+        return dispatch(setFilms(filmsList));
+      });
+    }
   };
 };
 

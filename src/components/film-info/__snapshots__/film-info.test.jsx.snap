@@ -11,8 +11,8 @@ exports[`Should FilmInfo render correctly 1`] = `
       className="movie-card__bg"
     >
       <img
-        alt="Hello background"
-        src="Hello"
+        alt="text background"
+        src="text"
       />
     </div>
     <h1
@@ -71,7 +71,7 @@ exports[`Should FilmInfo render correctly 1`] = `
         <h2
           className="movie-card__title"
         >
-          Hello
+          text
         </h2>
         <p
           className="movie-card__meta"
@@ -79,12 +79,12 @@ exports[`Should FilmInfo render correctly 1`] = `
           <span
             className="movie-card__genre"
           >
-            Hello
+            text
           </span>
           <span
             className="movie-card__year"
           >
-            Hello
+            text
           </span>
         </p>
         <div
@@ -152,9 +152,9 @@ exports[`Should FilmInfo render correctly 1`] = `
         className="movie-card__poster movie-card__poster--big"
       >
         <img
-          alt="Hello poster"
+          alt="text poster"
           height="327"
-          src="Hello"
+          src="text"
           width="218"
         />
       </div>
@@ -208,7 +208,7 @@ exports[`Should FilmInfo render correctly 1`] = `
           <div
             className="movie-rating__score"
           >
-            123
+            1
           </div>
           <p
             className="movie-rating__meta"
@@ -216,12 +216,12 @@ exports[`Should FilmInfo render correctly 1`] = `
             <span
               className="movie-rating__level"
             >
-              Awesome
+              Bad
             </span>
             <span
               className="movie-rating__count"
             >
-              123
+              1
                ratings
             </span>
           </p>
@@ -230,14 +230,14 @@ exports[`Should FilmInfo render correctly 1`] = `
           className="movie-card__text"
         >
           <p>
-            Hello
+            text
           </p>
           <p
             className="movie-card__director"
           >
             <strong>
               Director: 
-              Hello
+              text
             </strong>
           </p>
           <p
@@ -245,7 +245,7 @@ exports[`Should FilmInfo render correctly 1`] = `
           >
             <strong>
               Starring: 
-              Hello
+              text
                and other
             </strong>
           </p>

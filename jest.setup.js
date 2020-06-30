@@ -5,7 +5,6 @@ import {create, act} from "react-test-renderer";
 window.create = create;
 window.act = act;
 
-window.Browser = require(`react-router-dom`);
 window.React = require(`react`);
 window.renderer = require(`react-test-renderer`);
 window.PropTypes = require(`prop-types`);

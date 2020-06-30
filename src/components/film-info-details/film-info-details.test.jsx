@@ -1,13 +1,12 @@
 import FilmInfoDetails from "@components/film-info-details/film-info-details";
-import films from "../../mocks/films";
+import {testMockFilm} from "../../mocks/test-mock-film";
 
 it(`Should FilmInfoDetails render correctly`, () => {
-  const film = films[0];
   let tree;
 
   window.act(() => {
     tree = window.create(<FilmInfoDetails
-      film={film}
+      film={testMockFilm}
     />);
   });
   expect(tree.toJSON()).toMatchSnapshot();

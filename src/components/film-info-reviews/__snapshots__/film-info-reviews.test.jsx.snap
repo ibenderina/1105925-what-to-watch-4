@@ -16,7 +16,7 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
         <p
           className="review__text"
         >
-          A volunteer is worth twenty pressed men. Suffering for a friend doubleth friendship. A woman's work is never done. Comparisons are odious. Money talks. Don't keep a dog and bark yourself. Every man has his price
+          text
         </p>
         <footer
           className="review__details"
@@ -24,13 +24,13 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
           <cite
             className="review__author"
           >
-            Emma	William
+            text
           </cite>
           <time
             className="review__date"
             dateTime="2016-12-24"
           >
-            13.03.2005
+            text
           </time>
         </footer>
       </blockquote>
@@ -49,7 +49,7 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
         <p
           className="review__text"
         >
-          Don't keep a dog and bark yourself. Every man has his price
+          text
         </p>
         <footer
           className="review__details"
@@ -57,20 +57,20 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
           <cite
             className="review__author"
           >
-            Olivia	Jayden
+            text
           </cite>
           <time
             className="review__date"
             dateTime="2016-12-24"
           >
-            17.12.2019
+            text
           </time>
         </footer>
       </blockquote>
       <div
         className="review__rating"
       >
-        10
+        1
       </div>
     </div>
   </div>
@@ -86,7 +86,7 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
         <p
           className="review__text"
         >
-          Don't keep a dog and bark yourself. Every man has his price
+          text
         </p>
         <footer
           className="review__details"
@@ -94,20 +94,20 @@ exports[`Should FilmInfoReviews render correctly 1`] = `
           <cite
             className="review__author"
           >
-            Isabella	Mason
+            text
           </cite>
           <time
             className="review__date"
             dateTime="2016-12-24"
           >
-            01.06.2020
+            text
           </time>
         </footer>
       </blockquote>
       <div
         className="review__rating"
       >
-        7
+        1
       </div>
     </div>
   </div>

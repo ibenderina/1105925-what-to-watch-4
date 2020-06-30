@@ -7,7 +7,7 @@ it(`Should GenreListItem render correctly`, () => {
     tree = window.create(<GenreListItem
       genre={`Drama`}
       isCurrent={true}
-      onClick={() => {}}
+      handleGenreClick={() => {}}
     />);
   });
   expect(tree.toJSON()).toMatchSnapshot();

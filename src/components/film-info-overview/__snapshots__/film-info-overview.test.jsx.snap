@@ -18,7 +18,7 @@ exports[`Should FilmInfoOverview render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        Isabella	Mason
+        text
       </span>
     </p>
     <p
@@ -32,7 +32,7 @@ exports[`Should FilmInfoOverview render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        Emma	William
+        text
       </span>
     </p>
   </div>
@@ -50,7 +50,7 @@ exports[`Should FilmInfoOverview render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        2h 18m
+        text
       </span>
     </p>
     <p
@@ -64,7 +64,7 @@ exports[`Should FilmInfoOverview render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        Thriller
+        text
       </span>
     </p>
     <p
@@ -78,7 +78,7 @@ exports[`Should FilmInfoOverview render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        2020
+        text
       </span>
     </p>
   </div>
