@@ -11,7 +11,7 @@ module.exports = {
     historyApiFallback: true,
     contentBase: path.join(__dirname, `public`),
     open: false,
-    port: 1350,
+    port: 1337,
   },
   module: {
     rules: [
@@ -30,8 +30,10 @@ module.exports = {
     alias: {
       '@components': path.resolve(__dirname, `src/components/`),
       '@consts': path.resolve(__dirname, `src/consts/consts`),
-      '@utils': path.resolve(__dirname, `src/utils/utils`),
+      '@utils': path.resolve(__dirname, `src/utils/utils/`),
       '@reducer': path.resolve(__dirname, `src/reducer/reducer`),
+      '@mocks': path.resolve(__dirname, `src/mocks/`),
+      '@connects': path.resolve(__dirname, `src/connects/`),
     }
   },
   devtool: `source-map`,

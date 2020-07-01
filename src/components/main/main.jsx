@@ -3,10 +3,7 @@ import FilmInfo from "@components/film-info/film-info";
 import PromoFilm from "@components/promo-film/promo-film";
 import GenresList from "@components/genres-list/genres-list";
 import ShowMore from "@components/show-more/show-more";
-import {setFilms, setCurrentGenre} from "@reducer";
-import {connect} from "react-redux";
 import {ClassName} from "@consts";
-import {fetchFilms} from "../../mocks/films";
 
 class Main extends React.PureComponent {
   constructor(props) {
@@ -27,10 +24,12 @@ class Main extends React.PureComponent {
     }
   }
 
-  componentWillUpdate(nextProps) {
+  shouldComponentUpdate(nextProps) {
     if (!nextProps.filmsList.length && nextProps.isMoreFilms) {
       nextProps.setFilms(0, nextProps.currentGenre);
+      return false;
     }
+    return true;
   }
 
   render() {
@@ -131,26 +130,4 @@ Main.propTypes = {
   currentGenre: PropTypes.string.isRequired,
 };
 
-const mapStateToProps = (state) => {
-  return {
-    filmsList: state.films,
-    isMoreFilms: state.isMoreFilms,
-    promoFilm: state.promoFilm,
-    currentGenre: state.currentGenre,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setCurrentGenre: (genre) => {
-      return dispatch(setCurrentGenre(genre));
-    },
-    setFilms: (filmsCount, currentGenre) => {
-      fetchFilms({offset: filmsCount, genre: currentGenre}).then((filmsList) => {
-        return dispatch(setFilms(filmsList));
-      });
-    }
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default Main;

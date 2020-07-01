@@ -11,6 +11,8 @@ module.exports = {
     "^@consts(.*)$": `<rootDir>/src/consts/consts`,
     "^@utils(.*)$": `<rootDir>/src/utils/utils`,
     "^@reducer(.*)$": `<rootDir>/src/reducer/reducer`,
+    "^@mocks(.*)$": `<rootDir>/src/mocks/1$`,
+    "^@connects(.*)$": `<rootDir>/src/connects/1$`,
   },
   "coveragePathIgnorePatterns": [`/test.setup.js`],
 };

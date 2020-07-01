@@ -1,4 +1,4 @@
-import Main from "@components/main/main";
+import Main from "../../connects/main";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 
 const App = () => {

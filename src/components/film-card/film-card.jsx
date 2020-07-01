@@ -1,4 +1,5 @@
 import VideoPlayer from "@components/video-player/video-player";
+import {TIMEOUT} from "@consts";
 
 class FilmCard extends React.PureComponent {
   constructor() {
@@ -17,7 +18,7 @@ class FilmCard extends React.PureComponent {
       this.setState({
         isPlayed: true,
       });
-    }, 1000);
+    }, TIMEOUT);
     this.setState({
       timeout
     });

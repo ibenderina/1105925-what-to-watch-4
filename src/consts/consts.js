@@ -26,3 +26,5 @@ export const CountLimit = {
   MAX_SIMILAR_FILMS: 5,
   MAX_GENRES: 10,
 };
+
+export const TIMEOUT = 1000;
