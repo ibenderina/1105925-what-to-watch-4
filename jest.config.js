@@ -13,6 +13,7 @@ module.exports = {
     "^@reducer(.*)$": `<rootDir>/src/reducer/reducer`,
     "^@mocks(.*)$": `<rootDir>/src/mocks/1$`,
     "^@connects(.*)$": `<rootDir>/src/connects/1$`,
+    "^@hocs(.*)$": `<rootDir>/src/hocs/1$`,
   },
   "coveragePathIgnorePatterns": [`/test.setup.js`],
 };

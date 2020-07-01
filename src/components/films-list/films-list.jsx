@@ -1,4 +1,7 @@
 import FilmCard from "@components/film-card/film-card";
+import withVideoPlayer from "@hocs/with-film-card";
+
+const FilmCardWithVideoPlayer = withVideoPlayer(FilmCard);
 
 class FilmsList extends React.PureComponent {
   constructor(props) {
@@ -11,7 +14,7 @@ class FilmsList extends React.PureComponent {
     return (
       <div className="catalog__movies-list">
         {films.map((film) => {
-          return <FilmCard
+          return <FilmCardWithVideoPlayer
             key={film.id}
             url={film.url}
             filmTitle={film.title}

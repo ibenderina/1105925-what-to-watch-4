@@ -34,6 +34,7 @@ module.exports = {
       '@reducer': path.resolve(__dirname, `src/reducer/reducer`),
       '@mocks': path.resolve(__dirname, `src/mocks/`),
       '@connects': path.resolve(__dirname, `src/connects/`),
+      '@hocs': path.resolve(__dirname, `src/hocs/`),
     }
   },
   devtool: `source-map`,

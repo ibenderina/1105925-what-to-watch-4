@@ -1,7 +1,7 @@
 import {reducer, setCurrentGenre} from "@reducer";
-import mockFilms from "../mocks/films";
+import mockFilms from "@mocks/films";
 import {ALL_GENRES, CountLimit} from "@consts";
-import {extend} from "../utils/utils";
+import {extend} from "@utils";
 
 const initialState = {
   currentGenre: ALL_GENRES,

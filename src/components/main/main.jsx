@@ -4,6 +4,9 @@ import PromoFilm from "@components/promo-film/promo-film";
 import GenresList from "@components/genres-list/genres-list";
 import ShowMore from "@components/show-more/show-more";
 import {ClassName} from "@consts";
+import withTabs from "@hocs/with-tabs";
+
+const FilmInfoWithTabs = withTabs(FilmInfo);
 
 class Main extends React.PureComponent {
   constructor(props) {
@@ -39,7 +42,7 @@ class Main extends React.PureComponent {
 
     if (filmSelected) {
       shownFilm = (
-        <FilmInfo
+        <FilmInfoWithTabs
           film={filmSelected}
         />
       );
