@@ -5,12 +5,15 @@ it(`Should FilmCard render correctly`, () => {
   let tree;
 
   window.act(() => {
-    tree = window.create(<FilmCard
-      filmTitle={commonText}
-      image={commonText}
-      url={commonText}
-      handleFilmCardClick={() => {}}
-    />);
+    tree = window.create(
+        <FilmCard
+          filmTitle={commonText}
+          image={commonText}
+          url={commonText}
+          handleFilmCardClick={() => {}}
+          onMouseEnter={() => {}}
+          onMouseLeave={() => {}}>
+        </FilmCard>);
   });
   expect(tree.toJSON()).toMatchSnapshot();
 });

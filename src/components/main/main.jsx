@@ -8,7 +8,7 @@ import withTabs from "@hocs/with-tabs";
 
 const FilmInfoWithTabs = withTabs(FilmInfo);
 
-class Main extends React.PureComponent {
+class Main extends React.Component {
   constructor(props) {
     super(props);
 

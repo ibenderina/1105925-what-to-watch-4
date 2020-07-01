@@ -88,7 +88,12 @@ const FilmInfo = (props) => {
 };
 
 FilmInfo.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.oneOfType(
+      [
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+      ]
+  ).isRequired,
   setActiveTab: PropTypes.func.isRequired,
   film: PropTypes.exact({
     id: PropTypes.number.isRequired,

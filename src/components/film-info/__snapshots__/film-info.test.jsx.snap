@@ -169,7 +169,6 @@ exports[`Should FilmInfo render correctly 1`] = `
           >
             <li
               className="movie-nav__item movie-nav__item--active"
-              onClick={[Function]}
             >
               <a
                 className="movie-nav__link"
@@ -180,7 +179,6 @@ exports[`Should FilmInfo render correctly 1`] = `
             </li>
             <li
               className="movie-nav__item"
-              onClick={[Function]}
             >
               <a
                 className="movie-nav__link"
@@ -191,7 +189,6 @@ exports[`Should FilmInfo render correctly 1`] = `
             </li>
             <li
               className="movie-nav__item"
-              onClick={[Function]}
             >
               <a
                 className="movie-nav__link"
@@ -202,54 +199,7 @@ exports[`Should FilmInfo render correctly 1`] = `
             </li>
           </ul>
         </nav>
-        <div
-          className="movie-rating"
-        >
-          <div
-            className="movie-rating__score"
-          >
-            1
-          </div>
-          <p
-            className="movie-rating__meta"
-          >
-            <span
-              className="movie-rating__level"
-            >
-              Bad
-            </span>
-            <span
-              className="movie-rating__count"
-            >
-              1
-               ratings
-            </span>
-          </p>
-        </div>
-        <div
-          className="movie-card__text"
-        >
-          <p>
-            text
-          </p>
-          <p
-            className="movie-card__director"
-          >
-            <strong>
-              Director: 
-              text
-            </strong>
-          </p>
-          <p
-            className="movie-card__starring"
-          >
-            <strong>
-              Starring: 
-              text
-               and other
-            </strong>
-          </p>
-        </div>
+        test
       </div>
     </div>
   </div>

@@ -5,9 +5,12 @@ it(`Should FilmInfo render correctly`, () => {
 
   let tree;
   window.act(() => {
-    tree = window.create(<FilmInfo
-      film={testMockFilm}
-    />);
+    tree = window.create(
+        <FilmInfo
+          film={testMockFilm}
+          setActiveTab={() => {}}>
+          test
+        </FilmInfo>);
   });
   expect(tree.toJSON()).toMatchSnapshot();
 });
