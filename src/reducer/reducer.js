@@ -1,4 +1,4 @@
-import mockFilms from "../mocks/films.js";
+import mockFilms from "@mocks/films.js";
 import {ALL_GENRES, CountLimit} from "@consts";
 import {extend} from "@utils";
 

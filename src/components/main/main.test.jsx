@@ -1,8 +1,8 @@
-import Main from "@components/main/main";
+import Main from "@connects/main";
 import {Provider} from "react-redux";
 import configureStore from "redux-mock-store";
-import {ALL_GENRES} from "../../consts/consts";
-import {testMockFilm} from "../../mocks/test-mock-film";
+import {ALL_GENRES} from "@consts";
+import {testMockFilm} from "@mocks/test-mock-film";
 
 const mockStore = configureStore([]);
 const initialState = {

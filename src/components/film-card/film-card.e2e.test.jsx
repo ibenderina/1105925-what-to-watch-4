@@ -10,7 +10,9 @@ it(`Should get film info and should film name be pressed`, () => {
         image={commonText}
         url={commonText}
         handleFilmCardClick={handleFilmCardClick}
-      />
+        onMouseEnter={() => {}}
+        onMouseLeave={() => {}}>
+      </FilmCard>
   );
 
   main.props().onClick();

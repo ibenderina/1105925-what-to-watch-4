@@ -1,5 +1,5 @@
 import {chooseRandomInt, chooseRandomString, chooseRandomStrings} from "@utils";
-import {CountLimit} from "../consts/consts";
+import {CountLimit} from "@consts";
 
 export const UNIVERSAL_MOCK_TEXT = [
   `If you can't be good, be careful`,

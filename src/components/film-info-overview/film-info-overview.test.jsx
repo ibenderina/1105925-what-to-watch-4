@@ -1,5 +1,5 @@
 import FilmInfoOverview from "@components/film-info-details/film-info-details";
-import {testMockFilm} from "../../mocks/test-mock-film";
+import {testMockFilm} from "@mocks/test-mock-film";
 
 it(`Should FilmInfoOverview render correctly`, () => {
   let tree;
