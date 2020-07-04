@@ -1,5 +1,6 @@
 import Main from "@connects/main";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
+import VideoFullScreen from "@components/video-full-screen/video-full-screen";
 
 const App = () => {
   return (
@@ -8,9 +9,9 @@ const App = () => {
         <Route exact path="/">
           <Main/>
         </Route>
-        <Route exact path="/dev-film">
-          test
-        </Route>
+        <Route exact path="/video/:filmId"
+          component={VideoFullScreen}
+        />
       </Switch>
     </BrowserRouter>
   );

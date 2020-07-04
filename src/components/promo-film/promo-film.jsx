@@ -1,5 +1,8 @@
+import {useHistory} from "react-router";
+
 const PromoFilm = (props) => {
-  const {title, src, genre, date, background} = props.film;
+  const {id, title, src, genre, date, background} = props.film;
+  const history = useHistory();
 
   return (
     <section className="movie-card">
@@ -33,7 +36,7 @@ const PromoFilm = (props) => {
               <span className="movie-card__year">{date}</span>
             </p>
             <div className="movie-card__buttons">
-              <button className="btn btn--play movie-card__button" type="button">
+              <button className="btn btn--play movie-card__button" type="button" onClick={() => history.push(`/video/${id}`)}>
                 <svg viewBox="0 0 19 19" width="19" height="19">
                   <use href="#play-s"></use>
                 </svg>
@@ -55,6 +58,7 @@ const PromoFilm = (props) => {
 
 PromoFilm.propTypes = {
   film: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     src: PropTypes.string.isRequired,
     genre: PropTypes.string.isRequired,
