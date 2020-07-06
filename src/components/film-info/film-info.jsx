@@ -1,8 +1,10 @@
 import Icon from "react-svg-use";
 import {Tab} from "@consts";
+import {useHistory} from "react-router";
 
 const FilmInfo = (props) => {
-  const {src, title, genre, date, background} = props.film;
+  const {id, src, title, genre, date, background} = props.film;
+  const history = useHistory();
 
   return (
     <section className="movie-card movie-card--full">
@@ -38,7 +40,7 @@ const FilmInfo = (props) => {
             </p>
 
             <div className="movie-card__buttons">
-              <button className="btn btn--play movie-card__button" type="button">
+              <button className="btn btn--play movie-card__button" type="button" onClick={() => history.push(`/video/${id}`)}>
                 <Icon id={`play-s`} width={19} height={19}/>
                 <span>Play</span>
               </button>

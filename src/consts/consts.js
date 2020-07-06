@@ -22,9 +22,11 @@ export const ClassName = {
 };
 
 export const CountLimit = {
-  MAX_FILMS: 9,
-  MAX_SIMILAR_FILMS: 5,
-  MAX_GENRES: 10,
+  MAX_FILMS: 8,
+  MAX_SIMILAR_FILMS: 4,
+  MAX_GENRES: 9,
 };
 
 export const TIMEOUT = 1000;
+
+export const ESC = `Escape`;

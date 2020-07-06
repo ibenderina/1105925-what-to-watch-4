@@ -423,4 +423,12 @@ export const fetchFilms = ({offset = 0, limit = CountLimit.MAX_FILMS, genre}) =>
   });
 };
 
+export const fetchFilm = (filmId) => {
+  return new Promise((resolve, _) => {
+    return resolve(films.find((film) => {
+      return film.id === filmId;
+    }));
+  });
+};
+
 export default films;
