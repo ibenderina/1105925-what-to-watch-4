@@ -1,12 +1,11 @@
 import Icon from "react-svg-use";
-import {Tab} from "@consts";
+import {ClassName, Tab} from "@consts";
 import {useHistory} from "react-router";
-import {Film} from "@api/adapter";
 import {Link} from "react-router-dom";
 
 const FilmInfo = (props) => {
-  const {activeTab} = props;
-  const {id, src, title, genre, date, background, backgroundColor} = props.film;
+  const {activeTab, filmId, getFilmById} = props;
+  const {id, src, title, genre, date, background, backgroundColor} = getFilmById(filmId);
   const history = useHistory();
 
   return (
@@ -66,15 +65,15 @@ const FilmInfo = (props) => {
           <div className="movie-card__desc">
             <nav className="movie-nav movie-card__nav">
               <ul className="movie-nav__list">
-                <li className={`movie-nav__item ` + (activeTab === Tab.OVERVIEW ? `movie-nav__item--active` : ``)}
+                <li className={`movie-nav__item ` + (activeTab === Tab.OVERVIEW ? ClassName.ACTIVE_TAB : ``)}
                   onClick={props.setActiveTab(Tab.OVERVIEW)}>
                   <a href="#" className="movie-nav__link">Overview</a>
                 </li>
-                <li className={`movie-nav__item ` + (activeTab === Tab.DETAILS ? `movie-nav__item--active` : ``)}
+                <li className={`movie-nav__item ` + (activeTab === Tab.DETAILS ? ClassName.ACTIVE_TAB : ``)}
                   onClick={props.setActiveTab(Tab.DETAILS)}>
                   <a href="#" className="movie-nav__link">Details</a>
                 </li>
-                <li className={`movie-nav__item ` + (activeTab === Tab.REVIEWS ? `movie-nav__item--active` : ``)}
+                <li className={`movie-nav__item ` + (activeTab === Tab.REVIEWS ? ClassName.ACTIVE_TAB : ``)}
                   onClick={props.setActiveTab(Tab.REVIEWS)}>
                   <Link to={{pathname: `/films/${id}/review`}} className="movie-nav__link">Reviews</Link>
                 </li>
@@ -97,7 +96,8 @@ FilmInfo.propTypes = {
       ]
   ).isRequired,
   setActiveTab: PropTypes.func.isRequired,
-  film: PropTypes.instanceOf(Film).isRequired,
+  filmId: PropTypes.string.isRequired,
+  getFilmById: PropTypes.func.isRequired,
 };
 
 export default FilmInfo;

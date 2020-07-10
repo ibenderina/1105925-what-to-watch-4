@@ -20,7 +20,7 @@ class FilmsList extends React.PureComponent {
             key={film.id}
             url={film.url}
             filmTitle={film.title}
-            image={film.src}
+            image={film.previewImage}
             handleFilmCardClick={() => handleFilmCardClick(film.id)}
           />;
         })}

@@ -11,7 +11,6 @@ const initialState = {
   currentGenre: ALL_GENRES,
   genres: [...new Set(testFilms.map((f) => f.genre))],
   films: testFilms,
-  isMoreFilms: true,
   promoFilm: testFilms[0],
   showedFilmsCount: 8
 };

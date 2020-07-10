@@ -1,8 +1,6 @@
-import {Film} from "@api/adapter";
-
 const FilmInfoDetails = (props) => {
-  const {film} = props;
-  const {genre, date, director, starring, runTime} = film;
+  const {filmId, getFilmById} = props;
+  const {genre, date, director, starring, runTime} = getFilmById(filmId);
 
   return (
     <>
@@ -21,7 +19,7 @@ const FilmInfoDetails = (props) => {
         <div className="movie-card__text-col">
           <p className="movie-card__details-item">
             <strong className="movie-card__details-name">Run Time</strong>
-            <span className="movie-card__details-value">{runTime}</span>
+            <span className="movie-card__details-value">{runTime} min</span>
           </p>
           <p className="movie-card__details-item">
             <strong className="movie-card__details-name">Genre</strong>
@@ -38,7 +36,8 @@ const FilmInfoDetails = (props) => {
 };
 
 FilmInfoDetails.propTypes = {
-  film: PropTypes.instanceOf(Film).isRequired,
+  filmId: PropTypes.string.isRequired,
+  getFilmById: PropTypes.func.isRequired,
 };
 
 export default FilmInfoDetails;

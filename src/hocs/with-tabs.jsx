@@ -1,8 +1,7 @@
-import FilmInfoOverview from "@components/film-info-overview/film-info-overview";
-import FilmInfoDetails from "@components/film-info-details/film-info-details";
+import FilmInfoOverview from "@components/film-info-overview/film-info-overview.connect";
+import FilmInfoDetails from "@components/film-info-details/film-info-details.connect";
+import FilmInfoReviews from "@components/film-info-reviews/film-info-reviews.connect";
 import {Tab} from "@consts";
-import FilmInfoReviews from "@components/film-info-reviews/film-info-reviews";
-import {Film, FilmComment} from "@api/adapter";
 
 const withTabs = (Component) => {
   class WithTabs extends React.PureComponent {
@@ -10,7 +9,6 @@ const withTabs = (Component) => {
       super(props);
 
       this.state = {
-        currentFilmId: props.film.id,
         activeTab: Tab.OVERVIEW
       };
       this._setActiveTab = this._setActiveTab.bind(this);
@@ -25,20 +23,14 @@ const withTabs = (Component) => {
       };
     }
 
-    _changeActiveTab(film, comments) {
-      if (film.id !== this.state.currentFilmId) {
-        this.setState({
-          currentFilmId: film.id,
-          activeTab: Tab.OVERVIEW
-        });
-      }
+    _changeActiveTab() {
       switch (this.state.activeTab) {
         case Tab.OVERVIEW:
-          return <FilmInfoOverview film={film} />;
+          return <FilmInfoOverview {...this.props} />;
         case Tab.DETAILS:
-          return <FilmInfoDetails film={film} />;
+          return <FilmInfoDetails {...this.props} />;
         case Tab.REVIEWS:
-          return <FilmInfoReviews comments={comments} />;
+          return <FilmInfoReviews {...this.props} />;
       }
       return ``;
     }
@@ -50,16 +42,11 @@ const withTabs = (Component) => {
           activeTab={this.state.activeTab}
           {...this.props}
         >
-          {this._changeActiveTab(this.props.film, this.props.comments)}
+          {this._changeActiveTab()}
         </Component>
       );
     }
   }
-
-  WithTabs.propTypes = {
-    film: PropTypes.instanceOf(Film),
-    comments: PropTypes.arrayOf(PropTypes.instanceOf(FilmComment)).isRequired,
-  };
 
   return WithTabs;
 };

@@ -1,5 +1,5 @@
 import {reducer, Actions, Operations, ActionType} from "@reducer/comments/comments";
-import {extend} from "@utils";
+import {extend} from "@utils/utils";
 import {rawTestComments, testComments} from "@utils/test-data";
 import MockAdapter from "axios-mock-adapter";
 import {createAPI} from "@api/api";

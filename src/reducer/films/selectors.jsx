@@ -43,7 +43,7 @@ const getFilmById = createSelector(
       if (filmId) {
         return films.find((film) => {
           return film.id === filmId;
-        });
+        }) || {};
       }
       return null;
     }

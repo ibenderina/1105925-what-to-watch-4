@@ -51,6 +51,7 @@ exports[`Should FilmInfoOverview render correctly 1`] = `
         className="movie-card__details-value"
       >
         229
+         min
       </span>
     </p>
     <p

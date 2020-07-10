@@ -1,5 +1,5 @@
 import {ALL_GENRES, CountLimit} from "@consts";
-import {extend} from "@utils";
+import {extend} from "@utils/utils";
 import {parseFilms, Film} from "@api/adapter";
 
 const ActionType = {
@@ -14,7 +14,6 @@ const initialState = {
   currentGenre: ALL_GENRES,
   genres: [],
   films: [],
-  isMoreFilms: true,
   promoFilm: new Film({}),
   showedFilmsCount: 0,
 };
@@ -81,7 +80,6 @@ const reducer = (state = initialState, action) => {
       return extend(state, {
         showedFilmsCount: CountLimit.MAX_FILMS,
         films: action.payload,
-        isMoreFilms: action.payload.length >= CountLimit.MAX_FILMS
       });
 
     case ActionType.LOAD_PROMO_FILM:
@@ -90,17 +88,15 @@ const reducer = (state = initialState, action) => {
       });
 
     case ActionType.SHOW_MORE:
-      const showedFilmsCount = state.showedFilmsCount * 2;
+      const showedFilmsCount = state.showedFilmsCount + CountLimit.MAX_FILMS;
       return extend(state, {
         showedFilmsCount,
-        isMoreFilms: state.films.length >= showedFilmsCount
       });
 
     case ActionType.GET_FILM_BY_ID:
       return extend(state, {
         films: action.payload,
         promoFilm: action.payload[0],
-        isMoreFilms: action.payload.length >= CountLimit.MAX_FILMS
       });
 
     default:

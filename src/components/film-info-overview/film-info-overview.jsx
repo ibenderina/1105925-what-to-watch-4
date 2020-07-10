@@ -1,9 +1,8 @@
-import {setTextRating} from "@utils";
-import {Film} from "@api/adapter";
+import {setTextRating} from "@utils/utils";
 
 const FilmInfoOverview = (props) => {
-  const {film} = props;
-  const {ratingScore, ratingCount, description, director, starring} = film;
+  const {filmId, getFilmById} = props;
+  const {ratingScore, ratingCount, description, director, starring} = getFilmById(filmId);
 
   return (
     <>
@@ -11,7 +10,7 @@ const FilmInfoOverview = (props) => {
         <div className="movie-rating__score">{ratingScore}
         </div>
         <p className="movie-rating__meta">
-          <span className="movie-rating__level">{setTextRating(ratingScore)}</span>
+          <span className="movie-rating__level">{setTextRating(ratingCount)}</span>
           <span className="movie-rating__count">{ratingCount} ratings</span>
         </p>
       </div>
@@ -26,7 +25,8 @@ const FilmInfoOverview = (props) => {
 };
 
 FilmInfoOverview.propTypes = {
-  film: PropTypes.instanceOf(Film).isRequired,
+  filmId: PropTypes.string.isRequired,
+  getFilmById: PropTypes.func.isRequired,
 };
 
 export default FilmInfoOverview;

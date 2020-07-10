@@ -17,7 +17,9 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       </strong>
       <span
         className="movie-card__details-value"
-      />
+      >
+        Sergio Leone
+      </span>
     </p>
     <p
       className="movie-card__details-item"
@@ -30,7 +32,7 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        
+        Robert De Niro, James Woods, Elizabeth McGovern
       </span>
     </p>
   </div>
@@ -47,7 +49,10 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       </strong>
       <span
         className="movie-card__details-value"
-      />
+      >
+        229
+         min
+      </span>
     </p>
     <p
       className="movie-card__details-item"
@@ -59,7 +64,9 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       </strong>
       <span
         className="movie-card__details-value"
-      />
+      >
+        Crime
+      </span>
     </p>
     <p
       className="movie-card__details-item"
@@ -71,7 +78,9 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       </strong>
       <span
         className="movie-card__details-value"
-      />
+      >
+        1984
+      </span>
     </p>
   </div>
 </div>

@@ -1,6 +1,6 @@
-import {reducer, Actions as FilmsActions, Operations, ActionType} from "./films";
-import {ALL_GENRES} from "consts.jsx";
-import {extend} from "@utils";
+import {reducer, Actions as FilmsActions, Operations, ActionType} from "@reducer/films/films";
+import {ALL_GENRES} from "@consts";
+import {extend} from "@utils/utils";
 import {rawTestFilms, testFilms} from "@utils/test-data";
 import {Film} from "@api/adapter";
 import MockAdapter from "axios-mock-adapter";
@@ -13,7 +13,6 @@ it(`Reducer without additional parameters should return initial state`, () => {
     currentGenre: ALL_GENRES,
     genres: [],
     films: [],
-    isMoreFilms: true,
     promoFilm: new Film({}),
     showedFilmsCount: 0,
   };
@@ -23,9 +22,8 @@ it(`Reducer without additional parameters should return initial state`, () => {
 it(`Actions is correct`, () => {
   const initialState = {
     currentGenre: ALL_GENRES,
-    genres: [... new Set(testFilms.map((f) => f.genre))],
+    genres: [...new Set(testFilms.map((f) => f.genre))],
     films: testFilms,
-    isMoreFilms: true,
     promoFilm: testFilms[0],
     showedFilmsCount: 8,
   };

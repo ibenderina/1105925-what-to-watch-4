@@ -4,10 +4,12 @@ const ErrorCodes = {
   UNAUTHORIZED: 401,
 };
 
+const TIMEOUT = 5000;
+
 export const createAPI = (onUnauthorized) => {
   const api = axios.create({
     baseURL: `https://4.react.pages.academy/wtw`,
-    timeout: 5000,
+    timeout: TIMEOUT,
     withCredentials: true,
   });
 

@@ -1,9 +1,9 @@
 import FilmsList from "@components/films-list/films-list";
-import FilmInfo from "@components/film-info/film-info";
-import PromoFilm from "@components/promo-film/promo-film";
+import FilmInfo from "@components/film-info/film-info.connect";
+import PromoFilm from "@components/promo-film/promo-film.connect";
 import GenresList from "@components/genres-list/genres-list.connect";
 import ShowMore from "@components/show-more/show-more";
-import {ClassName} from "consts.jsx";
+import {ClassName} from "@consts";
 import withTabs from "@hocs/with-tabs";
 import {Film} from "@api/adapter";
 import {Link} from "react-router-dom";
@@ -27,31 +27,24 @@ class Main extends React.Component {
   render() {
     const filmId = this.props.match.params.id;
     const historyPush = this.props.history.push;
-    const {filmsList, promoFilm, selectedFilm, isMoreFilms, showMore, getComments} = this.props;
-    const filmSelected = selectedFilm(filmId);
-    let shownFilm = null;
-
-    if (filmSelected) {
-      shownFilm = <FilmInfoWithTabs film={filmSelected} comments={getComments(filmId)}/>;
-    } else {
-      shownFilm = <PromoFilm film={promoFilm}/>;
-    }
+    const {filmsList, showMore} = this.props;
+    const shownFilm = filmId ? <FilmInfoWithTabs filmId={filmId}/> : <PromoFilm/>;
 
     return (
       <>
         {shownFilm}
         <section className="page-content">
-          <section className={filmSelected ? ClassName.SIMILAR_FILMS : `catalog`}>
-            {filmSelected ? <h2 className="catalog__title">More like this</h2> : ``}
+          <section className={filmId ? ClassName.SIMILAR_FILMS : `catalog`}>
+            {filmId ? <h2 className="catalog__title">More like this</h2> : ``}
             <h2 className="catalog__title visually-hidden">Catalog</h2>
-            {filmSelected ? `` : <GenresList/>}
+            {filmId ? `` : <GenresList/>}
             <FilmsList
               films={filmsList}
               handleFilmCardClick={(id) => {
                 historyPush(`/films/${id}`);
               }}
             />
-            {filmSelected || !isMoreFilms ? `` : <ShowMore handleShowButtonClick={showMore}/>}
+            {filmId ? `` : <ShowMore handleShowButtonClick={showMore}/>}
           </section>
         </section>
         <footer className="page-footer">
@@ -69,16 +62,14 @@ class Main extends React.Component {
       </>
     );
   }
-};
+}
 
 Main.propTypes = {
   getComments: PropTypes.func.isRequired,
   loadFilmComments: PropTypes.func.isRequired,
-  selectedFilm: PropTypes.func.isRequired,
   filmsList: PropTypes.arrayOf(PropTypes.instanceOf(Film).isRequired).isRequired,
   setCurrentGenre: PropTypes.func.isRequired,
   showMore: PropTypes.func.isRequired,
-  isMoreFilms: PropTypes.bool.isRequired,
   promoFilm: PropTypes.object.isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
