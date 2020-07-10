@@ -1,3 +1,5 @@
+import {Film} from "@api/adapter";
+
 const FilmInfoDetails = (props) => {
   const {film} = props;
   const {genre, date, director, starring, runTime} = film;
@@ -12,7 +14,7 @@ const FilmInfoDetails = (props) => {
           </p>
           <p className="movie-card__details-item">
             <strong className="movie-card__details-name">Starring</strong>
-            <span className="movie-card__details-value">{starring}</span>
+            <span className="movie-card__details-value">{starring.join(`, `)}</span>
           </p>
         </div>
 
@@ -36,13 +38,7 @@ const FilmInfoDetails = (props) => {
 };
 
 FilmInfoDetails.propTypes = {
-  film: PropTypes.shape({
-    director: PropTypes.string.isRequired,
-    starring: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    runTime: PropTypes.string.isRequired,
-  }).isRequired,
+  film: PropTypes.instanceOf(Film).isRequired,
 };
 
 export default FilmInfoDetails;

@@ -1,28 +1,12 @@
-import {fetchFilm} from "@mocks/films";
 import {ESC} from "@consts";
 
 class VideoFullScreen extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      film: null,
-      isLoading: true
-    };
-
     this._handlerEscClick = this._handlerEscClick.bind(this);
   }
 
   componentDidMount() {
-    const filmId = this.props.match.params.filmId;
-    if (filmId) {
-      fetchFilm(parseInt(filmId, 10)).then((film) => {
-        this.setState({
-          film,
-          isLoading: false
-        });
-      });
-    }
-
     document.addEventListener(`keydown`, this._handlerEscClick);
   }
 
@@ -37,8 +21,9 @@ class VideoFullScreen extends React.Component {
   }
 
   render() {
-    const film = this.state.film;
-    if (this.state.isLoading) {
+    const filmId = this.props.match.params.id;
+    const film = this.props.selectedFilm(filmId);
+    if (!film) {
       return (
         <h2>Loading...</h2>
       );
@@ -64,12 +49,13 @@ class VideoFullScreen extends React.Component {
 }
 
 VideoFullScreen.propTypes = {
+  selectedFilm: PropTypes.func.isRequired,
   history: PropTypes.shape({
     goBack: PropTypes.func.isRequired,
   }).isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
-      filmId: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
     }).isRequired
   }).isRequired,
 };

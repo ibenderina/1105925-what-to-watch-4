@@ -10,7 +10,7 @@ exports[`Should FilmInfoReview render correctly 1`] = `
     <p
       className="review__text"
     >
-      text
+      This movie is just plain bad. There must be some big payola going round this awards season. Badly written, average acting at best, all the characters are unrelatable and inlikeable. 2 hours of my life wasted.
     </p>
     <footer
       className="review__details"
@@ -18,20 +18,20 @@ exports[`Should FilmInfoReview render correctly 1`] = `
       <cite
         className="review__author"
       >
-        text
+        Jack
       </cite>
       <time
         className="review__date"
         dateTime="2016-12-24"
       >
-        text
+        2020-06-21T10: 54: 44.818Z
       </time>
     </footer>
   </blockquote>
   <div
     className="review__rating"
   >
-    1
+    9.7
   </div>
 </div>
 `;

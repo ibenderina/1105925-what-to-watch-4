@@ -1,8 +1,9 @@
 import FilmInfoReview from "@components/film-info-review/film-info-review";
+import {FilmComment} from "@api/adapter";
 
 const FilmInfoReviews = (props) => {
   const {comments} = props;
-  const commentsHalfLength = parseInt(comments.length / 2, 10) + 1;
+  const commentsHalfLength = parseInt(comments.length / 2, 10) + Math.ceil(comments.length % 2);
   const col1 = comments.slice(0, commentsHalfLength);
   const col2 = comments.slice(commentsHalfLength);
 
@@ -21,23 +22,14 @@ const FilmInfoReviews = (props) => {
 
   return (
     <div className="movie-card__reviews movie-card__row">
-
       {getComments(col1)}
       {getComments(col2)}
-
     </div>
   );
 };
 
 FilmInfoReviews.propTypes = {
-  comments: PropTypes.arrayOf(
-      PropTypes.exact({
-        id: PropTypes.number.isRequired,
-        commentAuthor: PropTypes.string.isRequired,
-        commentText: PropTypes.string.isRequired,
-        commentDate: PropTypes.string.isRequired,
-        commentRating: PropTypes.number.isRequired,
-      }).isRequired).isRequired
+  comments: PropTypes.arrayOf(PropTypes.instanceOf(FilmComment)).isRequired
 };
 
 export default FilmInfoReviews;

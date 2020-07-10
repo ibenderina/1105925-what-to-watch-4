@@ -1,4 +1,5 @@
 import {setTextRating} from "@utils";
+import {Film} from "@api/adapter";
 
 const FilmInfoOverview = (props) => {
   const {film} = props;
@@ -25,13 +26,7 @@ const FilmInfoOverview = (props) => {
 };
 
 FilmInfoOverview.propTypes = {
-  film: PropTypes.shape({
-    description: PropTypes.string.isRequired,
-    director: PropTypes.string.isRequired,
-    starring: PropTypes.string.isRequired,
-    ratingScore: PropTypes.number.isRequired,
-    ratingCount: PropTypes.number.isRequired,
-  }).isRequired,
+  film: PropTypes.instanceOf(Film).isRequired,
 };
 
 export default FilmInfoOverview;
