@@ -3,13 +3,18 @@
 exports[`Should PromoFilm render correctly 1`] = `
 <section
   className="movie-card"
+  style={
+    Object {
+      "backgroundColor": "#CBAC79",
+    }
+  }
 >
   <div
     className="movie-card__bg"
   >
     <img
-      alt="Hello background"
-      src="Hello"
+      alt="Once Upon a Time in America background"
+      src="https://htmlacademy-react-3.appspot.com/wtw/static/film/background/ones_upon_a_time_in_america.jpg"
     />
   </div>
   <h1
@@ -68,9 +73,9 @@ exports[`Should PromoFilm render correctly 1`] = `
         className="movie-card__poster"
       >
         <img
-          alt="Hello poster"
+          alt="Once Upon a Time in America poster"
           height="327"
-          src="Hello"
+          src="https://htmlacademy-react-3.appspot.com/wtw/static/film/poster/Once_Upon_a_Time_in_America.jpg"
           width="218"
         />
       </div>
@@ -80,7 +85,7 @@ exports[`Should PromoFilm render correctly 1`] = `
         <h2
           className="movie-card__title"
         >
-          Hello
+          Once Upon a Time in America
         </h2>
         <p
           className="movie-card__meta"
@@ -88,12 +93,12 @@ exports[`Should PromoFilm render correctly 1`] = `
           <span
             className="movie-card__genre"
           >
-            Hello
+            Crime
           </span>
           <span
             className="movie-card__year"
           >
-            Hello
+            1984
           </span>
         </p>
         <div

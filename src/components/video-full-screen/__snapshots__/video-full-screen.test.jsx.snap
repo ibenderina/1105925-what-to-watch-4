@@ -1,7 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should VideoFullScreen render correctly 1`] = `
-<h2>
-  Loading...
-</h2>
+<div
+  className="player"
+>
+  <video
+    autoPlay={true}
+    className="player__video"
+    controls={true}
+    loop={true}
+    muted={false}
+    poster="https://htmlacademy-react-3.appspot.com/wtw/static/film/poster/Once_Upon_a_Time_in_America.jpg"
+    src="http://media.xiph.org/mango/tears_of_steel_1080p.webm"
+  />
+  <button
+    className="player__exit"
+    onClick={[Function]}
+    type="button"
+  >
+    Exit
+  </button>
+</div>
 `;

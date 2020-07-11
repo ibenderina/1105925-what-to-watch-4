@@ -18,7 +18,7 @@ exports[`Should FilmsList render correctly 1`] = `
         height="175"
         loop={true}
         muted={true}
-        poster="text"
+        poster="https://htmlacademy-react-3.appspot.com/wtw/static/film/preview/Once_Upon_a_Time_in_America.jpg"
         src=""
         width="280"
       />
@@ -28,9 +28,72 @@ exports[`Should FilmsList render correctly 1`] = `
     >
       <a
         className="small-movie-card__link"
-        href="movie-page.html"
+        href="/films/1"
+        onClick={[Function]}
       >
-        text
+        Once Upon a Time in America
+      </a>
+    </h3>
+  </article>
+  <article
+    className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <div
+      className="small-movie-card__image"
+    >
+      <video
+        autoPlay={true}
+        height="175"
+        loop={true}
+        muted={true}
+        poster="https://htmlacademy-react-3.appspot.com/wtw/static/film/preview/no-country-for-old-men.jpg"
+        src=""
+        width="280"
+      />
+    </div>
+    <h3
+      className="small-movie-card__title"
+    >
+      <a
+        className="small-movie-card__link"
+        href="/films/2"
+        onClick={[Function]}
+      >
+        No Country for Old Men
+      </a>
+    </h3>
+  </article>
+  <article
+    className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <div
+      className="small-movie-card__image"
+    >
+      <video
+        autoPlay={true}
+        height="175"
+        loop={true}
+        muted={true}
+        poster="https://htmlacademy-react-3.appspot.com/wtw/static/film/preview/A_Star_Is_Born.jpg"
+        src=""
+        width="280"
+      />
+    </div>
+    <h3
+      className="small-movie-card__title"
+    >
+      <a
+        className="small-movie-card__link"
+        href="/films/3"
+        onClick={[Function]}
+      >
+        A Star Is Born
       </a>
     </h3>
   </article>

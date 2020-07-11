@@ -1,22 +1,12 @@
 import PromoFilm from "@components/promo-film/promo-film";
+import {testFilms} from "@utils/test-data";
 
 it(`Should PromoFilm render correctly`, () => {
-  const commonText = `Hello`;
-  const commonNumber = 1;
   let tree;
 
   window.act(() => {
     tree = window.create(<PromoFilm
-      film={
-        {
-          id: commonNumber,
-          title: commonText,
-          src: commonText,
-          genre: commonText,
-          date: commonText,
-          background: commonText,
-        }
-      }
+      film={testFilms[0]}
     />);
   });
   expect(tree.toJSON()).toMatchSnapshot();

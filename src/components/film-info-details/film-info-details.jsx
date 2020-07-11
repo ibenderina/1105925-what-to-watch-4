@@ -1,6 +1,6 @@
 const FilmInfoDetails = (props) => {
-  const {film} = props;
-  const {genre, date, director, starring, runTime} = film;
+  const {filmId, getFilmById} = props;
+  const {genre, date, director, starring, runTime} = getFilmById(filmId);
 
   return (
     <>
@@ -12,14 +12,14 @@ const FilmInfoDetails = (props) => {
           </p>
           <p className="movie-card__details-item">
             <strong className="movie-card__details-name">Starring</strong>
-            <span className="movie-card__details-value">{starring}</span>
+            <span className="movie-card__details-value">{starring.join(`, `)}</span>
           </p>
         </div>
 
         <div className="movie-card__text-col">
           <p className="movie-card__details-item">
             <strong className="movie-card__details-name">Run Time</strong>
-            <span className="movie-card__details-value">{runTime}</span>
+            <span className="movie-card__details-value">{runTime} min</span>
           </p>
           <p className="movie-card__details-item">
             <strong className="movie-card__details-name">Genre</strong>
@@ -36,13 +36,8 @@ const FilmInfoDetails = (props) => {
 };
 
 FilmInfoDetails.propTypes = {
-  film: PropTypes.shape({
-    director: PropTypes.string.isRequired,
-    starring: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    runTime: PropTypes.string.isRequired,
-  }).isRequired,
+  filmId: PropTypes.string.isRequired,
+  getFilmById: PropTypes.func.isRequired,
 };
 
 export default FilmInfoDetails;

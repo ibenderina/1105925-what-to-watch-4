@@ -1,4 +1,5 @@
 import FilmCard from "@components/film-card/film-card";
+import {MemoryRouter} from "react-router-dom";
 
 it(`Should FilmCard render correctly`, () => {
   const commonText = `Hello`;
@@ -6,14 +7,17 @@ it(`Should FilmCard render correctly`, () => {
 
   window.act(() => {
     tree = window.create(
-        <FilmCard
-          filmTitle={commonText}
-          image={commonText}
-          url={commonText}
-          handleFilmCardClick={() => {}}
-          onMouseEnter={() => {}}
-          onMouseLeave={() => {}}>
-        </FilmCard>);
+        <MemoryRouter>
+          <FilmCard
+            filmId={1}
+            filmTitle={commonText}
+            image={commonText}
+            url={commonText}
+            handleFilmCardClick={() => {}}
+            onMouseEnter={() => {}}
+            onMouseLeave={() => {}}>
+          </FilmCard>
+        </MemoryRouter>);
   });
   expect(tree.toJSON()).toMatchSnapshot();
 });

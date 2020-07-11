@@ -4,13 +4,18 @@ exports[`Render App 1`] = `
 Array [
   <section
     className="movie-card"
+    style={
+      Object {
+        "backgroundColor": "#CBAC79",
+      }
+    }
   >
     <div
       className="movie-card__bg"
     >
       <img
-        alt="text background"
-        src="text"
+        alt="Once Upon a Time in America background"
+        src="https://htmlacademy-react-3.appspot.com/wtw/static/film/background/ones_upon_a_time_in_america.jpg"
       />
     </div>
     <h1
@@ -69,9 +74,9 @@ Array [
           className="movie-card__poster"
         >
           <img
-            alt="text poster"
+            alt="Once Upon a Time in America poster"
             height="327"
-            src="text"
+            src="https://htmlacademy-react-3.appspot.com/wtw/static/film/poster/Once_Upon_a_Time_in_America.jpg"
             width="218"
           />
         </div>
@@ -81,7 +86,7 @@ Array [
           <h2
             className="movie-card__title"
           >
-            text
+            Once Upon a Time in America
           </h2>
           <p
             className="movie-card__meta"
@@ -89,12 +94,12 @@ Array [
             <span
               className="movie-card__genre"
             >
-              text
+              Crime
             </span>
             <span
               className="movie-card__year"
             >
-              text
+              1984
             </span>
           </p>
           <div
@@ -174,7 +179,18 @@ Array [
             href="#"
             onClick={[Function]}
           >
-            text
+            Crime
+          </a>
+        </li>
+        <li
+          className="catalog__genres-item"
+        >
+          <a
+            className="catalog__genres-link"
+            href="#"
+            onClick={[Function]}
+          >
+            Drama
           </a>
         </li>
       </ul>
@@ -195,7 +211,7 @@ Array [
               height="175"
               loop={true}
               muted={true}
-              poster="text"
+              poster="https://htmlacademy-react-3.appspot.com/wtw/static/film/preview/Once_Upon_a_Time_in_America.jpg"
               src=""
               width="280"
             />
@@ -205,9 +221,72 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="movie-page.html"
+              href="/films/1"
+              onClick={[Function]}
             >
-              text
+              Once Upon a Time in America
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <div
+            className="small-movie-card__image"
+          >
+            <video
+              autoPlay={true}
+              height="175"
+              loop={true}
+              muted={true}
+              poster="https://htmlacademy-react-3.appspot.com/wtw/static/film/preview/no-country-for-old-men.jpg"
+              src=""
+              width="280"
+            />
+          </div>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="/films/2"
+              onClick={[Function]}
+            >
+              No Country for Old Men
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <div
+            className="small-movie-card__image"
+          >
+            <video
+              autoPlay={true}
+              height="175"
+              loop={true}
+              muted={true}
+              poster="https://htmlacademy-react-3.appspot.com/wtw/static/film/preview/A_Star_Is_Born.jpg"
+              src=""
+              width="280"
+            />
+          </div>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="/films/3"
+              onClick={[Function]}
+            >
+              A Star Is Born
             </a>
           </h3>
         </article>
@@ -233,7 +312,8 @@ Array [
     >
       <a
         className="logo__link logo__link--light"
-        href="main.html"
+        href="/"
+        onClick={[Function]}
       >
         <span
           className="logo__letter logo__letter--1"

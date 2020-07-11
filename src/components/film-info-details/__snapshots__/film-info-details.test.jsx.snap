@@ -18,7 +18,7 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        text
+        Sergio Leone
       </span>
     </p>
     <p
@@ -32,7 +32,7 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        text
+        Robert De Niro, James Woods, Elizabeth McGovern
       </span>
     </p>
   </div>
@@ -50,7 +50,8 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        text
+        229
+         min
       </span>
     </p>
     <p
@@ -64,7 +65,7 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        text
+        Crime
       </span>
     </p>
     <p
@@ -78,7 +79,7 @@ exports[`Should FilmInfoDetails render correctly 1`] = `
       <span
         className="movie-card__details-value"
       >
-        text
+        1984
       </span>
     </p>
   </div>

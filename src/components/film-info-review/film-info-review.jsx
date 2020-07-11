@@ -1,3 +1,5 @@
+import {FilmComment} from "@api/adapter";
+
 const FilmInfoReview = (props) => {
   const {comment} = props;
 
@@ -18,13 +20,7 @@ const FilmInfoReview = (props) => {
 };
 
 FilmInfoReview.propTypes = {
-  comment: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    commentAuthor: PropTypes.string.isRequired,
-    commentText: PropTypes.string.isRequired,
-    commentDate: PropTypes.string.isRequired,
-    commentRating: PropTypes.number.isRequired,
-  })
+  comment: PropTypes.instanceOf(FilmComment)
 };
 
 export default FilmInfoReview;

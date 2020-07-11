@@ -1,5 +1,3 @@
-import {connect} from "react-redux";
-import {setCurrentGenre} from "@reducer";
 import GenreListItem from "@components/genre-list-item/genre-list-item";
 import {ALL_GENRES} from "@consts";
 
@@ -34,19 +32,4 @@ GenresList.propTypes = {
 };
 
 
-const mapStateToProps = (state) => {
-  return {
-    genres: state.genres,
-    currentGenre: state.currentGenre
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    handleGenreClick: (genre) => {
-      return dispatch(setCurrentGenre(genre));
-    },
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(GenresList);
+export default GenresList;

@@ -6,6 +6,7 @@ it(`Should get film info and should film name be pressed`, () => {
 
   const main = window.shallow(
       <FilmCard
+        filmId={1}
         filmTitle={commonText}
         image={commonText}
         url={commonText}

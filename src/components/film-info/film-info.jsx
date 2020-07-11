@@ -1,13 +1,15 @@
 import Icon from "react-svg-use";
-import {Tab} from "@consts";
+import {ClassName, Tab} from "@consts";
 import {useHistory} from "react-router";
+import {Link} from "react-router-dom";
 
 const FilmInfo = (props) => {
-  const {id, src, title, genre, date, background} = props.film;
+  const {activeTab, filmId, getFilmById} = props;
+  const {id, src, title, genre, date, background, backgroundColor} = getFilmById(filmId);
   const history = useHistory();
 
   return (
-    <section className="movie-card movie-card--full">
+    <section className="movie-card movie-card--full" style={{backgroundColor}}>
       <div className="movie-card__hero">
         <div className="movie-card__bg">
           <img src={background} alt={title + ` background`}/>
@@ -17,11 +19,11 @@ const FilmInfo = (props) => {
 
         <header className="page-header movie-card__head">
           <div className="logo">
-            <a href="main.html" className="logo__link">
+            <Link to="/" className="logo__link">
               <span className="logo__letter logo__letter--1">W</span>
               <span className="logo__letter logo__letter--2">T</span>
               <span className="logo__letter logo__letter--3">W</span>
-            </a>
+            </Link>
           </div>
 
           <div className="user-block">
@@ -40,7 +42,7 @@ const FilmInfo = (props) => {
             </p>
 
             <div className="movie-card__buttons">
-              <button className="btn btn--play movie-card__button" type="button" onClick={() => history.push(`/video/${id}`)}>
+              <button className="btn btn--play movie-card__button" type="button" onClick={() => history.push(`/player/${id}`)}>
                 <Icon id={`play-s`} width={19} height={19}/>
                 <span>Play</span>
               </button>
@@ -63,25 +65,21 @@ const FilmInfo = (props) => {
           <div className="movie-card__desc">
             <nav className="movie-nav movie-card__nav">
               <ul className="movie-nav__list">
-                <li className="movie-nav__item movie-nav__item--active"
+                <li className={`movie-nav__item ` + (activeTab === Tab.OVERVIEW ? ClassName.ACTIVE_TAB : ``)}
                   onClick={props.setActiveTab(Tab.OVERVIEW)}>
                   <a href="#" className="movie-nav__link">Overview</a>
                 </li>
-                <li className="movie-nav__item"
+                <li className={`movie-nav__item ` + (activeTab === Tab.DETAILS ? ClassName.ACTIVE_TAB : ``)}
                   onClick={props.setActiveTab(Tab.DETAILS)}>
                   <a href="#" className="movie-nav__link">Details</a>
                 </li>
-                <li className="movie-nav__item"
+                <li className={`movie-nav__item ` + (activeTab === Tab.REVIEWS ? ClassName.ACTIVE_TAB : ``)}
                   onClick={props.setActiveTab(Tab.REVIEWS)}>
-                  <a href="#" className="movie-nav__link">Reviews</a>
+                  <Link to={{pathname: `/films/${id}/review`}} className="movie-nav__link">Reviews</Link>
                 </li>
               </ul>
             </nav>
-
-
             {props.children}
-
-
           </div>
         </div>
       </div>
@@ -90,6 +88,7 @@ const FilmInfo = (props) => {
 };
 
 FilmInfo.propTypes = {
+  activeTab: PropTypes.string.isRequired,
   children: PropTypes.oneOfType(
       [
         PropTypes.arrayOf(PropTypes.node),
@@ -97,28 +96,8 @@ FilmInfo.propTypes = {
       ]
   ).isRequired,
   setActiveTab: PropTypes.func.isRequired,
-  film: PropTypes.exact({
-    id: PropTypes.number.isRequired,
-    src: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    director: PropTypes.string.isRequired,
-    starring: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    background: PropTypes.string.isRequired,
-    ratingScore: PropTypes.number.isRequired,
-    ratingCount: PropTypes.number.isRequired,
-    url: PropTypes.string.isRequired,
-    runTime: PropTypes.string.isRequired,
-    comments: PropTypes.arrayOf(
-        PropTypes.exact({
-          id: PropTypes.number.isRequired,
-          commentAuthor: PropTypes.string.isRequired,
-          commentText: PropTypes.string.isRequired,
-          commentDate: PropTypes.string.isRequired,
-          commentRating: PropTypes.number.isRequired,
-        }).isRequired)
-  })};
+  filmId: PropTypes.string.isRequired,
+  getFilmById: PropTypes.func.isRequired,
+};
 
 export default FilmInfo;
