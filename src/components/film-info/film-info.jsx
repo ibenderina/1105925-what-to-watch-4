@@ -2,6 +2,7 @@ import Icon from "react-svg-use";
 import {ClassName, Tab} from "@consts";
 import {useHistory} from "react-router";
 import {Link} from "react-router-dom";
+import UserBlock from "@components/user-block/user-block.connect";
 
 const FilmInfo = (props) => {
   const {activeTab, filmId, getFilmById} = props;
@@ -26,11 +27,7 @@ const FilmInfo = (props) => {
             </Link>
           </div>
 
-          <div className="user-block">
-            <div className="user-block__avatar">
-              <img src="img/avatar.jpg" alt="User avatar" width="63" height="63"/>
-            </div>
-          </div>
+          <UserBlock/>
         </header>
 
         <div className="movie-card__wrap">

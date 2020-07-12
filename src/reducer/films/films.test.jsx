@@ -1,38 +1,21 @@
 import {reducer, Actions as FilmsActions, Operations, ActionType} from "@reducer/films/films";
-import {ALL_GENRES} from "@consts";
 import {extend} from "@utils/utils";
-import {rawTestFilms, testFilms} from "@utils/test-data";
-import {Film} from "@api/adapter";
+import {rawTestFilms, testEmptyFilmStore, testFilms, testFilmStore} from "@utils/test-data";
 import MockAdapter from "axios-mock-adapter";
 import {createAPI} from "@api/api";
 
 const api = createAPI(() => {});
 
 it(`Reducer without additional parameters should return initial state`, () => {
-  const initialState = {
-    currentGenre: ALL_GENRES,
-    genres: [],
-    films: [],
-    promoFilm: new Film({}),
-    showedFilmsCount: 0,
-  };
-  expect(reducer(void 0, {})).toEqual(initialState);
+  expect(reducer(void 0, {})).toEqual(testEmptyFilmStore);
 });
 
 it(`Actions is correct`, () => {
-  const initialState = {
-    currentGenre: ALL_GENRES,
-    genres: [...new Set(testFilms.map((f) => f.genre))],
-    films: testFilms,
-    promoFilm: testFilms[0],
-    showedFilmsCount: 8,
-  };
-
-  const result = extend(initialState, {
+  const result = extend(testFilmStore, {
     currentGenre: testFilms[0].genre,
   });
 
-  expect(reducer(initialState, FilmsActions.setCurrentGenre(testFilms[0].genre))).toEqual(result);
+  expect(reducer(testFilmStore, FilmsActions.setCurrentGenre(testFilms[0].genre))).toEqual(result);
 });
 
 

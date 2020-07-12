@@ -1,7 +1,7 @@
 import FilmInfoReviews from "@components/film-info-reviews/film-info-reviews.connect";
 import {testComments, testFilms} from "@utils/test-data";
 import configureStore from "redux-mock-store";
-import {ALL_GENRES} from "../../consts/consts";
+import {ALL_GENRES} from "@consts";
 import NameSpace from "@reducer/name-space";
 import {Provider} from "react-redux";
 

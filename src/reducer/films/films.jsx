@@ -92,16 +92,9 @@ const reducer = (state = initialState, action) => {
       return extend(state, {
         showedFilmsCount,
       });
-
-    case ActionType.GET_FILM_BY_ID:
-      return extend(state, {
-        films: action.payload,
-        promoFilm: action.payload[0],
-      });
-
-    default:
-      return state;
   }
+
+  return state;
 };
 
 export {reducer, ActionType, initialState, Actions, Operations};

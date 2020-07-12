@@ -9,11 +9,12 @@ it(`Should FilmCard render correctly`, () => {
     tree = window.create(
         <MemoryRouter>
           <FilmCard
-            filmId={1}
-            filmTitle={commonText}
+            id={1}
+            title={commonText}
+            genre={commonText}
             image={commonText}
             url={commonText}
-            handleFilmCardClick={() => {}}
+            setCurrentGenre={() => {}}
             onMouseEnter={() => {}}
             onMouseLeave={() => {}}>
           </FilmCard>

@@ -3,8 +3,8 @@ import VideoPlayer from "@components/video-player/video-player";
 
 const withVideoPlayer = (Component) => {
   class WithVideoPlayer extends React.PureComponent {
-    constructor() {
-      super();
+    constructor(props) {
+      super(props);
       this._handleFilmCardMouseEnter = this._handleFilmCardMouseEnter.bind(this);
       this._handleFilmCardMouseLeave = this._handleFilmCardMouseLeave.bind(this);
 

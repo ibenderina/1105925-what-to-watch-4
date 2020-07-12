@@ -1,3 +1,7 @@
+import {extend, isValidEmail, isValidPassword} from "@utils/utils";
+import {ErrorMessages} from "@consts";
+import {UserAccount} from "@api/adapter";
+
 const AuthorizationStatus = {
   AUTH: `AUTH`,
   NO_AUTH: `NO_AUTH`,
@@ -5,17 +9,27 @@ const AuthorizationStatus = {
 
 const initialState = {
   authorizationStatus: AuthorizationStatus.NO_AUTH,
+  authorizationErrorMessage: ``,
+  userAccount: new UserAccount({})
 };
 
 const ActionType = {
   REQUIRED_AUTHORIZATION: `REQUIRED_AUTHORIZATION`,
+  SET_AUTHORIZATION_ERROR: `SET_AUTHORIZATION_ERROR`,
+  LOGOUT: `LOGOUT`
 };
 
 const Actions = {
-  requireAuthorization: (status) => {
+  requireAuthorization: (status, userAccount) => {
     return {
       type: ActionType.REQUIRED_AUTHORIZATION,
-      payload: status,
+      payload: {status, userAccount},
+    };
+  },
+  setAuthorizationError: (errorMessage) => {
+    return {
+      type: ActionType.SET_AUTHORIZATION_ERROR,
+      payload: errorMessage,
     };
   },
 };
@@ -23,8 +37,15 @@ const Actions = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionType.REQUIRED_AUTHORIZATION:
-      return Object.assign({}, state, {
-        authorizationStatus: action.payload,
+      return extend(state, {
+        authorizationStatus: action.payload.status,
+        userAccount: action.payload.userAccount
+      });
+
+    case ActionType.SET_AUTHORIZATION_ERROR:
+      return extend(state, {
+        authorizationStatus: AuthorizationStatus.NO_AUTH,
+        authorizationErrorMessage: action.payload,
       });
   }
 
@@ -34,8 +55,15 @@ const reducer = (state = initialState, action) => {
 const Operations = {
   checkAuth: () => (dispatch, getState, api) => {
     return api.get(`/login`)
-      .then(() => {
-        dispatch(Actions.requireAuthorization(AuthorizationStatus.AUTH));
+      .then((response) => {
+        const userAccount = UserAccount.parse(response.data);
+        if (userAccount) {
+          return dispatch(Actions.requireAuthorization(
+              AuthorizationStatus.AUTH,
+              userAccount
+          ));
+        }
+        return dispatch(Actions.setAuthorizationError(ErrorMessages.INVALID_USER_DATA));
       })
       .catch((err) => {
         throw err;
@@ -43,12 +71,32 @@ const Operations = {
   },
 
   login: (authData) => (dispatch, getState, api) => {
+    const isInvalid = (
+      (!isValidEmail(authData.email) && ErrorMessages.EMAIL_INVALID) ||
+      (!isValidPassword(authData.password) && ErrorMessages.PASSWORD_INVALID)
+    );
+    if (isInvalid) {
+      dispatch(Actions.setAuthorizationError(isInvalid));
+      return () => {};
+    }
     return api.post(`/login`, {
-      email: authData.login,
+      email: authData.email,
       password: authData.password,
     })
-      .then(() => {
-        dispatch(Actions.requireAuthorization(AuthorizationStatus.AUTH));
+      .then((response) => {
+        const userAccount = UserAccount.parse(response.data);
+        if (userAccount) {
+          return dispatch(Actions.requireAuthorization(
+              AuthorizationStatus.AUTH,
+              userAccount
+          ));
+        }
+        return dispatch(Actions.setAuthorizationError(ErrorMessages.INVALID_USER_DATA));
+      }).catch((err) => {
+        const {response} = err;
+        if (response) {
+          dispatch(Actions.setAuthorizationError(response.data.error));
+        }
       });
   },
 };

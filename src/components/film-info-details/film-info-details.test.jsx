@@ -1,6 +1,6 @@
 import FilmInfoDetails from "@components/film-info-details/film-info-details.connect";
 import configureStore from "redux-mock-store";
-import {ALL_GENRES} from "@consts/consts";
+import {ALL_GENRES} from "@consts";
 import {testFilms} from "@utils/test-data";
 import NameSpace from "@reducer/name-space";
 import {Provider} from "react-redux";
