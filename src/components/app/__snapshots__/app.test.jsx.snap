@@ -58,7 +58,7 @@ Array [
           <img
             alt="User avatar"
             height="63"
-            src="img/avatar.jpg"
+            src="https://htmlacademy-react-3.appspot.com/wtw/static/avatar/5.jpg"
             width="63"
           />
         </div>
@@ -291,17 +291,7 @@ Array [
           </h3>
         </article>
       </div>
-      <div
-        className="catalog__more"
-      >
-        <button
-          className="catalog__button"
-          onClick={[Function]}
-          type="button"
-        >
-          Show more
-        </button>
-      </div>
+      
     </section>
   </section>,
   <footer

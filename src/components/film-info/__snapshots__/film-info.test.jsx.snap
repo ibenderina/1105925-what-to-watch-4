@@ -62,7 +62,7 @@ exports[`Should FilmInfo render correctly 1`] = `
           <img
             alt="User avatar"
             height="63"
-            src="img/avatar.jpg"
+            src="https://htmlacademy-react-3.appspot.com/wtw/static/avatar/5.jpg"
             width="63"
           />
         </div>

@@ -30,3 +30,9 @@ export const CountLimit = {
 export const TIMEOUT = 1000;
 
 export const ESC = `Escape`;
+
+export const ErrorMessages = {
+  EMAIL_INVALID: `Email invalid`,
+  PASSWORD_INVALID: `Password invalid`,
+  INVALID_USER_DATA: `Invalid user data`,
+};

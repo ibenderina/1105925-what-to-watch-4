@@ -1,6 +1,6 @@
 import {createSelector} from "reselect";
 import NameSpace from "@reducer/name-space.jsx";
-import {ALL_GENRES} from "@consts";
+import {ALL_GENRES, CountLimit} from "@consts";
 
 const getFilms = (state) => {
   return state[NameSpace.FILMS].films;
@@ -22,17 +22,26 @@ const getFilmId = (state, filmId) => {
   return parseInt(filmId, 10);
 };
 
-const getFilmsByGenre = createSelector(
-    getShowedFilmsCount,
+const getAllFilmsByGenre = createSelector(
     getCurrentGenre,
     getFilms,
-    (showedFilmsCount, currentGenre, films) => {
+    (currentGenre, films) => {
       if (currentGenre === ALL_GENRES) {
-        return films.slice(0, showedFilmsCount);
+        return films;
       }
       return films.filter((film) => {
         return film.genre === currentGenre;
-      }).slice(0, showedFilmsCount);
+      });
+    }
+);
+
+
+const getFilmsByGenre = createSelector(
+    (_, isSimilarList) => !!isSimilarList,
+    getShowedFilmsCount,
+    getAllFilmsByGenre,
+    (isSimilarList, showedFilmsCount, films) => {
+      return films.slice(0, isSimilarList ? CountLimit.MAX_SIMILAR_FILMS : showedFilmsCount);
     }
 );
 
@@ -58,4 +67,12 @@ const getGenresList = createSelector(
     }
 );
 
-export {getFilms, getGenresList, getPromoFilm, getFilmsByGenre, getCurrentGenre, getFilmById};
+const getShowMoreStatus = createSelector(
+    getAllFilmsByGenre,
+    getShowedFilmsCount,
+    (films, showedFilmsCount) => {
+      return showedFilmsCount < films.length;
+    }
+);
+
+export {getFilms, getGenresList, getPromoFilm, getFilmsByGenre, getCurrentGenre, getFilmById, getShowMoreStatus};

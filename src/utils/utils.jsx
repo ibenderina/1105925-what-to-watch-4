@@ -19,3 +19,11 @@ export const setTextRating = (ratingScore) => {
 export const extend = (a, b) => {
   return Object.assign({}, a, b);
 };
+
+export const isValidEmail = (email) => {
+  return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+};
+
+export const isValidPassword = (password) => {
+  return password.toString().length;
+};

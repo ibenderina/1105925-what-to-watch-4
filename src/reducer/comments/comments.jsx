@@ -1,7 +1,6 @@
 import {extend} from "@utils/utils";
 import {parseComments} from "@api/adapter";
 
-
 const ActionType = {
   LOAD_FILM_COMMENTS: `LOAD_FILM_COMMENTS`,
 };

@@ -1,22 +1,22 @@
-import FilmsList from "@components/films-list/films-list";
-import {testFilms, testFilmStore} from "@utils/test-data";
-import {MemoryRouter} from "react-router-dom";
-import {Provider} from "react-redux";
 import configureStore from "redux-mock-store";
 import NameSpace from "@reducer/name-space";
+import {testUserStore} from "@utils/test-data";
+import {Provider} from "react-redux";
+import SignIn from "@components/sign-in/sign-in.connect";
+import {MemoryRouter} from "react-router-dom";
 
-it(`Should FilmsList render correctly`, () => {
+it(`Should SignIn render correctly`, () => {
   const mockStore = configureStore([]);
   const store = mockStore({
-    [NameSpace.FILMS]: testFilmStore,
+    [NameSpace.USER]: testUserStore
   });
-
   let tree;
+
   window.act(() => {
     tree = window.create(
         <MemoryRouter>
           <Provider store={store}>
-            <FilmsList films={testFilms}/>
+            <SignIn/>
           </Provider>
         </MemoryRouter>
     );

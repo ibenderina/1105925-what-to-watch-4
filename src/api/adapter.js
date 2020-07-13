@@ -32,6 +32,23 @@ class FilmComment {
   }
 }
 
+class UserAccount {
+  constructor(rawUser) {
+    this.id = parseInt(rawUser[`id`], 10);
+    this.avatarUrl = rawUser[`avatar_url`];
+    this.email = rawUser[`email`];
+    this.name = rawUser[`name`];
+  }
+
+  static parse(rawData) {
+    try {
+      return new UserAccount(rawData);
+    } catch (e) {
+      return null;
+    }
+  }
+}
+
 const parseArray = (rawData, DataType) => {
   return rawData.map((item) => new DataType(item));
 };
@@ -44,4 +61,4 @@ const parseComments = (rawComments) => {
   return parseArray(rawComments, FilmComment);
 };
 
-export {Film, FilmComment, parseFilms, parseComments};
+export {Film, FilmComment, UserAccount, parseFilms, parseComments};

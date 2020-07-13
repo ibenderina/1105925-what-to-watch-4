@@ -1,5 +1,6 @@
 import {useHistory} from "react-router";
 import {Film} from "@api/adapter";
+import UserBlock from "@components/user-block/user-block.connect";
 
 const PromoFilm = (props) => {
   const {id, title, src, genre, date, background, backgroundColor} = props.film;
@@ -19,11 +20,7 @@ const PromoFilm = (props) => {
             <span className="logo__letter logo__letter--3">W</span>
           </a>
         </div>
-        <div className="user-block">
-          <div className="user-block__avatar">
-            <img src="img/avatar.jpg" alt="User avatar" width="63" height="63"/>
-          </div>
-        </div>
+        <UserBlock/>
       </header>
       <div className="movie-card__wrap">
         <div className="movie-card__info">
