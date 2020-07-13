@@ -1,6 +1,7 @@
 import {useHistory} from "react-router";
 import {Film} from "@api/adapter";
 import UserBlock from "@components/user-block/user-block.connect";
+import PageHeaderLogo from "@components/page-header-logo/page-header-logo";
 
 const PromoFilm = (props) => {
   const {id, title, src, genre, date, background, backgroundColor} = props.film;
@@ -13,13 +14,7 @@ const PromoFilm = (props) => {
       </div>
       <h1 className="visually-hidden">WTW</h1>
       <header className="page-header movie-card__head">
-        <div className="logo">
-          <a className="logo__link">
-            <span className="logo__letter logo__letter--1">W</span>
-            <span className="logo__letter logo__letter--2">T</span>
-            <span className="logo__letter logo__letter--3">W</span>
-          </a>
-        </div>
+        <PageHeaderLogo/>
         <UserBlock/>
       </header>
       <div className="movie-card__wrap">

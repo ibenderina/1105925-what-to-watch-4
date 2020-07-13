@@ -36,3 +36,13 @@ export const ErrorMessages = {
   PASSWORD_INVALID: `Password invalid`,
   INVALID_USER_DATA: `Invalid user data`,
 };
+
+export const SuccessMessages = {
+  ADD_COMMENT: `Comment was added!`,
+};
+
+export const TransferStates = {
+  IN_PROGRESS: `IN_PROGRESS`,
+  SUCCESS: `SUCCESS`,
+  ERROR: `ERROR`,
+};

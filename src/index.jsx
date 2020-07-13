@@ -7,7 +7,6 @@ import {Actions as UserActions, AuthorizationStatus} from "@reducer/user/user";
 import {createAPI} from "@api/api";
 import App from "@components/app/app.connect";
 
-
 const api = createAPI(() => {
   store.dispatch(UserActions.requireAuthorization(AuthorizationStatus.NO_AUTH));
 });

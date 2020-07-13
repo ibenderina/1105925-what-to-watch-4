@@ -30,6 +30,7 @@ exports[`Should PromoFilm render correctly 1`] = `
     >
       <a
         className="logo__link"
+        href="/"
       >
         <span
           className="logo__letter logo__letter--1"
@@ -48,20 +49,7 @@ exports[`Should PromoFilm render correctly 1`] = `
         </span>
       </a>
     </div>
-    <div
-      className="user-block"
-    >
-      <div
-        className="user-block__avatar"
-      >
-        <img
-          alt="User avatar"
-          height="63"
-          src="https://htmlacademy-react-3.appspot.com/wtw/static/avatar/5.jpg"
-          width="63"
-        />
-      </div>
-    </div>
+    
   </header>
   <div
     className="movie-card__wrap"

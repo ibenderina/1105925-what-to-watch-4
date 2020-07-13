@@ -3,9 +3,10 @@ import {ClassName, Tab} from "@consts";
 import {useHistory} from "react-router";
 import {Link} from "react-router-dom";
 import UserBlock from "@components/user-block/user-block.connect";
+import PageHeaderLogo from "@components/page-header-logo/page-header-logo";
 
 const FilmInfo = (props) => {
-  const {activeTab, filmId, getFilmById} = props;
+  const {activeTab, filmId, getFilmById, isLogged} = props;
   const {id, src, title, genre, date, background, backgroundColor} = getFilmById(filmId);
   const history = useHistory();
 
@@ -19,14 +20,7 @@ const FilmInfo = (props) => {
         <h1 className="visually-hidden">WTW</h1>
 
         <header className="page-header movie-card__head">
-          <div className="logo">
-            <Link to="/" className="logo__link">
-              <span className="logo__letter logo__letter--1">W</span>
-              <span className="logo__letter logo__letter--2">T</span>
-              <span className="logo__letter logo__letter--3">W</span>
-            </Link>
-          </div>
-
+          <PageHeaderLogo/>
           <UserBlock/>
         </header>
 
@@ -47,7 +41,7 @@ const FilmInfo = (props) => {
                 <Icon id={`add`} width={19} height={20}/>
                 <span>My list</span>
               </button>
-              <a href="add-review.html" className="btn movie-card__button">Add review</a>
+              {isLogged ? <a href={`/dev-review/${filmId}`} className="btn movie-card__button">Add review</a> : ``}
             </div>
           </div>
         </div>
@@ -85,6 +79,7 @@ const FilmInfo = (props) => {
 };
 
 FilmInfo.propTypes = {
+  isLogged: PropTypes.bool.isRequired,
   activeTab: PropTypes.string.isRequired,
   children: PropTypes.oneOfType(
       [

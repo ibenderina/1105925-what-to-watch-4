@@ -3,7 +3,7 @@ import {Provider} from "react-redux";
 import configureStore from "redux-mock-store";
 import {testFilmStore, testUserStore} from "@utils/test-data";
 import NameSpace from "@reducer/name-space";
-import {MemoryRouter} from 'react-router-dom';
+import {MemoryRouter} from "react-router-dom";
 
 const mockStore = configureStore([]);
 

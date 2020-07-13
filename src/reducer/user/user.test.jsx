@@ -3,7 +3,7 @@ import {AuthorizationStatus, Actions, ActionType, Operations} from "@reducer/use
 import {rawUserAccount, testUserAccount, testUserEmptyStore} from "@utils/test-data";
 import {extend} from "@utils/utils";
 import {createAPI} from "@api/api";
-import {ErrorMessages} from "../../consts/consts";
+import {ErrorMessages} from "@consts";
 import MockAdapter from "axios-mock-adapter";
 
 const api = createAPI(() => {});
@@ -28,7 +28,8 @@ it(`Require Authorization action is correct`, () => {
 
 it(`Set Authorization Error action is correct`, () => {
   const result = extend(testUserEmptyStore, {
-    authorizationErrorMessage: ErrorMessages.INVALID_USER_DATA
+    authorizationErrorMessage: ErrorMessages.INVALID_USER_DATA,
+    authorizationStatus: AuthorizationStatus.NO_AUTH,
   });
 
   expect(reducer(testUserEmptyStore, Actions.setAuthorizationError(ErrorMessages.INVALID_USER_DATA)))
@@ -36,7 +37,7 @@ it(`Set Authorization Error action is correct`, () => {
 });
 
 
-it(`checkAuth option is correct`, function () {
+it(`CheckAuth option is correct`, function () {
   const dispatch = jest.fn();
   const filmsLoader = Operations.checkAuth();
 
@@ -46,8 +47,12 @@ it(`checkAuth option is correct`, function () {
 
   return filmsLoader(dispatch, () => {}, api)
     .then(() => {
-      expect(dispatch).toHaveBeenCalledTimes(1);
+      expect(dispatch).toHaveBeenCalledTimes(2);
       expect(dispatch).toHaveBeenNthCalledWith(1, {
+        type: ActionType.REQUIRED_AUTHORIZATION,
+        payload: {status: AuthorizationStatus.IN_PROGRESS, userAccount: undefined},
+      });
+      expect(dispatch).toHaveBeenNthCalledWith(2, {
         type: ActionType.REQUIRED_AUTHORIZATION,
         payload: {
           status: AuthorizationStatus.AUTH,
@@ -57,7 +62,7 @@ it(`checkAuth option is correct`, function () {
     });
 });
 
-it(`login option is correct`, function () {
+it(`Login option is correct`, function () {
   const dispatch = jest.fn();
   const filmsLoader = Operations.checkAuth();
 
@@ -67,8 +72,12 @@ it(`login option is correct`, function () {
 
   return filmsLoader(dispatch, () => {}, api)
     .then(() => {
-      expect(dispatch).toHaveBeenCalledTimes(1);
+      expect(dispatch).toHaveBeenCalledTimes(2);
       expect(dispatch).toHaveBeenNthCalledWith(1, {
+        type: ActionType.REQUIRED_AUTHORIZATION,
+        payload: {status: AuthorizationStatus.IN_PROGRESS, userAccount: undefined},
+      });
+      expect(dispatch).toHaveBeenNthCalledWith(2, {
         type: ActionType.REQUIRED_AUTHORIZATION,
         payload: {
           status: AuthorizationStatus.AUTH,

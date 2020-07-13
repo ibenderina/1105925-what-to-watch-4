@@ -18,7 +18,6 @@ it(`Actions is correct`, () => {
   expect(reducer(testFilmStore, FilmsActions.setCurrentGenre(testFilms[0].genre))).toEqual(result);
 });
 
-
 it(`Should make a correct API call to /films`, function () {
   const apiMock = new MockAdapter(api);
   const dispatch = jest.fn();
