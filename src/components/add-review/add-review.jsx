@@ -1,16 +1,15 @@
 import UserBlock from "@components/user-block/user-block.connect";
 import PageHeaderLogo from "@components/page-header-logo/page-header-logo";
-import {useRef} from "react";
+import {Redirect} from "react-router-dom";
 import {extend} from "@utils/utils";
 
-
-class AddReview extends React.PureComponent {
+class AddReview extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       rating: 0,
-      comment: 0
+      comment: 0,
     };
     this.buttonRef = React.createRef();
     this.onInput = this.onInput.bind(this);
@@ -39,6 +38,10 @@ class AddReview extends React.PureComponent {
     const filmId = this.props.match.params.id;
     const {statusMessage, getFilmById, addComment, inProgress, addIsSuccess} = this.props;
     const film = getFilmById(filmId);
+
+    if (addIsSuccess) {
+      return <Redirect to={`/films/${filmId}`}/>;
+    }
 
     if (film) {
       return (
@@ -84,7 +87,7 @@ class AddReview extends React.PureComponent {
                 evt.preventDefault();
                 addComment(filmId, this.state.rating, this.state.comment);
               }}>
-              <div className={addIsSuccess ? `add-review__success-message` : `add-review__error-message`}>
+              <div className="add-review__error-message">
                 <p>{statusMessage}</p>
               </div>
               <div className="rating">

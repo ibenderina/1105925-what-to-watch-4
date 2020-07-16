@@ -9,7 +9,7 @@ export const addCommentInProgress = (state) => {
   return state[NameSpace.COMMENTS].addStatus === TransferStates.IN_PROGRESS;
 };
 
-export const addCommentSuccess = (state) => {
+export const addCommentIsSuccess = (state) => {
   return state[NameSpace.COMMENTS].addStatus === TransferStates.SUCCESS;
 };
 

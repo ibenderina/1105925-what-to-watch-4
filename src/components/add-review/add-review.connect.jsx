@@ -2,14 +2,14 @@ import {connect} from "react-redux";
 import {getFilmById} from "@reducer/films/selectors";
 import AddReview from "@components/add-review/add-review";
 import {getUserAccount} from "@reducer/user/selectors";
-import {addCommentInProgress, addCommentSuccess, getErrorMessage} from "@reducer/comments/selectors";
+import {addCommentInProgress, addCommentIsSuccess, getErrorMessage} from "@reducer/comments/selectors";
 import {Operations as CommentsOperations} from "@reducer/comments/comments";
 
 const mapStateToProps = (state) => ({
   getFilmById: (filmId) => getFilmById(state, filmId),
   userAccount: getUserAccount(state),
   inProgress: addCommentInProgress(state),
-  addIsSuccess: addCommentSuccess(state),
+  addIsSuccess: addCommentIsSuccess(state),
   statusMessage: getErrorMessage(state),
 });
 

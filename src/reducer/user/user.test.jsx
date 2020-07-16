@@ -9,11 +9,9 @@ import MockAdapter from "axios-mock-adapter";
 const api = createAPI(() => {});
 const apiMock = new MockAdapter(api);
 
-
 it(`Reducer without additional parameters should return initial state`, () => {
   expect(reducer(void 0, {})).toEqual(testUserEmptyStore);
 });
-
 
 it(`Require Authorization action is correct`, () => {
   const result = extend(testUserEmptyStore, {
@@ -25,7 +23,6 @@ it(`Require Authorization action is correct`, () => {
     .toEqual(result);
 });
 
-
 it(`Set Authorization Error action is correct`, () => {
   const result = extend(testUserEmptyStore, {
     authorizationErrorMessage: ErrorMessages.INVALID_USER_DATA,
@@ -35,7 +32,6 @@ it(`Set Authorization Error action is correct`, () => {
   expect(reducer(testUserEmptyStore, Actions.setAuthorizationError(ErrorMessages.INVALID_USER_DATA)))
     .toEqual(result);
 });
-
 
 it(`checkAuth option is correct`, function () {
   const dispatch = jest.fn();

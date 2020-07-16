@@ -42,6 +42,7 @@ export const SuccessMessages = {
 };
 
 export const TransferStates = {
+  NEW: `NEW`,
   IN_PROGRESS: `IN_PROGRESS`,
   SUCCESS: `SUCCESS`,
   ERROR: `ERROR`,

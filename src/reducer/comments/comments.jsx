@@ -10,7 +10,7 @@ const ActionType = {
 
 const initialState = {
   addStatusMessage: ``,
-  addStatus: TransferStates.SUCCESS,
+  addStatus: TransferStates.NEW,
 };
 
 
@@ -27,7 +27,6 @@ const Actions = {
       payload: {status, statusMessage}
     };
   },
-  // resetAddCommentState
 };
 
 const Operations = {
