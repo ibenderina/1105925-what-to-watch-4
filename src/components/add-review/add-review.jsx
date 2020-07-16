@@ -1,96 +1,138 @@
 import UserBlock from "@components/user-block/user-block.connect";
 import PageHeaderLogo from "@components/page-header-logo/page-header-logo";
 import {useRef} from "react";
+import {extend} from "@utils/utils";
 
-const AddReview = (props) => {
-  const filmId = props.match.params.id;
-  const {statusMessage, getFilmById, addComment, inProgress, addIsSuccess} = props;
-  const film = getFilmById(filmId);
 
-  const ratingRef = useRef();
-  const commentRef = useRef();
+class AddReview extends React.PureComponent {
+  constructor(props) {
+    super(props);
 
-  if (film) {
-    return (
-      <section className="movie-card movie-card--full" style={{backgroundColor: film.backgroundColor}}>
-        <div className="movie-card__header">
-          <div className="movie-card__bg">
-            <img src={film.background} alt={film.title}/>
-          </div>
+    this.state = {
+      rating: 0,
+      comment: 0
+    };
+    this.buttonRef = React.createRef();
+    this.onInput = this.onInput.bind(this);
+  }
 
-          <h1 className="visually-hidden">WTW</h1>
-
-          <header className="page-header">
-            <PageHeaderLogo/>
-
-            <nav className="breadcrumbs">
-              <ul className="breadcrumbs__list">
-                <li className="breadcrumbs__item">
-                  <a href={`/films/${filmId}`} className="breadcrumbs__link">{film.title}</a>
-                </li>
-                <li className="breadcrumbs__item">
-                  <a className="breadcrumbs__link">Add review</a>
-                </li>
-              </ul>
-            </nav>
-
-            <UserBlock/>
-          </header>
-
-          <div className="movie-card__poster movie-card__poster--small">
-            <img src={film.src}
-              alt={film.title + ` poster`}
-              width="218"
-              height="327"/>
-          </div>
-        </div>
-
-        <div className="add-review">
-          <form action="#" className="add-review__form"
-            style={inProgress ? {pointerEvents: `none`, opacity: 0.6} : {}}
-            onSubmit={(evt) => {
-              evt.preventDefault();
-              addComment(filmId, ratingRef.current.value, commentRef.current.value);
-            }}>
-            <div className={addIsSuccess ? `add-review__success-message` : `add-review__error-message`}>
-              <p>{statusMessage}</p>
-            </div>
-            <div className="rating">
-              <div className="rating__stars">
-                <input className="rating__input" id="star-1" type="radio" name="rating" value="1" ref={ratingRef}/>
-                <label className="rating__label" htmlFor="star-1">Rating 1</label>
-
-                <input className="rating__input" id="star-2" type="radio" name="rating" value="2" ref={ratingRef}/>
-                <label className="rating__label" htmlFor="star-2">Rating 2</label>
-
-                <input className="rating__input" id="star-3" type="radio" name="rating" value="3" ref={ratingRef} defaultChecked={true}/>
-                <label className="rating__label" htmlFor="star-3">Rating 3</label>
-
-                <input className="rating__input" id="star-4" type="radio" name="rating" value="4" ref={ratingRef}/>
-                <label className="rating__label" htmlFor="star-4">Rating 4</label>
-
-                <input className="rating__input" id="star-5" type="radio" name="rating" value="5" ref={ratingRef}/>
-                <label className="rating__label" htmlFor="star-5">Rating 5</label>
-              </div>
-            </div>
-
-            <div className="add-review__text">
-              <textarea className="add-review__textarea" name="review-text" id="review-text"
-                minLength={50}
-                maxLength={400}
-                placeholder="Review text" ref={commentRef}/>
-              <div className="add-review__submit">
-                <button className="add-review__btn" type="submit">Post</button>
-              </div>
-            </div>
-
-          </form>
-        </div>
-      </section>
+  onInput(evt) {
+    const newState = extend(this.state, ((element) => {
+      switch (element.type) {
+        case `radio`:
+          return {rating: parseInt(element.value, 10)};
+        case `textarea`:
+          return {comment: element.value};
+      }
+      return {};
+    })(evt.target));
+    this.setState(newState);
+    this.buttonRef.current.disabled = (
+      newState.rating < 1 ||
+      newState.rating > 5 ||
+      newState.comment.length < 50 ||
+      newState.comment.length > 400
     );
   }
-  return <h2>Loading</h2>;
-};
+
+  render() {
+    const filmId = this.props.match.params.id;
+    const {statusMessage, getFilmById, addComment, inProgress, addIsSuccess} = this.props;
+    const film = getFilmById(filmId);
+
+    if (film) {
+      return (
+        <section className="movie-card movie-card--full" style={{backgroundColor: film.backgroundColor}}>
+          <div className="movie-card__header">
+            <div className="movie-card__bg">
+              <img src={film.background} alt={film.title}/>
+            </div>
+
+            <h1 className="visually-hidden">WTW</h1>
+
+            <header className="page-header">
+              <PageHeaderLogo/>
+
+              <nav className="breadcrumbs">
+                <ul className="breadcrumbs__list">
+                  <li className="breadcrumbs__item">
+                    <a href={`/films/${filmId}`} className="breadcrumbs__link">{film.title}</a>
+                  </li>
+                  <li className="breadcrumbs__item">
+                    <a className="breadcrumbs__link">Add review</a>
+                  </li>
+                </ul>
+              </nav>
+
+              <UserBlock/>
+            </header>
+
+            <div className="movie-card__poster movie-card__poster--small">
+              <img src={film.src}
+                alt={film.title + ` poster`}
+                width="218"
+                height="327"/>
+            </div>
+          </div>
+
+          <div className="add-review">
+            <form action="#" className="add-review__form"
+              style={inProgress ? {pointerEvents: `none`, opacity: 0.6} : {}}
+              onChange={this.onInput}
+              onKeyPress={this.onInput}
+              onSubmit={(evt) => {
+                evt.preventDefault();
+                addComment(filmId, this.state.rating, this.state.comment);
+              }}>
+              <div className={addIsSuccess ? `add-review__success-message` : `add-review__error-message`}>
+                <p>{statusMessage}</p>
+              </div>
+              <div className="rating">
+                <div className="rating__stars">
+                  <input className="rating__input" id="star-0" type="radio" name="rating" value="0"
+                    autoComplete="off"
+                    defaultChecked={true}/>
+
+                  <input className="rating__input" id="star-1" type="radio" name="rating" value="1"
+                    autoComplete="off"/>
+                  <label className="rating__label" htmlFor="star-1">Rating 1</label>
+
+                  <input className="rating__input" id="star-2" type="radio" name="rating" value="2"
+                    autoComplete="off"/>
+                  <label className="rating__label" htmlFor="star-2">Rating 2</label>
+
+                  <input className="rating__input" id="star-3" type="radio" name="rating" value="3"
+                    autoComplete="off"/>
+                  <label className="rating__label" htmlFor="star-3">Rating 3</label>
+
+                  <input className="rating__input" id="star-4" type="radio" name="rating" value="4"
+                    autoComplete="off"/>
+                  <label className="rating__label" htmlFor="star-4">Rating 4</label>
+
+                  <input className="rating__input" id="star-5" type="radio" name="rating" value="5"
+                    autoComplete="off"/>
+                  <label className="rating__label" htmlFor="star-5">Rating 5</label>
+                </div>
+              </div>
+
+              <div className="add-review__text">
+                <textarea className="add-review__textarea" name="review-text" id="review-text"
+                  minLength={50}
+                  maxLength={400}
+                  placeholder="Review text"/>
+                <div className="add-review__submit">
+                  <button className="add-review__btn" type="submit" disabled={true} ref={this.buttonRef}>Post</button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </section>
+      );
+    }
+    return <h2>Loading</h2>;
+  }
+}
 
 AddReview.propTypes = {
   addIsSuccess: PropTypes.bool.isRequired,

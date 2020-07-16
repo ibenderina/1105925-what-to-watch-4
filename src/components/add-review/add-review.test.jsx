@@ -6,6 +6,7 @@ import {Provider} from "react-redux";
 import configureStore from "redux-mock-store";
 import PrivateRoute from "@components/private-route/private-route.connect";
 
+
 it(`Should AddReview render correctly if user logged`, () => {
   const mockStore = configureStore([]);
   const store = mockStore({
@@ -28,6 +29,7 @@ it(`Should AddReview render correctly if user logged`, () => {
   });
   expect(tree.toJSON()).toMatchSnapshot();
 });
+
 
 it(`Should AddReview render correctly if user NOT logged`, () => {
   const mockStore = configureStore([]);

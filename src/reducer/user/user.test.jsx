@@ -3,7 +3,7 @@ import {AuthorizationStatus, Actions, ActionType, Operations} from "@reducer/use
 import {rawUserAccount, testUserAccount, testUserEmptyStore} from "@utils/test-data";
 import {extend} from "@utils/utils";
 import {createAPI} from "@api/api";
-import {ErrorMessages} from "@consts";
+import {ErrorMessages} from "../../consts/consts";
 import MockAdapter from "axios-mock-adapter";
 
 const api = createAPI(() => {});
@@ -37,7 +37,7 @@ it(`Set Authorization Error action is correct`, () => {
 });
 
 
-it(`CheckAuth option is correct`, function () {
+it(`checkAuth option is correct`, function () {
   const dispatch = jest.fn();
   const filmsLoader = Operations.checkAuth();
 
@@ -62,7 +62,7 @@ it(`CheckAuth option is correct`, function () {
     });
 });
 
-it(`Login option is correct`, function () {
+it(`login option is correct`, function () {
   const dispatch = jest.fn();
   const filmsLoader = Operations.checkAuth();
 
