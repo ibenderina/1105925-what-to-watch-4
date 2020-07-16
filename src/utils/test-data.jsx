@@ -50,13 +50,13 @@ export const testEmptyFilmStore = {
 
 export const testEmptyCommentsStore = {
   addStatusMessage: ``,
-  addStatus: TransferStates.SUCCESS,
+  addStatus: TransferStates.NEW,
 };
 
 export const testCommentsStore = {
   1: testComments,
   addStatusMessage: ``,
-  addStatus: TransferStates.SUCCESS,
+  addStatus: TransferStates.NEW,
 };
 
 export const testStore = {
