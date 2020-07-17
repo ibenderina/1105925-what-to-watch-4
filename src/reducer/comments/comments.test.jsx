@@ -1,27 +1,33 @@
 import {reducer, Actions, Operations, ActionType} from "@reducer/comments/comments";
-import {extend} from "@utils/utils";
-import {rawTestComments, testComments} from "@utils/test-data";
+import {rawTestComments, testComments, testCommentsStore, testEmptyCommentsStore} from "@utils/test-data";
 import MockAdapter from "axios-mock-adapter";
 import {createAPI} from "@api/api";
+import {TransferStates} from "../../consts/consts";
+import {extend} from "@utils/utils";
 
 const api = createAPI(() => {});
 
 it(`Reducer without additional parameters should return initial state`, () => {
-  const initialState = {};
-  expect(reducer(void 0, {})).toEqual(initialState);
+  expect(reducer(void 0, {})).toEqual(testEmptyCommentsStore);
 });
 
 it(`Actions is correct`, () => {
-  const initialState = {};
-  const result = extend(initialState, {
-    1: testComments,
+  expect(reducer(testEmptyCommentsStore, Actions.loadFilmComments(1, testComments)))
+    .toEqual(testCommentsStore);
+
+  const resultStatus = TransferStates.SUCCESS;
+  const resultMessage = `Comment was added!`;
+  const resultStore = extend(testEmptyCommentsStore, {
+    addStatusMessage: resultMessage,
+    addStatus: resultStatus,
   });
 
-  expect(reducer(initialState, Actions.loadFilmComments(1, testComments))).toEqual(result);
+  expect(reducer(testEmptyCommentsStore, Actions.addComment(resultStatus, resultMessage)))
+    .toEqual(resultStore);
 });
 
 
-it(`Should make a correct API call to /comments`, function () {
+it(`Should make a correct API GET call to /comments`, function () {
   const apiMock = new MockAdapter(api);
   const dispatch = jest.fn();
   const commentsLoader = Operations.loadFilmComments(1);
@@ -40,6 +46,36 @@ it(`Should make a correct API call to /comments`, function () {
       expect(dispatch).toHaveBeenNthCalledWith(2, {
         type: ActionType.LOAD_FILM_COMMENTS,
         payload: {1: testComments},
+      });
+    });
+});
+
+
+it(`Should make a correct API POST call to /comments/:id`, function () {
+  const apiMock = new MockAdapter(api);
+  const dispatch = jest.fn();
+  const commentsLoader = Operations.addComment(1, 5, `test comment`);
+
+  apiMock
+    .onPost(`/comments/1`, {rating: 5, comment: `test comment`})
+    .reply(200, rawTestComments);
+
+  return commentsLoader(dispatch, () => {}, api)
+    .then(() => {
+      expect(dispatch).toHaveBeenCalledTimes(2);
+      expect(dispatch).toHaveBeenNthCalledWith(1, {
+        type: ActionType.ADD_COMMENT,
+        payload: {
+          status: TransferStates.IN_PROGRESS,
+          statusMessage: ``,
+        }
+      });
+      expect(dispatch).toHaveBeenNthCalledWith(2, {
+        type: ActionType.ADD_COMMENT,
+        payload: {
+          status: TransferStates.SUCCESS,
+          statusMessage: `Comment was added!`
+        },
       });
     });
 });

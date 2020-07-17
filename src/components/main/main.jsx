@@ -5,7 +5,7 @@ import GenresList from "@components/genres-list/genres-list.connect";
 import ShowMore from "@components/show-more/show-more";
 import {ClassName} from "@consts";
 import withTabs from "@hocs/with-tabs";
-import {Link} from "react-router-dom";
+import PageHeaderLogo from "@components/page-header-logo/page-header-logo";
 
 const FilmInfoWithTabs = withTabs(FilmInfo);
 
@@ -38,13 +38,7 @@ class Main extends React.Component {
           </section>
         </section>
         <footer className="page-footer">
-          <div className="logo">
-            <Link to="/" className="logo__link logo__link--light">
-              <span className="logo__letter logo__letter--1">W</span>
-              <span className="logo__letter logo__letter--2">T</span>
-              <span className="logo__letter logo__letter--3">W</span>
-            </Link>
-          </div>
+          <PageHeaderLogo/>
           <div className="copyright">
             <p>© 2019 What to watch Ltd.</p>
           </div>

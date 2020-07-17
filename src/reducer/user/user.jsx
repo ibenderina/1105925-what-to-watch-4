@@ -5,10 +5,11 @@ import {UserAccount} from "@api/adapter";
 const AuthorizationStatus = {
   AUTH: `AUTH`,
   NO_AUTH: `NO_AUTH`,
+  IN_PROGRESS: `IN_PROGRESS`,
 };
 
 const initialState = {
-  authorizationStatus: AuthorizationStatus.NO_AUTH,
+  authorizationStatus: AuthorizationStatus.IN_PROGRESS,
   authorizationErrorMessage: ``,
   userAccount: new UserAccount({})
 };
@@ -39,7 +40,7 @@ const reducer = (state = initialState, action) => {
     case ActionType.REQUIRED_AUTHORIZATION:
       return extend(state, {
         authorizationStatus: action.payload.status,
-        userAccount: action.payload.userAccount
+        userAccount: action.payload.userAccount || state.userAccount
       });
 
     case ActionType.SET_AUTHORIZATION_ERROR:
@@ -54,6 +55,9 @@ const reducer = (state = initialState, action) => {
 
 const Operations = {
   checkAuth: () => (dispatch, getState, api) => {
+    dispatch(Actions.requireAuthorization(
+        AuthorizationStatus.IN_PROGRESS
+    ));
     return api.get(`/login`)
       .then((response) => {
         const userAccount = UserAccount.parse(response.data);
@@ -79,6 +83,9 @@ const Operations = {
       dispatch(Actions.setAuthorizationError(isInvalid));
       return () => {};
     }
+    dispatch(Actions.requireAuthorization(
+        AuthorizationStatus.IN_PROGRESS
+    ));
     return api.post(`/login`, {
       email: authData.email,
       password: authData.password,

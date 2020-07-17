@@ -1,7 +1,7 @@
 import {Film, parseComments, parseFilms, UserAccount} from "@api/adapter";
 import NameSpace from "@reducer/name-space";
 import {AuthorizationStatus} from "@reducer/user/user";
-import {ALL_GENRES} from "@consts";
+import {ALL_GENRES, TransferStates} from "@consts";
 
 export const rawTestFilms = [
   {"name": `Once Upon a Time in America`, "poster_image": `https://htmlacademy-react-3.appspot.com/wtw/static/film/poster/Once_Upon_a_Time_in_America.jpg`, "preview_image": `https://htmlacademy-react-3.appspot.com/wtw/static/film/preview/Once_Upon_a_Time_in_America.jpg`, "background_image": `https://htmlacademy-react-3.appspot.com/wtw/static/film/background/ones_upon_a_time_in_america.jpg`, "background_color": `#CBAC79`, "description": `A former Prohibition-era Jewish gangster returns to the Lower East Side of Manhattan over thirty years later, where he once again must confront the ghosts and regrets of his old life.`, "rating": 9.9, "scores_count": 276395, "director": `Sergio Leone`, "starring": [`Robert De Niro`, `James Woods`, `Elizabeth McGovern`], "run_time": 229, "genre": `Crime`, "released": 1984, "id": 1, "is_favorite": false, "video_link": `http://media.xiph.org/mango/tears_of_steel_1080p.webm`, "preview_video_link": `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`},
@@ -21,13 +21,13 @@ export const testComments = parseComments(rawTestComments);
 export const testUserAccount = UserAccount.parse(rawUserAccount);
 
 export const testUserStore = {
-  authorizationStatus: AuthorizationStatus.AUTH,
+  authorizationStatus: AuthorizationStatus.IN_PROGRESS,
   authorizationErrorMessage: ``,
   userAccount: testUserAccount
 };
 
 export const testUserEmptyStore = {
-  authorizationStatus: AuthorizationStatus.NO_AUTH,
+  authorizationStatus: AuthorizationStatus.IN_PROGRESS,
   authorizationErrorMessage: ``,
   userAccount: new UserAccount({}),
 };
@@ -48,8 +48,15 @@ export const testEmptyFilmStore = {
   showedFilmsCount: 0,
 };
 
+export const testEmptyCommentsStore = {
+  addStatusMessage: ``,
+  addStatus: TransferStates.NEW,
+};
+
 export const testCommentsStore = {
-  1: testComments
+  1: testComments,
+  addStatusMessage: ``,
+  addStatus: TransferStates.NEW,
 };
 
 export const testStore = {

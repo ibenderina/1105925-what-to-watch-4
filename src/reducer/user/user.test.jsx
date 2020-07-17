@@ -9,11 +9,9 @@ import MockAdapter from "axios-mock-adapter";
 const api = createAPI(() => {});
 const apiMock = new MockAdapter(api);
 
-
 it(`Reducer without additional parameters should return initial state`, () => {
   expect(reducer(void 0, {})).toEqual(testUserEmptyStore);
 });
-
 
 it(`Require Authorization action is correct`, () => {
   const result = extend(testUserEmptyStore, {
@@ -25,16 +23,15 @@ it(`Require Authorization action is correct`, () => {
     .toEqual(result);
 });
 
-
 it(`Set Authorization Error action is correct`, () => {
   const result = extend(testUserEmptyStore, {
-    authorizationErrorMessage: ErrorMessages.INVALID_USER_DATA
+    authorizationErrorMessage: ErrorMessages.INVALID_USER_DATA,
+    authorizationStatus: AuthorizationStatus.NO_AUTH,
   });
 
   expect(reducer(testUserEmptyStore, Actions.setAuthorizationError(ErrorMessages.INVALID_USER_DATA)))
     .toEqual(result);
 });
-
 
 it(`checkAuth option is correct`, function () {
   const dispatch = jest.fn();
@@ -46,8 +43,12 @@ it(`checkAuth option is correct`, function () {
 
   return filmsLoader(dispatch, () => {}, api)
     .then(() => {
-      expect(dispatch).toHaveBeenCalledTimes(1);
+      expect(dispatch).toHaveBeenCalledTimes(2);
       expect(dispatch).toHaveBeenNthCalledWith(1, {
+        type: ActionType.REQUIRED_AUTHORIZATION,
+        payload: {status: AuthorizationStatus.IN_PROGRESS, userAccount: undefined},
+      });
+      expect(dispatch).toHaveBeenNthCalledWith(2, {
         type: ActionType.REQUIRED_AUTHORIZATION,
         payload: {
           status: AuthorizationStatus.AUTH,
@@ -67,8 +68,12 @@ it(`login option is correct`, function () {
 
   return filmsLoader(dispatch, () => {}, api)
     .then(() => {
-      expect(dispatch).toHaveBeenCalledTimes(1);
+      expect(dispatch).toHaveBeenCalledTimes(2);
       expect(dispatch).toHaveBeenNthCalledWith(1, {
+        type: ActionType.REQUIRED_AUTHORIZATION,
+        payload: {status: AuthorizationStatus.IN_PROGRESS, userAccount: undefined},
+      });
+      expect(dispatch).toHaveBeenNthCalledWith(2, {
         type: ActionType.REQUIRED_AUTHORIZATION,
         payload: {
           status: AuthorizationStatus.AUTH,
