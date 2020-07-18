@@ -19,8 +19,8 @@ it(`Should AddReview render correctly if user logged`, () => {
   window.act(() => {
     tree = window.create(
         <Provider store={store}>
-          <MemoryRouter initialEntries={[`/dev-review/1`]}>
-            <PrivateRoute exact path="/dev-review/1">
+          <MemoryRouter initialEntries={[`/review/1`]}>
+            <PrivateRoute exact path="/review/1">
               <AddReview/>
             </PrivateRoute>
           </MemoryRouter>
@@ -43,8 +43,8 @@ it(`Should AddReview render correctly if user NOT logged`, () => {
   window.act(() => {
     tree = window.create(
         <Provider store={store}>
-          <MemoryRouter initialEntries={[`/dev-review/1`]}>
-            <PrivateRoute exact path="/dev-review/1">
+          <MemoryRouter initialEntries={[`/review/1`]}>
+            <PrivateRoute exact path="/review/1">
               <AddReview/>
             </PrivateRoute>
           </MemoryRouter>

@@ -14,6 +14,10 @@ const withVideoPlayer = (Component) => {
       };
     }
 
+    componentWillUnmount() {
+      clearTimeout(this.state.timeout);
+    }
+
     _handleFilmCardMouseEnter() {
       const timeout = setTimeout(() => {
         this.setState({

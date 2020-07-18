@@ -4,10 +4,11 @@ import {useHistory} from "react-router";
 import {Link} from "react-router-dom";
 import UserBlock from "@components/user-block/user-block.connect";
 import PageHeaderLogo from "@components/page-header-logo/page-header-logo";
+import MyListButton from "@components/my-list-button/mi-list-button.connect";
 
 const FilmInfo = (props) => {
   const {activeTab, filmId, getFilmById, isLogged} = props;
-  const {id, src, title, genre, date, background, backgroundColor} = getFilmById(filmId);
+  const {id, src, title, genre, date, background, backgroundColor, isFavorite} = getFilmById(filmId);
   const history = useHistory();
 
   return (
@@ -37,11 +38,8 @@ const FilmInfo = (props) => {
                 <Icon id={`play-s`} width={19} height={19}/>
                 <span>Play</span>
               </button>
-              <button className="btn btn--list movie-card__button" type="button">
-                <Icon id={`add`} width={19} height={20}/>
-                <span>My list</span>
-              </button>
-              {isLogged ? <a href={`/dev-review/${filmId}`} className="btn movie-card__button">Add review</a> : ``}
+              <MyListButton filmId={id} isFavorite={isFavorite} />
+              {isLogged ? <a href={`/review/${filmId}`} className="btn movie-card__button">Add review</a> : ``}
             </div>
           </div>
         </div>

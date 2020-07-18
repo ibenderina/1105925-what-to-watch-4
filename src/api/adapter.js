@@ -6,7 +6,7 @@ class Film {
     this.director = rawFilm[`director`];
     this.genre = rawFilm[`genre`];
     this.id = parseInt(rawFilm[`id`], 10);
-    this.isFavorite = rawFilm[`is_favorite`];
+    this.isFavorite = rawFilm[`is_favorite`] || false;
     this.title = rawFilm[`name`];
     this.src = rawFilm[`poster_image`];
     this.previewImage = rawFilm[`preview_image`];
@@ -27,7 +27,7 @@ class FilmComment {
     this.commentAuthor = rawComment[`user`][`name`];
     this.authorId = parseInt(rawComment[`user`][`id`], 10);
     this.commentText = rawComment[`comment`];
-    this.commentDate = rawComment[`date`];
+    this.commentDate = new Date(rawComment[`date`]);
     this.commentRating = rawComment[`rating`];
   }
 }

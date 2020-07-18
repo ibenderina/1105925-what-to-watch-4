@@ -20,7 +20,7 @@ export const createAPI = (onUnauthorized) => {
   const onFail = (error) => {
     const {response} = error;
     if (response.status === ErrorCodes.UNAUTHORIZED) {
-      return onUnauthorized();
+      onUnauthorized(error);
     }
     throw error;
   };

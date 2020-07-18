@@ -8,5 +8,4 @@ const mapStateToProps = (state) => ({
   getFilmById: (filmId) => getFilmById(state, filmId),
 });
 
-
 export default connect(mapStateToProps, () => ({}))(FilmInfo);

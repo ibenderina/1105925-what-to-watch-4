@@ -2,7 +2,6 @@ import {extend} from "@utils/utils";
 import {parseComments} from "@api/adapter";
 import {SuccessMessages, TransferStates} from "@consts";
 
-
 const ActionType = {
   LOAD_FILM_COMMENTS: `LOAD_FILM_COMMENTS`,
   ADD_COMMENT: `ADD_COMMENT`,
@@ -12,7 +11,6 @@ const initialState = {
   addStatusMessage: ``,
   addStatus: TransferStates.NEW,
 };
-
 
 const Actions = {
   loadFilmComments: (filmId, comments) => {

@@ -2,7 +2,7 @@ import {reducer, Actions, Operations, ActionType} from "@reducer/comments/commen
 import {rawTestComments, testComments, testCommentsStore, testEmptyCommentsStore} from "@utils/test-data";
 import MockAdapter from "axios-mock-adapter";
 import {createAPI} from "@api/api";
-import {TransferStates} from "../../consts/consts";
+import {TransferStates} from "@consts";
 import {extend} from "@utils/utils";
 
 const api = createAPI(() => {});

@@ -69,8 +69,10 @@ const Operations = {
         }
         return dispatch(Actions.setAuthorizationError(ErrorMessages.INVALID_USER_DATA));
       })
-      .catch((err) => {
-        throw err;
+      .catch(() => {
+        dispatch(Actions.requireAuthorization(
+            AuthorizationStatus.NO_AUTH
+        ));
       });
   },
 

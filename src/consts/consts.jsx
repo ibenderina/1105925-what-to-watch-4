@@ -47,3 +47,13 @@ export const TransferStates = {
   SUCCESS: `SUCCESS`,
   ERROR: `ERROR`,
 };
+
+export const RatingLevel = {
+  MAX: 5,
+  MIN: 1
+};
+
+export const CommentLength = {
+  MAX: 400,
+  MIN: 50
+};
