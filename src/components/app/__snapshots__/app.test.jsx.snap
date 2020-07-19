@@ -30,7 +30,7 @@ Array [
         className="logo"
       >
         <a
-          className="logo__link"
+          className="logo__link "
           href="/"
         >
           <span
@@ -294,7 +294,7 @@ Array [
       className="logo"
     >
       <a
-        className="logo__link"
+        className="logo__link "
         href="/"
       >
         <span

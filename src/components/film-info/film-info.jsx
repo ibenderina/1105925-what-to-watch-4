@@ -1,5 +1,5 @@
 import Icon from "react-svg-use";
-import {ClassName, Tab} from "@consts";
+import {ClassName, PageRoute, Tab} from "@consts";
 import {useHistory} from "react-router";
 import {Link} from "react-router-dom";
 import UserBlock from "@components/user-block/user-block.connect";
@@ -34,12 +34,12 @@ const FilmInfo = (props) => {
             </p>
 
             <div className="movie-card__buttons">
-              <button className="btn btn--play movie-card__button" type="button" onClick={() => history.push(`/player/${id}`)}>
+              <button className="btn btn--play movie-card__button" type="button" onClick={() => history.push(`${PageRoute.PLAYER}/${id}`)}>
                 <Icon id={`play-s`} width={19} height={19}/>
                 <span>Play</span>
               </button>
               <MyListButton filmId={id} isFavorite={isFavorite} />
-              {isLogged ? <a href={`/review/${filmId}`} className="btn movie-card__button">Add review</a> : ``}
+              {isLogged ? <a href={`${PageRoute.REVIEW}/${filmId}`} className="btn movie-card__button">Add review</a> : ``}
             </div>
           </div>
         </div>
@@ -64,7 +64,7 @@ const FilmInfo = (props) => {
                 </li>
                 <li className={`movie-nav__item ` + (activeTab === Tab.REVIEWS ? ClassName.ACTIVE_TAB : ``)}
                   onClick={props.setActiveTab(Tab.REVIEWS)}>
-                  <Link to={{pathname: `/films/${id}/review`}} className="movie-nav__link">Reviews</Link>
+                  <Link to={{pathname: `${PageRoute.FILMS}/${id}${PageRoute.REVIEW}`}} className="movie-nav__link">Reviews</Link>
                 </li>
               </ul>
             </nav>

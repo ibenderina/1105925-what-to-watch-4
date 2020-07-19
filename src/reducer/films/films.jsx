@@ -1,4 +1,4 @@
-import {ALL_GENRES, CountLimit} from "@consts";
+import {ALL_GENRES, APIEndpoints, CountLimit} from "@consts";
 import {extend} from "@utils/utils";
 import {parseFilms, Film} from "@api/adapter";
 
@@ -9,12 +9,14 @@ const ActionType = {
   LOAD_PROMO_FILM: `LOAD_PROMO_FILM`,
   SHOW_MORE: `SHOW_MORE`,
   TOGGLE_IF_FAVORITE: `TOGGLE_IF_FAVORITE`,
+  LOAD_FAVORITE_FILMS: `LOAD_FAVORITE_FILMS`,
 };
 
 const initialState = {
   currentGenre: ALL_GENRES,
   genres: [],
   films: [],
+  favoriteFilms: [],
   promoFilm: new Film({}),
   showedFilmsCount: 0,
 };
@@ -48,24 +50,31 @@ const Actions = {
       type: ActionType.TOGGLE_IF_FAVORITE,
       payload: filmId,
     };
+  },
+  loadFavoriteFilms: (filmId) => {
+    return {
+      type: ActionType.LOAD_FAVORITE_FILMS,
+      payload: filmId,
+    };
   }
 };
 
 const Operations = {
   loadPromoFilm: () => (dispatch, getState, api) => {
-    return api.get(`/films/promo`)
-      .then((film) => {
+    return api.get(APIEndpoints.PROMO_FILM)
+      .then((response) => {
         dispatch(
-            Actions.loadPromoFilm(new Film(film.data))
+            Actions.loadPromoFilm(new Film(response.data))
         );
       });
   },
+
   loadFilms: () => (dispatch, getState, api) => {
-    return api.get(`/films`)
-      .then((films) => {
+    return api.get(APIEndpoints.FILMS)
+      .then((response) => {
         dispatch(
             Actions.loadFilms(
-                parseFilms(films.data)
+                parseFilms(response.data)
             )
         );
       })
@@ -73,10 +82,21 @@ const Operations = {
         throw err;
       });
   },
+
   toggleIsFavorite: (filmId, status) => (dispatch, getState, api) => {
-    return api.post(`/favorite/${filmId}/${+status}`)
+    return api.post(`${APIEndpoints.FAVORITE}/${filmId}/${+status}`)
       .then((response) => {
         dispatch(Actions.toggleIsFavorite(new Film(response.data)));
+      })
+      .catch((err) => {
+        throw err;
+      });
+  },
+
+  loadFavoriteFilms: () => (dispatch, getState, api) => {
+    return api.get(APIEndpoints.FAVORITE)
+      .then((response) => {
+        dispatch(Actions.loadFavoriteFilms(parseFilms(response.data)));
       })
       .catch((err) => {
         throw err;
@@ -96,6 +116,11 @@ const reducer = (state = initialState, action) => {
       return extend(state, {
         showedFilmsCount: CountLimit.MAX_FILMS,
         films: action.payload,
+      });
+
+    case ActionType.LOAD_FAVORITE_FILMS:
+      return extend(state, {
+        favoriteFilms: action.payload || [],
       });
 
     case ActionType.LOAD_PROMO_FILM:

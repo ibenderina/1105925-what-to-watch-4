@@ -3,7 +3,7 @@ import {AuthorizationStatus, Actions, ActionType, Operations} from "@reducer/use
 import {rawUserAccount, testUserAccount, testUserEmptyStore} from "@utils/test-data";
 import {extend} from "@utils/utils";
 import {createAPI} from "@api/api";
-import {ErrorMessages} from "@consts";
+import {APIEndpoints, ErrorMessages} from "@consts";
 import MockAdapter from "axios-mock-adapter";
 
 const api = createAPI(() => {});
@@ -38,7 +38,7 @@ it(`checkAuth option is correct`, function () {
   const filmsLoader = Operations.checkAuth();
 
   apiMock
-    .onGet(`/login`)
+    .onGet(APIEndpoints.LOGIN)
     .reply(200, rawUserAccount);
 
   return filmsLoader(dispatch, () => {}, api)
@@ -63,7 +63,7 @@ it(`login option is correct`, function () {
   const filmsLoader = Operations.checkAuth();
 
   apiMock
-    .onPost(`/login`, {email: testUserAccount.email, password: `test`})
+    .onPost(APIEndpoints.LOGIN, {email: testUserAccount.email, password: `test`})
     .reply(200, rawUserAccount);
 
   return filmsLoader(dispatch, () => {}, api)

@@ -1,5 +1,5 @@
 import {extend, isValidEmail, isValidPassword} from "@utils/utils";
-import {ErrorMessages} from "@consts";
+import {APIEndpoints, ErrorMessages} from "@consts";
 import {UserAccount} from "@api/adapter";
 
 const AuthorizationStatus = {
@@ -58,7 +58,7 @@ const Operations = {
     dispatch(Actions.requireAuthorization(
         AuthorizationStatus.IN_PROGRESS
     ));
-    return api.get(`/login`)
+    return api.get(APIEndpoints.LOGIN)
       .then((response) => {
         const userAccount = UserAccount.parse(response.data);
         if (userAccount) {
@@ -88,7 +88,7 @@ const Operations = {
     dispatch(Actions.requireAuthorization(
         AuthorizationStatus.IN_PROGRESS
     ));
-    return api.post(`/login`, {
+    return api.post(APIEndpoints.LOGIN, {
       email: authData.email,
       password: authData.password,
     })
@@ -109,7 +109,6 @@ const Operations = {
       });
   },
 };
-
 
 export {
   Actions,

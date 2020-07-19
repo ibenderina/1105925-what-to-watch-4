@@ -1,6 +1,6 @@
 import {extend} from "@utils/utils";
 import {parseComments} from "@api/adapter";
-import {SuccessMessages, TransferStates} from "@consts";
+import {APIEndpoints, SuccessMessages, TransferStates} from "@consts";
 
 const ActionType = {
   LOAD_FILM_COMMENTS: `LOAD_FILM_COMMENTS`,
@@ -30,7 +30,7 @@ const Actions = {
 const Operations = {
   loadFilmComments: (filmId) => (dispatch, getState, api) => {
     dispatch(Actions.loadFilmComments(filmId, []));
-    return api.get(`/comments/${filmId}`)
+    return api.get(`${APIEndpoints.COMMENTS}/${filmId}`)
       .then((comments) => {
         dispatch(
             Actions.loadFilmComments(
@@ -46,7 +46,7 @@ const Operations = {
 
   addComment: (filmId, rating, comment) => (dispatch, getState, api) => {
     dispatch(Actions.addComment(TransferStates.IN_PROGRESS, ``));
-    return api.post(`/comments/${filmId}`, {rating, comment})
+    return api.post(`${APIEndpoints.COMMENTS}/${filmId}`, {rating, comment})
       .then(() => {
         dispatch(Actions.addComment(TransferStates.SUCCESS, SuccessMessages.ADD_COMMENT));
       })

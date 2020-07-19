@@ -3,6 +3,7 @@ import UserBlock from "@components/user-block/user-block.connect";
 import PageHeaderLogo from "@components/page-header-logo/page-header-logo";
 import MyListButton from "@components/my-list-button/mi-list-button.connect";
 import {Film} from "@api/adapter";
+import {PageRoute} from "@consts";
 
 const PromoFilm = (props) => {
   const {id, title, src, genre, date, background, backgroundColor, isFavorite} = props.film;
@@ -30,7 +31,7 @@ const PromoFilm = (props) => {
               <span className="movie-card__year">{date}</span>
             </p>
             <div className="movie-card__buttons">
-              <button className="btn btn--play movie-card__button" type="button" onClick={() => history.push(`/player/${id}`)}>
+              <button className="btn btn--play movie-card__button" type="button" onClick={() => history.push(`${PageRoute.PLAYER}/${id}`)}>
                 <svg viewBox="0 0 19 19" width="19" height="19">
                   <use href="#play-s"></use>
                 </svg>

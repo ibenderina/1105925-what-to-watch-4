@@ -29,7 +29,7 @@ exports[`Should PromoFilm render correctly 1`] = `
       className="logo"
     >
       <a
-        className="logo__link"
+        className="logo__link "
         href="/"
       >
         <span

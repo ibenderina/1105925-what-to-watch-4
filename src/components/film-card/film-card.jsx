@@ -1,5 +1,6 @@
 import {Link} from "react-router-dom";
 import {useHistory} from "react-router";
+import {PageRoute} from "@consts";
 
 const FilmCard = (props) => {
   const {id, title, genre, children, onMouseEnter, onMouseLeave, setCurrentGenre} = props;
@@ -12,13 +13,13 @@ const FilmCard = (props) => {
       onMouseLeave={onMouseLeave}
       onClick={() => {
         setCurrentGenre(genre);
-        history.push(`/films/${id}`);
+        history.push(`${PageRoute.FILMS}/${id}`);
       }}>
       <div className="small-movie-card__image">
         {children}
       </div>
       <h3 className="small-movie-card__title">
-        <Link className="small-movie-card__link" to={{pathname: `/films/${id}`}}>{title}</Link>
+        <Link className="small-movie-card__link" to={{pathname: `${PageRoute.FILMS}/${id}`}}>{title}</Link>
       </h3>
     </article>
   );
