@@ -6,10 +6,13 @@ import reducer from "@reducer/reducer";
 import {Actions as UserActions, AuthorizationStatus} from "@reducer/user/user";
 import {createAPI} from "@api/api";
 import App from "@components/app/app.connect";
+import {history} from "./history";
 
-
-const api = createAPI(() => {
+const api = createAPI((error) => {
   store.dispatch(UserActions.requireAuthorization(AuthorizationStatus.NO_AUTH));
+  if (error.config.url !== `/login`) {
+    history.push(`/login`);
+  }
 });
 
 const store = createStore(

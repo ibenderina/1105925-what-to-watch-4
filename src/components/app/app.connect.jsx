@@ -4,13 +4,9 @@ import {connect} from "react-redux";
 import App from "@components/app/app";
 
 const mapDispatchToProps = (dispatch) => ({
-  checkAuth: () => {
-    return dispatch(UserOperations.checkAuth());
-  },
-  loadFilms: () => {
+  init: () => {
+    dispatch(UserOperations.checkAuth());
     dispatch(DataOperations.loadFilms());
-  },
-  loadPromoFilm: () => {
     dispatch(DataOperations.loadPromoFilm());
   }
 });

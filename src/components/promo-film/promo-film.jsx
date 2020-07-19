@@ -1,10 +1,11 @@
 import {useHistory} from "react-router";
-import {Film} from "@api/adapter";
 import UserBlock from "@components/user-block/user-block.connect";
 import PageHeaderLogo from "@components/page-header-logo/page-header-logo";
+import MyListButton from "@components/my-list-button/mi-list-button.connect";
+import {Film} from "@api/adapter";
 
 const PromoFilm = (props) => {
-  const {id, title, src, genre, date, background, backgroundColor} = props.film;
+  const {id, title, src, genre, date, background, backgroundColor, isFavorite} = props.film;
   const history = useHistory();
 
   return (
@@ -35,12 +36,7 @@ const PromoFilm = (props) => {
                 </svg>
                 <span>Play</span>
               </button>
-              <button className="btn btn--list movie-card__button" type="button">
-                <svg viewBox="0 0 19 20" width="19" height="20">
-                  <use href="#add"></use>
-                </svg>
-                <span>My list</span>
-              </button>
+              <MyListButton filmId={id} isFavorite={isFavorite} />
             </div>
           </div>
         </div>

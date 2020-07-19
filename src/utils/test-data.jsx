@@ -10,7 +10,7 @@ export const rawTestFilms = [
 ];
 
 export const rawTestComments = [
-  {"id": 1, "user": {"id": 11, "name": `Jack`}, "rating": 9.7, "comment": `This movie is just plain bad. There must be some big payola going round this awards season. Badly written, average acting at best, all the characters are unrelatable and inlikeable. 2 hours of my life wasted.`, "date": `2020-06-21T10: 54: 44.818Z`},
+  {"id": 1, "user": {"id": 11, "name": `Jack`}, "rating": 9.7, "comment": `This movie is just plain bad. There must be some big payola going round this awards season. Badly written, average acting at best, all the characters are unrelatable and inlikeable. 2 hours of my life wasted.`, "date": `2020-06-21T10:54:44.818Z`},
   {"id": 2, "user": {"id": 10, "name": `Max`}, "rating": 4, "comment": `This movie is just plain bad. There must be some big payola going round this awards season. Badly written, average acting at best, all the characters are unrelatable and inlikeable. 2 hours of my life wasted.`, "date": `2020-06-23T10:54:44.818Z`}
 ];
 

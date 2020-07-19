@@ -3,7 +3,7 @@ import {AuthorizationStatus, Actions, ActionType, Operations} from "@reducer/use
 import {rawUserAccount, testUserAccount, testUserEmptyStore} from "@utils/test-data";
 import {extend} from "@utils/utils";
 import {createAPI} from "@api/api";
-import {ErrorMessages} from "../../consts/consts";
+import {ErrorMessages} from "@consts";
 import MockAdapter from "axios-mock-adapter";
 
 const api = createAPI(() => {});

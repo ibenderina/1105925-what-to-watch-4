@@ -16,7 +16,7 @@ it(`Render App`, () => {
   window.act(() => {
     tree = window.create(
         <Provider store={store}>
-          <App checkAuth={() => {}} loadFilms={() => {}} loadPromoFilm={() => {}}/>
+          <App init={() => {}}/>
         </Provider>);
   });
   expect(tree.toJSON()).toMatchSnapshot();

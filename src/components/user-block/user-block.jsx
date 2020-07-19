@@ -1,4 +1,5 @@
 import {UserAccount} from "@api/adapter";
+import {Link} from "react-router-dom";
 
 const UserBlock = (props) => {
   const {isLogged, inProgress, userAccount} = props;
@@ -7,8 +8,10 @@ const UserBlock = (props) => {
       return (
         <div className="user-block">
           <div className="user-block__avatar">
-            <img src={`https://htmlacademy-react-3.appspot.com${userAccount.avatarUrl}`}
-              alt="User avatar" width="63" height="63"/>
+            <Link to="/mylist">
+              <img src={`https://htmlacademy-react-3.appspot.com${userAccount.avatarUrl}`}
+                alt="User avatar" width="63" height="63"/>
+            </Link>
           </div>
         </div>
       );
@@ -22,7 +25,6 @@ const UserBlock = (props) => {
   }
   return ``;
 };
-
 
 UserBlock.propTypes = {
   isLogged: PropTypes.bool.isRequired,

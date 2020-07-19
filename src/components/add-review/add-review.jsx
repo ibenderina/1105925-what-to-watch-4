@@ -2,6 +2,7 @@ import UserBlock from "@components/user-block/user-block.connect";
 import PageHeaderLogo from "@components/page-header-logo/page-header-logo";
 import {Redirect} from "react-router-dom";
 import {extend} from "@utils/utils";
+import {RatingLevel, CommentLength} from "../../consts/consts";
 
 class AddReview extends React.Component {
   constructor(props) {
@@ -27,10 +28,10 @@ class AddReview extends React.Component {
     })(evt.target));
     this.setState(newState);
     this.buttonRef.current.disabled = (
-      newState.rating < 1 ||
-      newState.rating > 5 ||
-      newState.comment.length < 50 ||
-      newState.comment.length > 400
+      newState.rating < RatingLevel.MIN ||
+      newState.rating > RatingLevel.MAX ||
+      newState.comment.length < CommentLength.MIN ||
+      newState.comment.length > CommentLength.MAX
     );
   }
 

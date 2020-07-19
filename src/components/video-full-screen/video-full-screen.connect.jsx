@@ -6,4 +6,4 @@ const mapStateToProps = (state) => ({
   selectedFilm: (filmId) => getFilmById(state, filmId)
 });
 
-export default connect(mapStateToProps, () => {})(VideoFullScreen);
+export default connect(mapStateToProps, () => ({}))(VideoFullScreen);

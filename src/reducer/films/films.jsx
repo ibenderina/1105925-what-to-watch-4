@@ -8,6 +8,7 @@ const ActionType = {
   LOAD_FILMS: `LOAD_FILMS`,
   LOAD_PROMO_FILM: `LOAD_PROMO_FILM`,
   SHOW_MORE: `SHOW_MORE`,
+  TOGGLE_IF_FAVORITE: `TOGGLE_IF_FAVORITE`,
 };
 
 const initialState = {
@@ -39,7 +40,13 @@ const Actions = {
   setCurrentGenre: (genre) => {
     return {
       type: ActionType.SET_CURRENT_GENRE,
-      currentGenre: genre,
+      payload: genre,
+    };
+  },
+  toggleIsFavorite: (filmId) => {
+    return {
+      type: ActionType.TOGGLE_IF_FAVORITE,
+      payload: filmId,
     };
   }
 };
@@ -66,13 +73,22 @@ const Operations = {
         throw err;
       });
   },
+  toggleIsFavorite: (filmId, status) => (dispatch, getState, api) => {
+    return api.post(`/favorite/${filmId}/${+status}`)
+      .then((response) => {
+        dispatch(Actions.toggleIsFavorite(new Film(response.data)));
+      })
+      .catch((err) => {
+        throw err;
+      });
+  },
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionType.SET_CURRENT_GENRE:
       return extend(state, {
-        currentGenre: action.currentGenre,
+        currentGenre: action.payload,
         showedFilmsCount: CountLimit.MAX_FILMS,
       });
 
@@ -91,6 +107,15 @@ const reducer = (state = initialState, action) => {
       const showedFilmsCount = state.showedFilmsCount + CountLimit.MAX_FILMS;
       return extend(state, {
         showedFilmsCount,
+      });
+
+    case ActionType.TOGGLE_IF_FAVORITE:
+      const film = state.films.find((f) => f.id === action.payload.id);
+      film.isFavorite = action.payload.isFavorite;
+      const promoFilm = state.promoFilm.id === film.id ? action.payload : state.promoFilm;
+      return extend(state, {
+        films: state.films,
+        promoFilm,
       });
   }
 

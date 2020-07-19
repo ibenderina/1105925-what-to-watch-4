@@ -6,5 +6,4 @@ const mapStateToProps = (state) => ({
   film: getPromoFilm(state),
 });
 
-
-export default connect(mapStateToProps, ()=>({}))(PromoFilm);
+export default connect(mapStateToProps, () => ({}))(PromoFilm);
