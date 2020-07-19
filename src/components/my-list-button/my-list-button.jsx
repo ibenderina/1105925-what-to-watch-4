@@ -12,8 +12,8 @@ const MyListButton = (props) => {
 };
 
 MyListButton.propTypes = {
-  filmId: PropTypes.number.isRequired,
-  isFavorite: PropTypes.bool.isRequired,
+  filmId: PropTypes.number,
+  isFavorite: PropTypes.bool,
   toggleFavorite: PropTypes.func.isRequired,
 };
 
