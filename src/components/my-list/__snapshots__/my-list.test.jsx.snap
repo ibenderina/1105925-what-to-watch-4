@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should My List render correctly 1`] = `
+<div
+  className="user-page"
+>
+  <header
+    className="page-header user-page__head"
+  >
+    <div
+      className="logo"
+    >
+      <a
+        className="logo__link "
+        href="/"
+      >
+        <span
+          className="logo__letter logo__letter--1"
+        >
+          W
+        </span>
+        <span
+          className="logo__letter logo__letter--2"
+        >
+          T
+        </span>
+        <span
+          className="logo__letter logo__letter--3"
+        >
+          W
+        </span>
+      </a>
+    </div>
+    <h1
+      className="page-title user-page__title"
+    >
+      My list
+    </h1>
+    
+  </header>
+  <section
+    className="catalog"
+  >
+    <h2
+      className="catalog__title visually-hidden"
+    >
+      Catalog
+    </h2>
+    <div
+      className="catalog__movies-list"
+    >
+      <article
+        className="small-movie-card catalog__movies-card"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <div
+          className="small-movie-card__image"
+        >
+          <video
+            autoPlay={true}
+            height="175"
+            loop={true}
+            muted={true}
+            poster="https://htmlacademy-react-3.appspot.com/wtw/static/film/preview/Once_Upon_a_Time_in_America.jpg"
+            src=""
+            width="280"
+          />
+        </div>
+        <h3
+          className="small-movie-card__title"
+        >
+          <a
+            className="small-movie-card__link"
+            href="/films/1"
+            onClick={[Function]}
+          >
+            Once Upon a Time in America
+          </a>
+        </h3>
+      </article>
+      <article
+        className="small-movie-card catalog__movies-card"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <div
+          className="small-movie-card__image"
+        >
+          <video
+            autoPlay={true}
+            height="175"
+            loop={true}
+            muted={true}
+            poster="https://htmlacademy-react-3.appspot.com/wtw/static/film/preview/no-country-for-old-men.jpg"
+            src=""
+            width="280"
+          />
+        </div>
+        <h3
+          className="small-movie-card__title"
+        >
+          <a
+            className="small-movie-card__link"
+            href="/films/2"
+            onClick={[Function]}
+          >
+            No Country for Old Men
+          </a>
+        </h3>
+      </article>
+      <article
+        className="small-movie-card catalog__movies-card"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <div
+          className="small-movie-card__image"
+        >
+          <video
+            autoPlay={true}
+            height="175"
+            loop={true}
+            muted={true}
+            poster="https://htmlacademy-react-3.appspot.com/wtw/static/film/preview/A_Star_Is_Born.jpg"
+            src=""
+            width="280"
+          />
+        </div>
+        <h3
+          className="small-movie-card__title"
+        >
+          <a
+            className="small-movie-card__link"
+            href="/films/3"
+            onClick={[Function]}
+          >
+            A Star Is Born
+          </a>
+        </h3>
+      </article>
+    </div>
+  </section>
+  <footer
+    className="page-footer"
+  >
+    <div
+      className="logo"
+    >
+      <a
+        className="logo__link logo__link--light"
+        href="/"
+      >
+        <span
+          className="logo__letter logo__letter--1"
+        >
+          W
+        </span>
+        <span
+          className="logo__letter logo__letter--2"
+        >
+          T
+        </span>
+        <span
+          className="logo__letter logo__letter--3"
+        >
+          W
+        </span>
+      </a>
+    </div>
+    <div
+      className="copyright"
+    >
+      <p>
+        © 2019 What to watch Ltd.
+      </p>
+    </div>
+  </footer>
+</div>
+`;
