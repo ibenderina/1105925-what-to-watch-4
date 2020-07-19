@@ -5,7 +5,7 @@ import {testCommentsStore, testUserEmptyStore, testUserStore} from "@utils/test-
 import {Provider} from "react-redux";
 import configureStore from "redux-mock-store";
 import PrivateRoute from "@components/private-route/private-route.connect";
-
+import {PageRoute} from "@consts";
 
 it(`Should AddReview render correctly if user logged`, () => {
   const mockStore = configureStore([]);
@@ -19,8 +19,8 @@ it(`Should AddReview render correctly if user logged`, () => {
   window.act(() => {
     tree = window.create(
         <Provider store={store}>
-          <MemoryRouter initialEntries={[`/review/1`]}>
-            <PrivateRoute exact path="/review/1">
+          <MemoryRouter initialEntries={[`${PageRoute.REVIEW}/1`]}>
+            <PrivateRoute exact path={`${PageRoute.REVIEW}/1`}>
               <AddReview/>
             </PrivateRoute>
           </MemoryRouter>
@@ -29,7 +29,6 @@ it(`Should AddReview render correctly if user logged`, () => {
   });
   expect(tree.toJSON()).toMatchSnapshot();
 });
-
 
 it(`Should AddReview render correctly if user NOT logged`, () => {
   const mockStore = configureStore([]);
@@ -43,8 +42,8 @@ it(`Should AddReview render correctly if user NOT logged`, () => {
   window.act(() => {
     tree = window.create(
         <Provider store={store}>
-          <MemoryRouter initialEntries={[`/review/1`]}>
-            <PrivateRoute exact path="/review/1">
+          <MemoryRouter initialEntries={[`${PageRoute.REVIEW}/1`]}>
+            <PrivateRoute exact path={`${PageRoute.REVIEW}/1`}>
               <AddReview/>
             </PrivateRoute>
           </MemoryRouter>

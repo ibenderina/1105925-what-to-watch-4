@@ -2,7 +2,7 @@ import UserBlock from "@components/user-block/user-block.connect";
 import PageHeaderLogo from "@components/page-header-logo/page-header-logo";
 import {Redirect} from "react-router-dom";
 import {extend} from "@utils/utils";
-import {RatingLevel, CommentLength} from "../../consts/consts";
+import {RatingLevel, CommentLength, PageRoute} from "@consts";
 
 class AddReview extends React.Component {
   constructor(props) {
@@ -41,7 +41,7 @@ class AddReview extends React.Component {
     const film = getFilmById(filmId);
 
     if (addIsSuccess) {
-      return <Redirect to={`/films/${filmId}`}/>;
+      return <Redirect to={`${PageRoute.FILMS}/${filmId}`}/>;
     }
 
     if (film) {
@@ -60,7 +60,7 @@ class AddReview extends React.Component {
               <nav className="breadcrumbs">
                 <ul className="breadcrumbs__list">
                   <li className="breadcrumbs__item">
-                    <a href={`/films/${filmId}`} className="breadcrumbs__link">{film.title}</a>
+                    <a href={`${PageRoute.FILMS}/${filmId}`} className="breadcrumbs__link">{film.title}</a>
                   </li>
                   <li className="breadcrumbs__item">
                     <a className="breadcrumbs__link">Add review</a>

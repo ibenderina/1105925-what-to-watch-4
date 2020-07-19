@@ -36,6 +36,7 @@ export const testFilmStore = {
   currentGenre: ALL_GENRES,
   genres: [...new Set(testFilms.map((f) => f.genre))],
   films: testFilms,
+  favoriteFilms: testFilms,
   promoFilm: testFilms[0],
   showedFilmsCount: 8
 };
@@ -44,6 +45,7 @@ export const testEmptyFilmStore = {
   currentGenre: ALL_GENRES,
   genres: [],
   films: [],
+  favoriteFilms: [],
   promoFilm: new Film({}),
   showedFilmsCount: 0,
 };

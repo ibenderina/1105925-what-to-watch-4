@@ -3,6 +3,7 @@ import {extend} from "@utils/utils";
 import {rawTestFilms, testEmptyFilmStore, testFilms, testFilmStore} from "@utils/test-data";
 import MockAdapter from "axios-mock-adapter";
 import {createAPI} from "@api/api";
+import {APIEndpoints} from "../../consts/consts";
 
 const api = createAPI(() => {});
 
@@ -25,7 +26,7 @@ it(`Should make a correct API call to /films`, function () {
   const filmsLoader = Operations.loadFilms();
 
   apiMock
-    .onGet(`/films`)
+    .onGet(APIEndpoints.FILMS)
     .reply(200, rawTestFilms);
 
   return filmsLoader(dispatch, () => {}, api)
@@ -38,13 +39,32 @@ it(`Should make a correct API call to /films`, function () {
     });
 });
 
+it(`Should make a correct API call to /favorite`, function () {
+  const apiMock = new MockAdapter(api);
+  const dispatch = jest.fn();
+  const filmsLoader = Operations.loadFavoriteFilms();
+
+  apiMock
+    .onGet(APIEndpoints.FAVORITE)
+    .reply(200, rawTestFilms);
+
+  return filmsLoader(dispatch, () => {}, api)
+    .then(() => {
+      expect(dispatch).toHaveBeenCalledTimes(1);
+      expect(dispatch).toHaveBeenNthCalledWith(1, {
+        type: ActionType.LOAD_FAVORITE_FILMS,
+        payload: testFilms,
+      });
+    });
+});
+
 it(`Should make a correct API call to /films/promo`, function () {
   const apiMock = new MockAdapter(api);
   const dispatch = jest.fn();
   const filmLoader = Operations.loadPromoFilm();
 
   apiMock
-    .onGet(`/films/promo`)
+    .onGet(APIEndpoints.PROMO_FILM)
     .reply(200, rawTestFilms[0]);
 
   return filmLoader(dispatch, () => {}, api)

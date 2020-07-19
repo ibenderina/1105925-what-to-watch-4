@@ -7,11 +7,12 @@ import {Actions as UserActions, AuthorizationStatus} from "@reducer/user/user";
 import {createAPI} from "@api/api";
 import App from "@components/app/app.connect";
 import {history} from "./history";
+import {APIEndpoints, PageRoute} from "@consts";
 
 const api = createAPI((error) => {
   store.dispatch(UserActions.requireAuthorization(AuthorizationStatus.NO_AUTH));
-  if (error.config.url !== `/login`) {
-    history.push(`/login`);
+  if (error.config.url !== APIEndpoints.LOGIN) {
+    history.push(PageRoute.LOGIN);
   }
 });
 

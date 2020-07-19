@@ -2,7 +2,7 @@ import {reducer, Actions, Operations, ActionType} from "@reducer/comments/commen
 import {rawTestComments, testComments, testCommentsStore, testEmptyCommentsStore} from "@utils/test-data";
 import MockAdapter from "axios-mock-adapter";
 import {createAPI} from "@api/api";
-import {TransferStates} from "@consts";
+import {APIEndpoints, TransferStates} from "@consts";
 import {extend} from "@utils/utils";
 
 const api = createAPI(() => {});
@@ -33,7 +33,7 @@ it(`Should make a correct API GET call to /comments`, function () {
   const commentsLoader = Operations.loadFilmComments(1);
 
   apiMock
-    .onGet(`/comments/1`)
+    .onGet(`${APIEndpoints.COMMENTS}/1`)
     .reply(200, rawTestComments);
 
   return commentsLoader(dispatch, () => {}, api)
@@ -57,7 +57,7 @@ it(`Should make a correct API POST call to /comments/:id`, function () {
   const commentsLoader = Operations.addComment(1, 5, `test comment`);
 
   apiMock
-    .onPost(`/comments/1`, {rating: 5, comment: `test comment`})
+    .onPost(`${APIEndpoints.COMMENTS}/1`, {rating: 5, comment: `test comment`})
     .reply(200, rawTestComments);
 
   return commentsLoader(dispatch, () => {}, api)

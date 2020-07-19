@@ -57,3 +57,21 @@ export const CommentLength = {
   MAX: 400,
   MIN: 50
 };
+
+
+export const PageRoute = {
+  INDEX: `/`,
+  LOGIN: `/login`,
+  MY_LIST: `/mylist`,
+  REVIEW: `/review`,
+  FILMS: `/films`,
+  PLAYER: `/player`,
+};
+
+export const APIEndpoints = {
+  PROMO_FILM: `/films/promo`,
+  FILMS: `/films`,
+  FAVORITE: `/favorite`,
+  COMMENTS: `/comments`,
+  LOGIN: `/login`,
+};

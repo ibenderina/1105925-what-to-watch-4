@@ -5,6 +5,8 @@ import SignIn from "@components/sign-in/sign-in.connect";
 import PrivateRoute from "@components/private-route/private-route.connect";
 import AddReview from "@components/add-review/add-review.connect";
 import {history} from "../../history";
+import MyList from "@components/my-list/my-list.connect";
+import {PageRoute} from "@consts";
 
 class App extends React.PureComponent {
   componentDidMount() {
@@ -15,13 +17,13 @@ class App extends React.PureComponent {
     return (
       <Router history={history}>
         <Switch>
-          <Route exact path="/" component={Main}/>
-          <Route exact path="/login" component={SignIn}/>
-          <PrivateRoute exact path="/mylist"/>
-          <PrivateRoute exact path="/review/:id" component={AddReview}/>
-          <Route exact path="/films/:id" component={Main}/>
-          <Route exact path="/films/:id/review" component={Main}/>
-          <Route exact path="/player/:id" component={VideoFullScreen}/>
+          <Route exact path={PageRoute.INDEX} component={Main}/>
+          <Route exact path={PageRoute.LOGIN} component={SignIn}/>
+          <PrivateRoute exact path={PageRoute.MY_LIST} component={MyList}/>
+          <PrivateRoute exact path={`${PageRoute.REVIEW}/:id`} component={AddReview}/>
+          <Route exact path={`${PageRoute.FILMS}/:id`} component={Main}/>
+          <Route exact path={`${PageRoute.FILMS}/:id${PageRoute.REVIEW}`} component={Main}/>
+          <Route exact path={`${PageRoute.PLAYER}/:id`} component={VideoFullScreen}/>
         </Switch>
       </Router>
     );
