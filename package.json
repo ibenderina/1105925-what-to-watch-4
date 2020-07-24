@@ -52,7 +52,9 @@
     "node": "10"
   },
   "dependencies": {
+    "@types/dateformat": "^3.0.1",
     "axios": "0.19.2",
+    "dateformat": "^3.0.3",
     "history": "4.10.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",

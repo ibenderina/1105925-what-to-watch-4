@@ -1,10 +1,13 @@
 import * as React from "react";
 import {Redirect} from "react-router-dom";
-import {RatingLevel, CommentLength, PageRoute} from "@consts";
+
+import {RatingLevel, CommentLength, PageRoute, ErrorMessages} from "@consts";
 import {extend} from "@utils/utils";
 import {Film} from "@api/adapter";
+
 import UserBlock from "@components/user-block/user-block.connect";
 import PageHeaderLogo from "@components/page-header-logo/page-header-logo";
+
 
 interface Props {
   addIsSuccess: boolean,
@@ -29,6 +32,7 @@ class AddReview extends React.PureComponent<Props> {
   state = {
     rating: 0,
     comment: '',
+    errorMessage: null,
   };
 
   private onInput = (evt: React.FormEvent<HTMLFormElement>): void => {
@@ -42,17 +46,37 @@ class AddReview extends React.PureComponent<Props> {
       return {};
     })(evt.target as HTMLInputElement));
     this.setState(newState);
-    this.buttonRef.current.disabled = (
-      newState.rating < RatingLevel.MIN ||
-      newState.rating > RatingLevel.MAX ||
-      newState.comment.length < CommentLength.MIN ||
-      newState.comment.length > CommentLength.MAX
-    );
+  };
+
+  private onSubmit = (evt: React.FormEvent<HTMLFormElement>): void => {
+    evt.preventDefault();
+
+    const state = this.state;
+    const errorMessage = ((): string | null => {
+      if (state.rating < RatingLevel.MIN || state.rating > RatingLevel.MAX) {
+        return ErrorMessages.INVALID_RATING;
+      }
+      if (state.comment.length < CommentLength.MIN) {
+        return ErrorMessages.TOO_SHORT_COMMENT;
+      }
+      if (state.comment.length > CommentLength.MAX) {
+        return ErrorMessages.TOO_LONG_COMMENT;
+      }
+    })();
+
+    this.setState({
+        errorMessage
+    });
+
+    if (!errorMessage) {
+      this.props.addComment(this.props.match.params.id, this.state.rating, this.state.comment);
+    }
+
   };
 
   render() {
     const filmId = this.props.match.params.id;
-    const {statusMessage, getFilmById, addComment, inProgress, addIsSuccess} = this.props;
+    const {statusMessage, getFilmById, inProgress, addIsSuccess} = this.props;
     const film = getFilmById(filmId);
 
     if (addIsSuccess) {
@@ -99,12 +123,9 @@ class AddReview extends React.PureComponent<Props> {
               style={inProgress ? {pointerEvents: `none`, opacity: 0.6} : {}}
               onChange={this.onInput}
               onKeyPress={this.onInput}
-              onSubmit={(evt) => {
-                evt.preventDefault();
-                addComment(filmId, this.state.rating, this.state.comment);
-              }}>
+              onSubmit={this.onSubmit}>
               <div className="add-review__error-message">
-                <p>{statusMessage}</p>
+                <p>{statusMessage || this.state.errorMessage}</p>
               </div>
               <div className="rating">
                 <div className="rating__stars">
@@ -136,11 +157,9 @@ class AddReview extends React.PureComponent<Props> {
 
               <div className="add-review__text">
                 <textarea className="add-review__textarea" name="review-text" id="review-text"
-                  minLength={50}
-                  maxLength={400}
                   placeholder="Review text"/>
                 <div className="add-review__submit">
-                  <button className="add-review__btn" type="submit" disabled={true} ref={this.buttonRef}>Post</button>
+                  <button className="add-review__btn" type="submit" ref={this.buttonRef}>Post</button>
                 </div>
               </div>
 

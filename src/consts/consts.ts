@@ -35,6 +35,9 @@ export enum ErrorMessages {
   EMAIL_INVALID = `Email invalid`,
   PASSWORD_INVALID = `Password invalid`,
   INVALID_USER_DATA = `Invalid user data`,
+  INVALID_RATING = `Please select rating`,
+  TOO_SHORT_COMMENT = `Minimal comment length 50 symbols`,
+  TOO_LONG_COMMENT = `Maximum comment length 400 symbols`,
 }
 
 export enum SuccessMessages {
