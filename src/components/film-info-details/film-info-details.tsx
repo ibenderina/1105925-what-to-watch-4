@@ -6,7 +6,7 @@ interface Props {
   getFilmById: (filmId: string) => Film
 }
 
-const FilmInfoDetails = (props: Props) => {
+const FilmInfoDetails = (props: Props): React.ReactElement => {
   const {filmId, getFilmById} = props;
   const {genre, date, director, starring, runTime} = getFilmById(filmId);
 

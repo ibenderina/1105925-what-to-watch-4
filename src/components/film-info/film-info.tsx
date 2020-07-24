@@ -17,7 +17,7 @@ interface Props {
   getFilmById: (filmId: string) => Film
 }
 
-const FilmInfo = (props: Props) => {
+const FilmInfo = (props: Props): React.ReactElement => {
   const {activeTab, filmId, getFilmById, isLogged, children, setActiveTab} = props;
   const {id, src, title, genre, date, background, backgroundColor, isFavorite} = getFilmById(filmId);
   const history = useHistory();

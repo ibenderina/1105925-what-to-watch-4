@@ -4,7 +4,6 @@ import GenresList from "@components/genres-list/genres-list";
 import {testGenresList} from "@utils/test-data";
 import {ALL_GENRES} from "@consts";
 
-
 it(`Should Genre List render correctly`, () => {
   const tree = renderer.create(
     <GenresList

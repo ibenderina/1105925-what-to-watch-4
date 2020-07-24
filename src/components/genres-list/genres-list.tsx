@@ -8,7 +8,7 @@ interface Props {
   handleGenreClick: (genre: string) => void
 }
 
-const GenresList = (props: Props) => {
+const GenresList = (props: Props): React.ReactElement => {
   const {genres, currentGenre, handleGenreClick} = props;
 
   return (

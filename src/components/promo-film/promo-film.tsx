@@ -10,7 +10,7 @@ interface Props {
   film: Film
 }
 
-const PromoFilm = (props: Props) => {
+const PromoFilm = (props: Props): React.ReactElement => {
   const {id, title, src, genre, date, background, backgroundColor, isFavorite} = props.film;
   const history = useHistory();
 

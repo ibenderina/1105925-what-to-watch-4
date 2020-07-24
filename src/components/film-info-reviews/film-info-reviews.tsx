@@ -7,7 +7,7 @@ interface Props {
   getComments: (filmId: string) => FilmComment[]
 }
 
-const FilmInfoReviews = (props: Props) => {
+const FilmInfoReviews = (props: Props): React.ReactElement => {
   const {filmId, getComments} = props;
   const comments = getComments(filmId);
   const commentsHalfLength = Math.round(comments.length / 2) + Math.ceil(comments.length % 2);

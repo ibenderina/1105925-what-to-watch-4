@@ -19,7 +19,7 @@ export const rawUserAccount: RawUserAccount = {"id": 1, "email": `test@te33st.tr
 export const testFilms = Film.parse(rawTestFilms);
 export const testComments = FilmComment.parse(rawTestComments);
 export const testUserAccount = UserAccount.parse(rawUserAccount);
-export const testGenresList = testFilms.map((film: Film) => film.genre);
+export const testGenresList = [...new Set(testFilms.map((film: Film) => film.genre))];
 
 export const testUserStore = {
   authorizationStatus: AuthorizationStatus.IN_PROGRESS,

@@ -9,7 +9,7 @@ interface Props {
   films: Film[]
 }
 
-const FilmsList = (props: Props) => {
+const FilmsList = (props: Props): React.ReactElement => {
   const {films} = props;
 
   return (

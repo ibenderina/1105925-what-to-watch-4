@@ -7,7 +7,7 @@ interface Props {
   isPlayed: boolean
 }
 
-const VideoPlayer = (props: Props) => {
+const VideoPlayer = (props: Props): React.ReactElement => {
   let {url} = props;
   const {isPlayed, isMuted, image} = props;
 

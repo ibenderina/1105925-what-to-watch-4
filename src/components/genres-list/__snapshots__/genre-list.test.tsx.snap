@@ -34,17 +34,6 @@ exports[`Should Genre List render correctly 1`] = `
       href="#"
       onClick={[Function]}
     >
-      Crime
-    </a>
-  </li>
-  <li
-    className="catalog__genres-item"
-  >
-    <a
-      className="catalog__genres-link"
-      href="#"
-      onClick={[Function]}
-    >
       Drama
     </a>
   </li>

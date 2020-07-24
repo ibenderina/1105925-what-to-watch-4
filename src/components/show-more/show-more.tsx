@@ -4,7 +4,7 @@ interface Props {
   handleShowButtonClick: () => void
 }
 
-const ShowMore = (props: Props) => {
+const ShowMore = (props: Props): React.ReactElement => {
   const {handleShowButtonClick} = props;
 
   return (

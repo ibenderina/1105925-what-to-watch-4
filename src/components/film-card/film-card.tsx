@@ -13,7 +13,7 @@ interface Props {
   setCurrentGenre: (genre: string) => void
 }
 
-const FilmCard = (props: Props) => {
+const FilmCard = (props: Props): React.ReactElement => {
   const {id, title, genre, children, onMouseEnter, onMouseLeave, setCurrentGenre} = props;
   const history = useHistory();
 

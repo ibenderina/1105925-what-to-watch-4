@@ -8,5 +8,4 @@ const mapStateToProps = (state) => ({
   userAccount: getUserAccount(state),
 });
 
-
 export default connect(mapStateToProps, () => ({}))(UserBlock);

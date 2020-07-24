@@ -8,7 +8,7 @@ interface Props {
   userAccount: UserAccount
 }
 
-const UserBlock = (props: Props) => {
+const UserBlock = (props: Props): React.ReactElement => {
   const {isLogged, inProgress, userAccount} = props;
   if (!inProgress) {
     if (isLogged) {

@@ -4,7 +4,7 @@ interface Props {
   isLight: boolean
 }
 
-const PageHeaderLogo = (props: Props) => {
+const PageHeaderLogo = (props: Props): React.ReactElement => {
   const {isLight} = props;
   return (
     <div className="logo">

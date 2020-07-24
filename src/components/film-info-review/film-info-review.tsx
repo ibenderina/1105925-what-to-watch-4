@@ -6,7 +6,7 @@ interface Props {
   comment: FilmComment
 }
 
-const FilmInfoReview = (props: Props) => {
+const FilmInfoReview = (props: Props): React.ReactElement => {
   const {comment} = props;
 
   return (

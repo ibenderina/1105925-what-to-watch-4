@@ -5,13 +5,6 @@ import {testFilms} from "@utils/test-data";
 
 it(`Should VideoFullScreen render correctly`, () => {
   let tree;
-  // = renderer.create(
-  //   <VideoFullScreen
-  //     selectedFilm={() => testFilms[0]}
-  //     history={{goBack: () => {}}}
-  //     match={{params: {id: testFilms[0].id.toString()}}}
-  //   />
-  // );
 
   renderer.act(() => {
     tree = renderer.create(<VideoFullScreen
@@ -20,7 +13,6 @@ it(`Should VideoFullScreen render correctly`, () => {
       match={{params: {id: testFilms[0].id.toString()}}}
     />);
   });
-  console.log(tree);
   expect(tree.toJSON()).toMatchSnapshot();
 });
 

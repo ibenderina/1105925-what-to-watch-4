@@ -9,11 +9,9 @@ export const getAuthStateInProgress = (state) => {
   return state[NameSpace.USER].authorizationStatus === AuthorizationStatus.IN_PROGRESS;
 };
 
-
 export const getUserAccount = (state) => {
   return state[NameSpace.USER].userAccount;
 };
-
 
 export const getErrorMessage = (state) => {
   return state[NameSpace.USER].authorizationErrorMessage;
