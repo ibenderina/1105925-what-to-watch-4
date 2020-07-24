@@ -2,7 +2,7 @@ const path = require(`path`);
 const webpack = require(`webpack`);
 
 module.exports = {
-  entry: `./src/index.jsx`,
+  entry: `./src/index.tsx`,
   output: {
     filename: `bundle.js`,
     path: path.join(__dirname, `public`)
@@ -21,12 +21,16 @@ module.exports = {
         use: {
           loader: `babel-loader`,
         },
+      },
+      {
+        test: /\.(tsx|ts)?$/,
+        loader: `ts-loader`
       }
     ],
   },
   resolve: {
     modules: [`node_modules`, path.resolve(path.join(__dirname, `src/components`))],
-    extensions: [`.js`, `.jsx`, `.ts`, `.tsx`, `.webm`],
+    extensions: [`.js`, `.ts`, `.tsx`, `.json`],
     alias: {
       '@components': path.resolve(__dirname, `src/components`),
       '@consts': path.resolve(__dirname, `src/consts/consts`),
@@ -34,13 +38,13 @@ module.exports = {
       '@reducer': path.resolve(__dirname, `src/reducer`),
       '@hocs': path.resolve(__dirname, `src/hocs`),
       '@api': path.resolve(__dirname, `src/api`),
+      '@root': path.resolve(__dirname, `src`),
     }
   },
   devtool: `source-map`,
   plugins: [
     new webpack.ProvidePlugin({
       React: `react`,
-      PropTypes: `prop-types`,
     }),
   ],
 };
