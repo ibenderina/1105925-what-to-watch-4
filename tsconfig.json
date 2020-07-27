@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": ["./components/*"],
+      "@consts": ["./consts/consts"],
+      "@utils/*": ["./utils/*"],
+      "@reducer/*": ["./reducer/*"],
+      "@hocs/*": ["./hocs/*"],
+      "@api/*": ["./api/*"],
+      "@root/*": ["./*"]
+    },
+    "sourceMap": true,
+    "module": "commonjs",
+    "target": "es2016",
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "alwaysStrict": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

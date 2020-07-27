@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Should AddReview render correctly if user NOT logged 1`] = `""`;
-
-exports[`Should AddReview render correctly if user logged 1`] = `""`;
