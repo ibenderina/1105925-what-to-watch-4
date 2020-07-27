@@ -135,7 +135,7 @@ const reducer = (state = initialState, action) => {
       });
 
     case ActionType.TOGGLE_IF_FAVORITE:
-      const film = state.films.find((f) => f.id === action.payload.id);
+      const film = state.films.find((item) => item.id === action.payload.id);
       film.isFavorite = action.payload.isFavorite;
       const promoFilm = state.promoFilm.id === film.id ? action.payload : state.promoFilm;
       return extend(state, {

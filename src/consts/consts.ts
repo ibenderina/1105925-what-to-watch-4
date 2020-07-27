@@ -77,3 +77,5 @@ export enum APIEndpoints {
   COMMENTS = `/comments`,
   LOGIN = `/login`,
 }
+
+export const MINUTES = 60;

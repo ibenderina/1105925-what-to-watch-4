@@ -1,4 +1,4 @@
-import {Level} from "@consts";
+import {Level, MINUTES} from "@consts";
 
 export const setTextRating = (ratingScore: number): string => {
   if (ratingScore < 3) {
@@ -26,4 +26,11 @@ export const isValidEmail = (email: string): boolean => {
 
 export const isValidPassword = (password: string): boolean => {
   return !!password.toString().length;
+};
+
+export const setTimeFormat = (minutes: number): number[] => {
+  const hours = minutes / MINUTES;
+  const timeInHours = Math.trunc(hours);
+  const timeInMinutes = Math.trunc((hours - timeInHours) * MINUTES);
+  return [timeInHours, timeInMinutes];
 };

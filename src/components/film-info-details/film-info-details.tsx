@@ -1,5 +1,6 @@
 import * as React from "react";
 import {Film} from "@api/adapter";
+import {setTimeFormat} from "@utils/utils";
 
 interface Props {
   filmId: string,
@@ -27,7 +28,7 @@ const FilmInfoDetails = (props: Props): React.ReactElement => {
         <div className="movie-card__text-col">
           <p className="movie-card__details-item">
             <strong className="movie-card__details-name">Run Time</strong>
-            <span className="movie-card__details-value">{runTime} min</span>
+            <span className="movie-card__details-value">{setTimeFormat(runTime).join('h ')}min</span>
           </p>
           <p className="movie-card__details-item">
             <strong className="movie-card__details-name">Genre</strong>
